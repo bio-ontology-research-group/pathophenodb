@@ -1,8 +1,66 @@
 import React, { Component } from 'react';
+import { browserHistory } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 import './bootstrap/css/bootstrap.min.css';
 
+class DiseasePage extends React.Component {
+
+    constructor(props) {
+	super(props);
+
+	var disease = props.disease;
+	
+	this.state = {
+	    disease: disease,
+	};
+
+    }
+
+    componentWillReceiveProps(newProps) {
+	var disease = newProps.disease;
+	this.setState({disease: disease});
+    }
+
+    render() {
+	var disease = this.state.disease;
+	if (disease !== undefined) {
+	    var names = disease.DiseaseNames.join(', ');
+	    var pathogen_names = disease.PathogenNames.join(', ');
+	    var drugs = disease.Drugs.map(
+		(item) => item.Drug_ID + ' - ' + item.Drug_Name).join(', ');
+	    var phenos = disease.Phenotypes.map(
+		(item) => item.phenotype_id + ' - ' + item.phenotype_names[0])
+		.join(', ');
+	    var resist = disease.Drug_Resistance.map(
+		(item) => item.Resistant_to).join(', ');
+	    const disease_info = (
+		<tbody>
+		<tr><td><strong>ID</strong></td><td>{ disease.DOID }</td></tr>
+		<tr><td><strong>Names</strong></td><td>{ names }</td></tr>
+		<tr><td><strong>Taxonomy ID</strong></td><td>{ disease.TaxID }</td></tr>
+		<tr><td><strong>Pathogen Type</strong></td><td>{ disease.Pathogen_type }</td></tr>
+		<tr><td><strong>Pathogen Names</strong></td><td>{ pathogen_names }</td></tr>
+		<tr><td><strong>Drugs</strong></td><td>{ drugs }</td></tr>
+		<tr><td><strong>Phenotypes</strong></td><td>{ phenos }</td></tr>
+		<tr><td><strong>Resistant To</strong></td><td>{ resist }</td></tr>
+		</tbody>
+	    );
+	    return (
+		<div class="container">
+		    <div class="row">
+		    <table class="table table-striped text-left">
+		      {disease_info}
+		    </table>
+		    </div>
+		</div>
+	    );
+	}
+
+	return (<div className="container"></div>);
+    }
+
+}
 
 class ResultsTable extends React.Component {
 
@@ -163,6 +221,7 @@ class App extends Component {
 	    query: query,
 	    section: section,
 	    results: {'headers': [], 'rows': []},
+	    diseaseMap: {},
 	};
     }
 
@@ -200,8 +259,8 @@ class App extends Component {
 
     componentWillReceiveProps(newProps) {
 	var section = newProps.match.params.section;
+	var query = newProps.match.params.query;
 	if (section == 'search') {
-	    var query = newProps.match.params.query;
 	    if (query !== undefined && query != this.state.query) {
 		query = decodeURIComponent(query);
 		this.setState({query: query});
@@ -213,6 +272,12 @@ class App extends Component {
 		this.setState({page: page});
 	    } else {
 		this.setState({page: 1});
+	    }
+	} else if (section == 'browse' && query !== undefined) {
+	    var doid = decodeURIComponent(query);
+	    if (this.state.diseaseMap.hasOwnProperty(doid)) {
+		var disease = this.state.diseaseMap[doid];
+		this.setState({disease: disease});
 	    }
 	}
 	
@@ -227,15 +292,20 @@ class App extends Component {
     executeQuery(query) {
 	var that = this;
 	var query_list = [
-            { 'match_phrase_prefix': { 'disease_name': query } }
+            { 'match': { 'DiseaseNames': query } },
+	    { 'match': { 'PathogenNames': query } }
         ];
-        var docs = { 'query': { 'bool': { 'must': query_list } } };
+        var docs = {
+	    'query': { 'bool': { 'should': query_list } },
+	    'from': 0,
+	    'size': 1000
+	};
             
 	var params = {
-		method: 'POST', body: JSON.stringify(docs)
+	    method: 'POST', body: JSON.stringify(docs)
 	};
 	var that = this;
-	fetch('/db/DisPath/_search/')
+	fetch('/pathopheno/db/_search/', params)
 	    .then(function(response){
 		return response.json();
 	    })
@@ -243,22 +313,25 @@ class App extends Component {
 		var hits = data.hits.hits;
 		var diseases = {
 		    headers: ['ID', 'Names', 'Pathogens'], rows: [] };
+		var diseaseMap = {};
 		for (var i = 0; i < hits.length; i++) {
 		    var item = hits[i]._source;
 		    console.log(item);
 		    if ('DiseaseNames' in item) {
+			diseaseMap[item.DOID] = item;
+			const id = (<a href={'#/browse/' + encodeURIComponent(item.DOID)}>{item.DOID}</a>);
 			var names = item.DiseaseNames.join(', ');
 			var pathogens = item.PathogenNames.join(', ');
 			var filterBy = names;
 			diseases.rows.push([
-			    item.DOID,
+			    id,
 			    names,
 			    pathogens,
 			    names
 			]);
 		    }
 		}
-		that.setState({results: diseases});
+		that.setState({results: diseases, diseaseMap: diseaseMap});
 	    });
 
     }
@@ -284,7 +357,7 @@ class App extends Component {
     renderHeader() {
 	var section = this.state.section;
 	const menuItems = [
-	    'Search', 'Downloads', 'About', 'Contact'];
+	    'Search', 'Browse', 'About', 'Contact'];
 	const content = menuItems.map(function(item) {
 	    var activeClass = '';
 	    if (item.toLowerCase() == section) {
@@ -307,20 +380,38 @@ class App extends Component {
 		</div>
 	);
     }
+
+    goBack(e) {
+	e.preventDefault();
+	this.props.history.goBack();
+    }
     
     render() {
-	var page = this.state.page;
-	var results = this.state.results;
-	var rootURI = '#/search/' + this.state.query + '/';
+	var section = (<div></div>);
+	if (this.state.section == 'search') {
+	    var page = this.state.page;
+	    var results = this.state.results;
+	    var rootURI = '#/search/' + this.state.query + '/';
+	    section = (<ResultsTable data={results} page={page} rootURI={rootURI}/>);
+	} else if (this.state.section == 'browse'){
+	    var disease = this.state.disease;
+	    section = (
+		    <div>
+		    <a className="btn btn-primary btn-sm pull-left" onClick={(e) => this.goBack(e)}>Back</a>
+		    <DiseasePage disease={disease} />
+	        </div>);
+	}
 	return (
 	      <div className="container">
 		{ this.renderHeader() }
       <div className="jumbotron">
         <h1>DisPath Search</h1>
-        <p className="lead">Some information about search</p>
+		<p className="lead">Some information about search</p>
+	</div><div>
 		{ this.renderSearchForm() }
 		<br/>
-		<ResultsTable data={results} page={page} rootURI={rootURI}/>
+		{ section }
+		
       </div>
 
       <div className="row">
