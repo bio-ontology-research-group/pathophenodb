@@ -8,7 +8,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
     <HashRouter>
-	<Route path="/:section?/:query?/:page?/" component={App} />
+	<Route path="/:section?/:query?/" component={App} />
     </HashRouter>,
     document.getElementById('root'));
 registerServiceWorker();

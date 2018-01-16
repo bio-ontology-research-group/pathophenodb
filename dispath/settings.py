@@ -77,6 +77,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'dispath.wsgi.application'
 
+# Memcached
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
+    }
+}
+
+SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.CachedStaticFilesStorage'
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
@@ -126,3 +137,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'dispath/public'
+MEDIA_ROOT = 'dispath/media'
+MEDIA_URL = '/media/'
+
+STATICFILES_DIRS = (
+    rel('static'),)
+
+SITE_ID = 1
+SITE_DOMAIN = 'pathopheno.com'

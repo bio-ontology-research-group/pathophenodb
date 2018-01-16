@@ -4,207 +4,6 @@ import logo from './logo.svg';
 import './App.css';
 import './bootstrap/css/bootstrap.min.css';
 
-class DiseasePage extends React.Component {
-
-    constructor(props) {
-	super(props);
-
-	var disease = props.disease;
-	
-	this.state = {
-	    disease: disease,
-	};
-
-    }
-
-    componentWillReceiveProps(newProps) {
-	var disease = newProps.disease;
-	this.setState({disease: disease});
-    }
-
-    render() {
-	var disease = this.state.disease;
-	if (disease !== undefined) {
-	    var names = disease.DiseaseNames.join(', ');
-	    var pathogen_names = disease.PathogenNames.join(', ');
-	    var drugs = disease.Drugs.map(
-		(item) => item.Drug_ID + ' - ' + item.Drug_Name).join(', ');
-	    var phenos = disease.Phenotypes.map(
-		(item) => item.phenotype_id + ' - ' + item.phenotype_names[0])
-		.join(', ');
-	    var resist = disease.Drug_Resistance.map(
-		(item) => item.Resistant_to).join(', ');
-	    const disease_info = (
-		<tbody>
-		<tr><td><strong>ID</strong></td><td>{ disease.DOID }</td></tr>
-		<tr><td><strong>Names</strong></td><td>{ names }</td></tr>
-		<tr><td><strong>Taxonomy ID</strong></td><td>{ disease.TaxID }</td></tr>
-		<tr><td><strong>Pathogen Type</strong></td><td>{ disease.Pathogen_type }</td></tr>
-		<tr><td><strong>Pathogen Names</strong></td><td>{ pathogen_names }</td></tr>
-		<tr><td><strong>Drugs</strong></td><td>{ drugs }</td></tr>
-		<tr><td><strong>Phenotypes</strong></td><td>{ phenos }</td></tr>
-		<tr><td><strong>Resistant To</strong></td><td>{ resist }</td></tr>
-		</tbody>
-	    );
-	    return (
-		<div class="container">
-		    <div class="row">
-		    <table class="table table-striped text-left">
-		      {disease_info}
-		    </table>
-		    </div>
-		</div>
-	    );
-	}
-
-	return (<div className="container"></div>);
-    }
-
-}
-
-class ResultsTable extends React.Component {
-
-    constructor(props) {
-	super(props);
-	var page = 1;
-	if ('page' in props && props.page != undefined) {
-	    page = parseInt(props.page);
-	}
-	var rows = [];
-	var headers = [];
-	console.log(props);
-	if (props.data !== undefined) {
-	    rows = props.data.rows.slice();
-	    headers = props.data.headers;
-	}
-	this.state = {
-	    page: page,
-	    paginateBy: 10,
-	    rows: rows,
-	    headers: headers,
-	    filterValue: '',
-	};
-    }
-
-    componentWillReceiveProps(newProps) {
-	var state = {}
-	if (newProps.page !== undefined) {
-	    state.page = parseInt(newProps.page);
-	}
-	if (this.props.data != newProps.data) {
-	    state.page = 1;
-	    state.headers = newProps.data.headers;
-	    state.rows = newProps.data.rows.slice();
-	    state.filterValue = '';
-	}
-	this.setState(state);
-    }
-
-    renderPageButton(page) {
-	var activeClass = '';
-	if (page == this.state.page) {
-	    activeClass = 'active';
-	}
-	return (
-		<li className={activeClass}>
-		<a href={this.props.rootURI + page}>{page}</a>
-		</li>
-	);
-    }
-
-    renderPaginator() {
-	var n = Math.ceil(this.state.rows.length / this.state.paginateBy);
-	var page = this.state.page;
-	var prevPage = page - 1 < 1 ? 1 : page - 1;
-	var nextPage = page + 1 > n ? n : page + 1;
-	var pages = Array();
-	for (var i = page - 2; i <= page + 2; i++) {
-	    if (i >= 1 && i <= n) {
-		pages.push(i);
-	    }
-	}
-	const content = pages.map(
-	    (i) => this.renderPageButton(i));
-	return (
-	    <nav aria-label="Page navigation" class="pull-right">
-	      <ul class="pagination">
-		<li>
-		<a href={this.props.rootURI + prevPage} aria-label="Previous">
-		    <span aria-hidden="true">&laquo;</span>
-		  </a>
-		</li>
-		{content}
-		<li>
-		<a href={this.props.rootURI + nextPage} aria-label="Next">
-		    <span aria-hidden="true">&raquo;</span>
-		  </a>
-		</li>
-	      </ul>
-	    </nav>
-	);
-    }
-
-    renderFilter() {
-	return (
-	    <form class="form">
-		<br/>
-		<input class="form-control" type="text" value={this.props.filterValue} onChange={(e) => this.filterChange(e)} placeholder="Filter"/>
-	    </form>
-	);
-    }
-
-    filterChange(e) {
-	var v = e.target.value;
-	this.setState({filterValue: v, page: 1});
-	if (this.props.data !== undefined) {
-	    const filteredRows = this.props.data.rows.filter(
-		function(items) {
-		    var keys = v.split(" ");
-		    for (var key of keys) {
-			var i = items.length - 1;
-			if (items[i].indexOf(key) != -1) return true;
-		    }
-		}
-	    );
-	    this.setState({rows: filteredRows});
-	}
-    }
-
-    renderRow(items) {
-	const cells = items.map(
-	    (item) => <td> {item} </td>);
-	return (<tr> {cells} </tr>);
-    }
-    
-    render() {
-	var paginateBy = this.state.paginateBy;
-	var page = this.state.page;
-	const rows = this.state.rows.slice(
-	    (page - 1) * paginateBy, page * paginateBy);
-	const header = this.state.headers.map(
-	    (item) => <th> {item} </th>);
-	const content = rows.map(
-	    (items) => this.renderRow(items.slice(0, items.length - 1))
-	);
-	return (
-	    <div class="container">
-		<div class="row">
-		    <div class="col-md-6">
-			{this.renderFilter()}
-		    </div><div class="col-md-6">
-			{this.renderPaginator()}
-		    </div>
-		</div>
-		<table class="table table-striped">
-		    <thead> {header} </thead>
-		    <tbody> {content} </tbody>
-		</table>
-		{this.renderPaginator()}
-	    </div>
-	);
-    }
-}
-
 
 class App extends Component {
 
@@ -219,69 +18,93 @@ class App extends Component {
 	
 	this.state = {
 	    query: query,
+	    search: '',
 	    section: section,
-	    results: {'headers': [], 'rows': []},
-	    diseaseMap: {},
+	    searchResults: {"taxon": [], "diseases": [], "phenotypes": []},
+	    searchResultsShow: false,
+	    result: {}
 	};
     }
 
     componentWillMount() {
-	if (this.state.query !== undefined) {
-	    this.executeQuery(this.state.query);
+    }
+
+    searchChange(e) {
+	var search = e.target.value;
+	this.setState({search: search});
+	if (search.length >= 3) {
+	    this.executeSearch(search);
+	    this.setState({searchResultsShow: true });
+	} else {
+	    this.setState({searchResultsShow: false});
+	
 	}
     }
 
-    renderQueryForm() {
-	return (
+    executeSearch(search) {
+	var that = this;
+	fetch('/api/searchclasses?query=' + encodeURIComponent(search)
+		  + '&format=json')
+	    .then((response) => response.json())
+	    .then(function(data) {
+		console.log(data);
+		if (data.status == 'ok') {
+		    that.setState({
+			searchResults: data.result,
+			searchResultsShow: true});
+		}
+	    });
+    }
 
-	    <div class="row">
-		<div class="col-md-6 col-md-offset-3">
-		<form class="form" onSubmit={(e) => this.handleSubmit(e)}>
-		<div class="input-group input-group-lg">
-		<input class="form-control input-lg" type="text" value={this.state.inputQuery} onChange={(e) => this.queryChange(e)} placeholder="Search"/>
-		<span class="input-group-btn"><button type="submit" class="btn btn-lg">Query</button></span>
-		</div>
-		</form>
-		</div>
-		
+    handleSearchItemClick(search) {
+	this.setState({ search: search, searchResultsShow: false });
+    }
+
+
+    renderSearchResults() {
+	var results = this.state.searchResults;
+	const pathogens = results["taxon"].map(
+	    (item) => 
+		<li>
+		<a href={'#/Pathogens/' + encodeURIComponent(item.class)}
+	            onClick={(e) => this.handleSearchItemClick(item.label[0])}>{item.label[0]}</a></li>
+	);
+	const diseases = results["diseases"].map(
+	    (item) => 
+		<li>
+		<a href={'#/Diseases/' + encodeURIComponent(item.class)}
+	            onClick={(e) => this.handleSearchItemClick(item.label[0])}>{item.label[0]}</a></li>
+	);
+	const phenotypes = results["phenotypes"].map(
+	    (item) => 
+		<li>
+		<a href={'#/Phenotypes/' + encodeURIComponent(item.class)}
+	            onClick={(e) => this.handleSearchItemClick(item.label[0])}>{item.label[0]}</a></li>
+	);
+	var open = '';
+	if (this.state.searchResultsShow) {
+	    open = 'open';
+	}
+	return (
+	    <div className={'dropdown ' + open}>
+		<ul class="dropdown-menu">
+		<li><strong>Pathogens</strong></li>
+		{pathogens}
+	        <li><strong>Diseases</strong></li>
+		{diseases}
+		<li><strong>Phenotypes</strong></li>
+		{phenotypes}	    
+	    </ul>
 	    </div>
 	);
     }
-
-    queryChange(e) {
-	this.setState({inputQuery: e.target.value});
-    }
-
-    handleSubmit(e) {
-	e.preventDefault();
-	this.props.history.push('/search/' + encodeURIComponent(this.state.inputQuery));
-    }
+    
 
     componentWillReceiveProps(newProps) {
 	var section = newProps.match.params.section;
 	var query = newProps.match.params.query;
-	if (section == 'search') {
-	    if (query !== undefined && query != this.state.query) {
-		query = decodeURIComponent(query);
-		this.setState({query: query});
-		this.executeQuery(query);
-	    }
-
-	    var page = newProps.match.params.page;
-	    if (page !== undefined) {
-		this.setState({page: page});
-	    } else {
-		this.setState({page: 1});
-	    }
-	} else if (section == 'browse' && query !== undefined) {
-	    var doid = decodeURIComponent(query);
-	    if (this.state.diseaseMap.hasOwnProperty(doid)) {
-		var disease = this.state.diseaseMap[doid];
-		this.setState({disease: disease});
-	    }
-	}
-	
-	this.setState({section: section});
+	this.executeQuery(section, query);
+	this.setState({section: section, query: query});
     }
 
     innerHTML(htmlString) {
@@ -289,49 +112,19 @@ class App extends Component {
 	return (<span dangerouslySetInnerHTML={html}></span>);
     }
 
-    executeQuery(query) {
+    executeQuery(section, query) {
 	var that = this;
-	var query_list = [
-            { 'match': { 'DiseaseNames': query } },
-	    { 'match': { 'PathogenNames': query } }
-        ];
-        var docs = {
-	    'query': { 'bool': { 'should': query_list } },
-	    'from': 0,
-	    'size': 1000
-	};
-            
-	var params = {
-	    method: 'POST', body: JSON.stringify(docs)
-	};
-	var that = this;
-	fetch('/pathopheno/db/_search/', params)
+	    
+	fetch('/api/search?query=' + query + '&section=' + section)
 	    .then(function(response){
 		return response.json();
 	    })
 	    .then(function(data) {
-		var hits = data.hits.hits;
-		var diseases = {
-		    headers: ['ID', 'Names', 'Pathogens'], rows: [] };
-		var diseaseMap = {};
-		for (var i = 0; i < hits.length; i++) {
-		    var item = hits[i]._source;
-		    console.log(item);
-		    if ('DiseaseNames' in item) {
-			diseaseMap[item.DOID] = item;
-			const id = (<a href={'#/browse/' + encodeURIComponent(item.DOID)}>{item.DOID}</a>);
-			var names = item.DiseaseNames.join(', ');
-			var pathogens = item.PathogenNames.join(', ');
-			var filterBy = names;
-			diseases.rows.push([
-			    id,
-			    names,
-			    pathogens,
-			    names
-			]);
-		    }
+		console.log(data);
+		if (data.status == 'ok') {
+		    console.log(data);
+		    that.setState({result: data.result});
 		}
-		that.setState({results: diseases, diseaseMap: diseaseMap});
 	    });
 
     }
@@ -342,13 +135,10 @@ class App extends Component {
 
 	    <div className="row">
 		<div className="col-md-6 col-md-offset-3">
-		<form className="form" onSubmit={(e) => this.handleSubmit(e)}>
-		<div className="input-group input-group-lg">
-		<input className="form-control input-lg" type="text" value={this.state.inputQuery} onChange={(e) => this.queryChange(e)} placeholder="Search"/>
-		<span className="input-group-btn"><button type="submit" className="btn btn-lg">Query</button></span>
-		</div>
-		</form>
-		</div>
+		<input className="form-control input-lg" type="text"
+	    value={this.state.search} onChange={(e) => this.searchChange(e)} placeholder="Search"/>
+		{ this.renderSearchResults()}
+	        </div>
 		
 	    </div>
 	);
@@ -357,7 +147,7 @@ class App extends Component {
     renderHeader() {
 	var section = this.state.section;
 	const menuItems = [
-	    'Search', 'Browse', 'About', 'Contact'];
+	    'Search', 'Browse', 'About'];
 	const content = menuItems.map(function(item) {
 	    var activeClass = '';
 	    if (item.toLowerCase() == section) {
@@ -375,6 +165,7 @@ class App extends Component {
         <nav>
           <ul className="nav nav-justified">
 		{ content }
+		<li><a target="_blank" href="http://borg.kaust.edu.sa/Pages/People.aspx">Contact</a></li>
 	    </ul>
         </nav>
 		</div>
@@ -385,34 +176,177 @@ class App extends Component {
 	e.preventDefault();
 	this.props.history.goBack();
     }
+
+    renderResult() {
+	var obj = this.state.result;
+	var objSection = 'Diseases';
+	if (obj.ontology == 'NCBITAXONSH') {
+	    objSection = 'Pathogens';
+	} else if (obj.ontology == 'PhenomeNETSH') {
+	    objSection = 'Phenotypes';
+	}
+	if (!obj.hasOwnProperty('class')) {
+	    return (<div className="row"></div>);
+	}
+	var diseases = (<div className="hidden"></div>);
+	var phenotypes = (<div className="hidden"></div>);
+	var pathogens = (<div className="hidden"></div>);
+	if (obj.hasOwnProperty('Diseases')) {
+	    var items = Object.values(obj.Diseases).map(
+		(item) =>
+		    <tr>
+		    <td><a href={'#/Diseases/' + encodeURIComponent(item.class)}>{item.class}</a></td>
+		    <td>{item.label}</td></tr>
+	    );
+	    let subs = obj.subclasses.map(function(sub){
+		let subItems = Object.values(sub.Diseases).map(
+		    (item) =>
+			<tr>
+			<td><a href={'#/Diseases/' + encodeURIComponent(item.class)}>{item.class}</a></td>
+			<td>{item.label}</td></tr>
+		);
+		return (
+			<table className="table table-striped">
+			<tbody>
+			<tr><td colspan="2"><strong>
+			<a href={'#/' + objSection + '/' + encodeURIComponent(sub.class)}>{sub.class}</a></strong></td></tr>
+			{subItems}
+		    </tbody>
+			</table>
+		);
+	    });
+	    diseases = (
+		    <div className="col-md-6">
+		    <h3>Associated Diseases</h3>
+		    <table className="table table-striped">
+		    <thead><tr><th>IRI</th><th>Label</th></tr></thead>
+		    <tbody>
+		    {items}
+		<tr><td colspan="2"><strong>Indirect Associations</strong></td></tr>
+		</tbody>
+		</table>
+		    {subs}
+		</div>
+	    );
+	}
+	if (obj.hasOwnProperty('Pathogens')) {
+	    var items = Object.values(obj.Pathogens).map(
+		(item) =>
+		    <tr>
+		    <td><a href={'#/Pathogens/' + encodeURIComponent(item.class)}>{item.class}</a></td>
+		    <td>{item.label}</td></tr>
+	    );
+	    let subs = obj.subclasses.map(function(sub){
+		let subItems = Object.values(sub.Pathogens).map(
+		    (item) =>
+			<tr>
+			<td><a href={'#/Diseases/' + encodeURIComponent(item.class)}>{item.class}</a></td>
+			<td>{item.label}</td></tr>
+		);
+		return (
+			<table className="table table-striped">
+			<tbody>
+			<tr><td colspan="2"><strong>
+			<a href={'#/' + objSection + '/' + encodeURIComponent(sub.class)}>{sub.class}</a></strong></td></tr>
+			{subItems}
+		    </tbody>
+			</table>
+		);
+	    });
+	    pathogens = (
+		    <div className="col-md-6">
+		    <h3>Associated Pathogens</h3>
+		    <table className="table table-striped">
+		    <thead><tr><th>IRI</th><th>Label</th></tr></thead>
+		    <tbody>
+		    {items}
+		<tr><td colspan="2"><strong>Indirect Associations</strong></td></tr>
+		</tbody>
+		    </table>
+		    {subs}
+		</div>
+	    );
+	}
+
+	if (obj.hasOwnProperty('Phenotypes')) {
+	    var items = Object.values(obj.Phenotypes).map(
+		(item) =>
+		    <tr>
+		    <td><a href={'#/Phenotypes/' + encodeURIComponent(item.class)}>{item.class}</a></td>
+		    <td>{item.label}</td></tr>
+	    );
+	    let subs = obj.subclasses.map(function(sub){
+		let subItems = Object.values(sub.Phenotypes).map(
+		    (item) =>
+			<tr>
+			<td><a href={'#/Diseases/' + encodeURIComponent(item.class)}>{item.class}</a></td>
+			<td>{item.label}</td></tr>
+		);
+		return (
+			<table className="table table-striped">
+			<tbody>
+			<tr><td colspan="2"><strong>
+			<a href={'#/' + objSection + '/' + encodeURIComponent(sub.class)}>{sub.class}</a></strong></td></tr>
+			{subItems}
+		    </tbody>
+			</table>
+		);
+	    });
+	    phenotypes = (
+		    <div className="col-md-6">
+		    <h3>Associated Phenotypes</h3>
+		    <table className="table table-striped">
+		    <thead><tr><th>IRI</th><th>Label</th></tr></thead>
+		    <tbody>
+		    {items}
+		<tr><td colspan="2"><strong>Indirect Associations</strong></td></tr>
+		</tbody>
+		    </table>
+		    {subs}
+		</div>
+	    );
+	}
+	let specContent = (<tr></tr>);
+	if (objSection == 'Diseases') {
+	    let specItems = obj.Drugs.map((item) => (<a target="_blank" href={item.Drug_ID}> {item.Drug_Name} </a>));
+	    specContent = (<tr><td><strong> Drugs </strong></td><td>{specItems}</td></tr>);
+	} else if (objSection == 'Pathogens' && obj.hasOwnProperty("Drug_Resistance")) {
+	    let specItems = obj.Drug_Resistance.map((item) => (<a target="_blank" href={item.PubChemID}> {item.Resistant_to} </a>));
+	    specContent = (<tr><td><strong> Resistant to</strong></td><td>{specItems}</td></tr>);
+	
+	}
+	const content = (
+	    <div class="col-md-12">
+		<table className="table table-striped">
+		<tbody>
+		<tr><td><strong>Label</strong></td><td>{obj.label}</td></tr>
+		<tr><td><strong>Class</strong></td><td>{obj.class}</td></tr>
+		<tr><td><strong>Definition</strong></td><td>{obj.definition}</td></tr>
+		{specContent}
+	    </tbody>
+		</table>
+		{diseases}{pathogens}{phenotypes}
+	    </div>
+	
+	);
+	return (<div class="row">{content}</div>);
+    }
     
     render() {
 	var section = (<div></div>);
-	if (this.state.section == 'search') {
-	    var page = this.state.page;
-	    var results = this.state.results;
-	    var rootURI = '#/search/' + this.state.query + '/';
-	    section = (<ResultsTable data={results} page={page} rootURI={rootURI}/>);
-	} else if (this.state.section == 'browse'){
-	    var disease = this.state.disease;
-	    section = (
-		    <div>
-		    <a className="btn btn-primary btn-sm pull-left" onClick={(e) => this.goBack(e)}>Back</a>
-		    <DiseasePage disease={disease} />
-	        </div>);
-	}
 	return (
 	      <div className="container">
 		{ this.renderHeader() }
-      <div className="jumbotron">
-        <h1>DisPath Search</h1>
+		<div className="jumbotron">
+		<h1>PathoPhenoDB Search</h1>
 		<p className="lead">Some information about search</p>
-	</div><div>
+		</div>
+
+		<div className="row">
 		{ this.renderSearchForm() }
 		<br/>
-		{ section }
-		
-      </div>
+		</div>
+		{ this.renderResult() }
 
       <div className="row">
         <div className="col-lg-4">
