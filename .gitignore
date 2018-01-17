@@ -1,4 +1,5 @@
 dpfront/node_modules/
+dpfron/build/
 data/
 venv/
 *.pyc
