@@ -147,7 +147,7 @@ class App extends Component {
     renderHeader() {
 	var section = this.state.section;
 	const menuItems = [
-	    'Search', 'Browse', 'About'];
+	    'Search', 'Browse'];
 	const content = menuItems.map(function(item) {
 	    var activeClass = '';
 	    if (item.toLowerCase() == section) {
@@ -165,6 +165,7 @@ class App extends Component {
         <nav>
           <ul className="nav nav-justified">
 		{ content }
+	    	<li><a href="/media/downloads/patho_phenoDB.nt">Download</a></li>
 		<li><a target="_blank" href="http://borg.kaust.edu.sa/Pages/People.aspx">Contact</a></li>
 	    </ul>
         </nav>
