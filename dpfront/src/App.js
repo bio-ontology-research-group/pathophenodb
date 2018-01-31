@@ -294,7 +294,7 @@ class App extends Component {
 	    let subs = obj.subclasses.map(function(sub){
 		let subItems = '';
 		if (sub.hasOwnProperty('Phenotypes')) {
-		    let subItems = Object.values(sub.Phenotypes).map(
+		    subItems = Object.values(sub.Phenotypes).map(
 			(item) =>
 			    <tr>
 			    <td><a href={'#/Diseases/' + encodeURIComponent(item.class)}>{item.class}</a></td>
