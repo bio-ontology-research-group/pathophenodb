@@ -192,7 +192,7 @@ class App extends Component {
 	var diseases = (<div className="hidden"></div>);
 	var phenotypes = (<div className="hidden"></div>);
 	var pathogens = (<div className="hidden"></div>);
-	if (obj.hasOwnProperty('Diseases')) {
+	if (objSection != 'Diseases') {
 	    var items = Object.values(obj.Diseases).map(
 		(item) =>
 		    <tr>
@@ -230,7 +230,7 @@ class App extends Component {
 		</div>
 	    );
 	}
-	if (obj.hasOwnProperty('Pathogens')) {
+	if (objSection != 'Pathogens') {
 	    var items = Object.values(obj.Pathogens).map(
 		(item) =>
 		    <tr>
@@ -269,7 +269,7 @@ class App extends Component {
 	    );
 	}
 
-	if (obj.hasOwnProperty('Phenotypes')) {
+	if (objSection != 'Phenotypes') {
 	    var items = Object.values(obj.Phenotypes).map(
 		(item) =>
 		    <tr>
