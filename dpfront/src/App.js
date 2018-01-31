@@ -193,19 +193,25 @@ class App extends Component {
 	var phenotypes = (<div className="hidden"></div>);
 	var pathogens = (<div className="hidden"></div>);
 	if (objSection != 'Diseases') {
-	    var items = Object.values(obj.Diseases).map(
-		(item) =>
-		    <tr>
-		    <td><a href={'#/Diseases/' + encodeURIComponent(item.class)}>{item.class}</a></td>
-		    <td>{item.label}</td></tr>
-	    );
-	    let subs = obj.subclasses.map(function(sub){
-		let subItems = Object.values(sub.Diseases).map(
+	    var items = '';
+	    if (obj.hasOwnProperty('Diseases')) {
+		items = Object.values(obj.Diseases).map(
 		    (item) =>
 			<tr>
 			<td><a href={'#/Diseases/' + encodeURIComponent(item.class)}>{item.class}</a></td>
 			<td>{item.label}</td></tr>
 		);
+	    }
+	    let subs = obj.subclasses.map(function(sub){
+		let subItems = '';
+		if (sub.hasOwnProperty('Diseases')) {
+		    subItems = Object.values(sub.Diseases).map(
+		    (item) =>
+			<tr>
+			<td><a href={'#/Diseases/' + encodeURIComponent(item.class)}>{item.class}</a></td>
+			<td>{item.label}</td></tr>
+		    );
+		}
 		return (
 			<table className="table table-striped">
 			<tbody>
@@ -231,19 +237,25 @@ class App extends Component {
 	    );
 	}
 	if (objSection != 'Pathogens') {
-	    var items = Object.values(obj.Pathogens).map(
-		(item) =>
-		    <tr>
-		    <td><a href={'#/Pathogens/' + encodeURIComponent(item.class)}>{item.class}</a></td>
-		    <td>{item.label}</td></tr>
-	    );
-	    let subs = obj.subclasses.map(function(sub){
-		let subItems = Object.values(sub.Pathogens).map(
+	    var items = '';
+	    if (obj.hasOwnProperty('Pathogens')) {
+		items = Object.values(obj.Pathogens).map(
 		    (item) =>
 			<tr>
-			<td><a href={'#/Diseases/' + encodeURIComponent(item.class)}>{item.class}</a></td>
+			<td><a href={'#/Pathogens/' + encodeURIComponent(item.class)}>{item.class}</a></td>
 			<td>{item.label}</td></tr>
 		);
+	    }
+	    let subs = obj.subclasses.map(function(sub){
+		let subItems = '';
+		if (sub.hasOwnProperty('Pathogens')) {
+		    subItems = Object.values(sub.Pathogens).map(
+			(item) =>
+			    <tr>
+			    <td><a href={'#/Diseases/' + encodeURIComponent(item.class)}>{item.class}</a></td>
+			    <td>{item.label}</td></tr>
+		    );
+		}
 		return (
 			<table className="table table-striped">
 			<tbody>
@@ -270,19 +282,25 @@ class App extends Component {
 	}
 
 	if (objSection != 'Phenotypes') {
-	    var items = Object.values(obj.Phenotypes).map(
-		(item) =>
-		    <tr>
-		    <td><a href={'#/Phenotypes/' + encodeURIComponent(item.class)}>{item.class}</a></td>
-		    <td>{item.label}</td></tr>
-	    );
-	    let subs = obj.subclasses.map(function(sub){
-		let subItems = Object.values(sub.Phenotypes).map(
+	    var items = '';
+	    if (obj.hasOwnProperty('Phenotypes')) {
+		items = Object.values(obj.Phenotypes).map(
 		    (item) =>
 			<tr>
-			<td><a href={'#/Diseases/' + encodeURIComponent(item.class)}>{item.class}</a></td>
+			<td><a href={'#/Phenotypes/' + encodeURIComponent(item.class)}>{item.class}</a></td>
 			<td>{item.label}</td></tr>
 		);
+	    }
+	    let subs = obj.subclasses.map(function(sub){
+		let subItems = '';
+		if (sub.hasOwnProperty('Phenotypes')) {
+		    let subItems = Object.values(sub.Phenotypes).map(
+			(item) =>
+			    <tr>
+			    <td><a href={'#/Diseases/' + encodeURIComponent(item.class)}>{item.class}</a></td>
+			    <td>{item.label}</td></tr>
+		    );
+		}
 		return (
 			<table className="table table-striped">
 			<tbody>
