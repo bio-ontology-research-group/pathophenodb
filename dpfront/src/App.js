@@ -362,6 +362,8 @@ class App extends Component {
 		   A database of pathogens and their phenotypes for
 		   diagnostic support in infections. 
 	        </p>
+		</div>
+		<div className="row">
 		<p>
 		Examples:
 		<ul>
