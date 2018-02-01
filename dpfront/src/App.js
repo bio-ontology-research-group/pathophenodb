@@ -354,11 +354,22 @@ class App extends Component {
     render() {
 	var section = (<div></div>);
 	return (
-	      <div className="container">
+		<div className="container">
 		{ this.renderHeader() }
 		<div className="jumbotron">
 		<h1>PathoPhenoDB Search</h1>
-		<p className="lead">Some information about search</p>
+		<p className="lead">
+		   A database of pathogens and their phenotypes for
+		   diagnostic support in infections. 
+	        </p>
+		<p>
+		Examples:
+		<ul>
+		<li>Disease - <a href="#/Diseases/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FDOID_11263">Chlamydia</a></li>
+		<li>Pathogen - <a href="#/Pathogens/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FNCBITaxon_10255">Variola virus</a></li>
+		<li>Phenotype - <a href="#/Phenotypes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHP_0000988">Skin rash</a></li>
+	    </ul>
+	    </p>
 		</div>
 
 		<div className="row">
