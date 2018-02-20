@@ -330,8 +330,32 @@ class App extends Component {
 	    let specItems = obj.Drugs.map((item) => (<a target="_blank" href={item.Drug_ID}> {item.Drug_Name} </a>));
 	    specContent = (<tr><td><strong> Drugs </strong></td><td>{specItems}</td></tr>);
 	} else if (objSection == 'Pathogens' && obj.hasOwnProperty("Drug_Resistance")) {
-	    let specItems = obj.Drug_Resistance.map((item) => (<a target="_blank" href={item.PubChemID}> {item.Resistant_to} </a>));
-	    specContent = (<tr><td><strong> Resistant to</strong></td><td>{specItems}</td></tr>);
+	    let specItems = obj.Drug_Resistance.map(
+		(item) => (
+			<tr>
+			<td>
+			<a target="_blank" href={item.PubChemID}> {item.Resistant_to} </a>
+			</td>
+			<td>
+			<a target="_blank" href={item.DNA_accession}> {item.DNA_accession} </a>
+			</td>
+			<td>
+			<a target="_blank" href={item.Protein_accession}> {item.Protein_accession} </a>
+			</td>
+		    </tr>
+		));
+
+
+	    specContent = (<tr>
+			   <td><strong> Resistant to</strong></td>
+			   <td>
+			   <table className="table table-striped">
+			   <thead><th>Drug</th><th>DNA Accession</th><th>Protein Accession</th></thead>
+			   <tbody>
+			   {specItems}
+			   </tbody>
+			   </table>
+			   </td></tr>);
 	
 	}
 	const content = (
@@ -363,7 +387,7 @@ class App extends Component {
 		   diagnostic support in infections. 
 	        </p>
 		</div>
-		<div className="row">
+		<div className="row"><div className="col-md-12">
 		<p>
 		Examples:
 		<ul>
@@ -372,7 +396,7 @@ class App extends Component {
 		<li>Phenotype - <a href="#/Phenotypes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHP_0000988">Skin rash</a></li>
 	    </ul>
 	    </p>
-		</div>
+		</div></div>
 
 		<div className="row">
 		{ this.renderSearchForm() }
