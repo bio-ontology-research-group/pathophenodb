@@ -326,7 +326,7 @@ class App extends Component {
 	    );
 	}
 	let specContent = (<tr></tr>);
-	if (objSection == 'Diseases') {
+	if (objSection == 'Diseases' && obj.hasOwnProperty("Drugs")) {
 	    let specItems = obj.Drugs.map((item) => (<a target="_blank" href={item.Drug_ID}> {item.Drug_Name} </a>));
 	    specContent = (<tr><td><strong> Drugs </strong></td><td>{specItems}</td></tr>);
 	} else if (objSection == 'Pathogens' && obj.hasOwnProperty("Drug_Resistance")) {
