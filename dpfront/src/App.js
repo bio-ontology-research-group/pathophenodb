@@ -301,7 +301,6 @@ class App extends Component {
 		}
 		return (
 			<table className="table table-striped">
-			<thead><th colspan="2"> Assosications of equivalent classes</th></thead>
 			<tbody>
 			<tr><td colspan="2"><strong>
 			<a href={'#/' + objSection + '/' + encodeURIComponent(sub.class)}>{sub.label} ({sub.class})</a></strong></td></tr>
