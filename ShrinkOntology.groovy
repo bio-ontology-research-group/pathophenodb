@@ -54,13 +54,13 @@ def classes = new HashSet<OWLClass>();
 def jsonObjects = new JsonSlurper().parseText(new File(clsFile).text);
 
 jsonObjects.each {
-    OWLClass cls = dataFactory.getOWLClass(IRI.create(it["Phenotype"]));
+    OWLClass cls = dataFactory.getOWLClass(IRI.create(it["TaxID"]));
     classes.add(cls)
     classes.addAll(getAnchestors(cls))
 }
 
 def newManager = OWLManager.createOWLOntologyManager()
-def newOntology = newManager.createOntology(IRI.create("http://purl.obolibrary.org/obo/phenomenet.owl"))
+def newOntology = newManager.createOntology(IRI.create("http://purl.obolibrary.org/obo/ncbitaxon.owl"))
 classes.each { cls ->
     ontology.getReferencingAxioms(cls, Imports.INCLUDED).each { ax ->
 	newOntology.addAxiom(ax);
@@ -71,4 +71,4 @@ classes.each { cls ->
     }
 }
 
-newManager.saveOntology(newOntology, IRI.create("file:/home/kulmanm/KAUST/CBRC/dispath/data/phenomenet-sh.owl"));
+newManager.saveOntology(newOntology, IRI.create("file:/home/kulmanm/KAUST/CBRC/dispath/data/ncbitaxon-sh.owl"));

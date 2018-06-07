@@ -5,6 +5,7 @@ import requests
 import json
 import itertools
 from django.conf import settings
+import sys, traceback
 
 
 ABEROWL_API_URL = getattr(settings, 'ABEROWL_API_URL', 'http://10.254.145.9/')
@@ -71,38 +72,52 @@ class SearchAPIView(APIView):
             if section == 'Pathogens':
                 ontology = 'NCBITAXONSH'
             elif section == 'Phenotypes':
-                
                 ontology = 'PhenomeNETSH'
+            
             params = {
                 'script': 'runQuery.groovy',
-                'type': 'subeq',
+                'type': 'equivalent',
                 'direct': 'false',
                 'query': '<' + query + '>',
                 'axioms': 'false',
                 'ontology': ontology
             }
             url = ABEROWL_API_URL + 'api/backend/'
+
             r = requests.get(url, params=params)
             results = {}
             for res in r.json()["result"]:
                 results[res["class"]] = res
-            
-            
             result = results.pop(query)
+            
             if query in links:
                 result.update(links[query])
                 result = load_annotations(result)
+            equivs = []
+            for key, item in results.items():
+                if key in links:
+                    item.update(links[key])
+                    item = load_annotations(item)
+                    equivs.append(item)
+
+            result['equivalents'] = equivs
+
+            params['type'] = 'subclass'
+            r = requests.get(url, params=params)
+            results = {}
+            for res in r.json()["result"]:
+                results[res["class"]] = res
             subs = []
             for key, item in results.items():
                 if key in links:
                     item.update(links[key])
                     item = load_annotations(item)
                     subs.append(item)
-
             result['subclasses'] = subs
 
             return Response({'status': 'ok', 'result': result})
         except Exception as e:
+            traceback.print_exc(file=sys.stdout)
             return Response({'status': 'exception', 'message': str(e)})
 
 
@@ -133,4 +148,4 @@ class SearchClassesAPIView(APIView):
             result = {'status': 'ok', 'result': data}
             return Response(result)
         except Exception as e:
-            return Response({'status': 'exception', 'message': e.getMessage()})
+            return Response({'status': 'exception', 'message': str(e)})

@@ -216,12 +216,33 @@ class App extends Component {
 			<table className="table table-striped">
 			<tbody>
 			<tr><td colspan="2"><strong>
-			<a href={'#/' + objSection + '/' + encodeURIComponent(sub.class)}>{sub.class}</a></strong></td></tr>
+			<a href={'#/' + objSection + '/' + encodeURIComponent(sub.class)}>{sub.label} ({sub.class})</a></strong></td></tr>
 			{subItems}
 		    </tbody>
 			</table>
 		);
 	    });
+	    let equivs = obj.equivalents.map(function(sub){
+		let subItems = '';
+		if (sub.hasOwnProperty('Phenotypes')) {
+		    subItems = Object.values(sub.Phenotypes).map(
+			(item) =>
+			    <tr>
+			    <td><a href={'#/Diseases/' + encodeURIComponent(item.class)}>{item.class}</a></td>
+			    <td>{item.label}</td></tr>
+		    );
+		}
+		return (
+			<table className="table table-striped">
+			<tbody>
+			<tr><td colspan="2"><strong>
+			<a href={'#/' + objSection + '/' + encodeURIComponent(sub.class)}>{sub.label} ({sub.class})</a></strong></td></tr>
+			{subItems}
+		    </tbody>
+			</table>
+		);
+	    });
+
 	    diseases = (
 		    <div className="col-md-6">
 		    <h3>Associated Diseases</h3>
@@ -229,10 +250,12 @@ class App extends Component {
 		    <thead><tr><th>IRI</th><th>Label</th></tr></thead>
 		    <tbody>
 		    {items}
-		<tr><td colspan="2"><strong>Indirect Associations</strong></td></tr>
 		</tbody>
 		</table>
+		    <p> <strong>Assosications of subclasses</strong></p>
 		    {subs}
+		    <p> <strong>Assosications of equivalent classes</strong></p>
+		    {equivs}
 		</div>
 	    );
 	}
@@ -260,7 +283,28 @@ class App extends Component {
 			<table className="table table-striped">
 			<tbody>
 			<tr><td colspan="2"><strong>
-			<a href={'#/' + objSection + '/' + encodeURIComponent(sub.class)}>{sub.class}</a></strong></td></tr>
+			<a href={'#/' + objSection + '/' + encodeURIComponent(sub.class)}>{sub.label} ({sub.class})</a></strong></td></tr>
+			{subItems}
+		    </tbody>
+			</table>
+		);
+	    });
+	    let equivs = obj.equivalents.map(function(sub){
+		let subItems = '';
+		if (sub.hasOwnProperty('Pathogens')) {
+		    subItems = Object.values(sub.Pathogens).map(
+			(item) =>
+			    <tr>
+			    <td><a href={'#/Diseases/' + encodeURIComponent(item.class)}>{item.class}</a></td>
+			    <td>{item.label}</td></tr>
+		    );
+		}
+		return (
+			<table className="table table-striped">
+			<thead><th colspan="2"> Assosications of equivalent classes</th></thead>
+			<tbody>
+			<tr><td colspan="2"><strong>
+			<a href={'#/' + objSection + '/' + encodeURIComponent(sub.class)}>{sub.label} ({sub.class})</a></strong></td></tr>
 			{subItems}
 		    </tbody>
 			</table>
@@ -272,11 +316,13 @@ class App extends Component {
 		    <table className="table table-striped">
 		    <thead><tr><th>IRI</th><th>Label</th></tr></thead>
 		    <tbody>
-		    {items}
-		<tr><td colspan="2"><strong>Indirect Associations</strong></td></tr>
-		</tbody>
+		       {items}
+		    </tbody>
 		    </table>
+		    <p> <strong>Assosications of subclasses</strong></p>
 		    {subs}
+		    <p> <strong>Assosications of equivalent classes</strong></p>
+		    {equivs}
 		</div>
 	    );
 	}
@@ -305,7 +351,27 @@ class App extends Component {
 			<table className="table table-striped">
 			<tbody>
 			<tr><td colspan="2"><strong>
-			<a href={'#/' + objSection + '/' + encodeURIComponent(sub.class)}>{sub.class}</a></strong></td></tr>
+			<a href={'#/' + objSection + '/' + encodeURIComponent(sub.class)}>{sub.label} ({sub.class})</a></strong></td></tr>
+			{subItems}
+		    </tbody>
+			</table>
+		);
+	    });
+	    let equivs = obj.equivalents.map(function(sub){
+		let subItems = '';
+		if (sub.hasOwnProperty('Phenotypes')) {
+		    subItems = Object.values(sub.Phenotypes).map(
+			(item) =>
+			    <tr>
+			    <td><a href={'#/Diseases/' + encodeURIComponent(item.class)}>{item.class}</a></td>
+			    <td>{item.label}</td></tr>
+		    );
+		}
+		return (
+			<table className="table table-striped">
+			<tbody>
+			<tr><td colspan="2"><strong>
+			<a href={'#/' + objSection + '/' + encodeURIComponent(sub.class)}>{sub.label} ({sub.class})</a></strong></td></tr>
 			{subItems}
 		    </tbody>
 			</table>
@@ -318,10 +384,12 @@ class App extends Component {
 		    <thead><tr><th>IRI</th><th>Label</th></tr></thead>
 		    <tbody>
 		    {items}
-		<tr><td colspan="2"><strong>Indirect Associations</strong></td></tr>
 		</tbody>
 		    </table>
+		    <p> <strong>Assosications of subclasses</strong></p>
 		    {subs}
+		    <p> <strong>Assosications of equivalent classes</strong></p>
+		    {equivs}
 		</div>
 	    );
 	}
