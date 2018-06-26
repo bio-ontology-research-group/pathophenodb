@@ -45,7 +45,6 @@ def load_annotations(result):
             'iri': result['Diseases']}
         r = requests.get(url, params=params)
         data = r.json()
-        print(data)
         if data['status'] == 'ok':
             result['Diseases'] = data['result']
     if 'Pathogens' in result:

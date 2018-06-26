@@ -10,16 +10,12 @@ class App extends Component {
 
     constructor(props) {
 	super(props);
-	var query = props.match.params.query;
-	var section = props.match.params.section;
-	if (section !== undefined) {
-	    section = 'search';
-	}
 	
 	this.state = {
-	    query: query,
+	    page: 'search',
+	    query: '',
 	    search: '',
-	    section: section,
+	    section: '',
 	    searchResults: {"taxon": [], "diseases": [], "phenotypes": []},
 	    searchResultsShow: false,
 	    result: {}
@@ -27,6 +23,14 @@ class App extends Component {
     }
 
     componentWillMount() {
+	const params = this.props.match.params;
+	if (params.page == 'search' && params.section !== undefined && params.query !== undefined) {
+	    this.executeQuery(params.section, params.query);
+	    this.setState({page: params.page,
+			   section: params.section, query: params.query});
+	} else if (params.page !== undefined){
+	    this.setState({page: params.page});
+	}
     }
 
     searchChange(e) {
@@ -66,19 +70,19 @@ class App extends Component {
 	const pathogens = results["taxon"].map(
 	    (item) => 
 		<li>
-		<a href={'#/Pathogens/' + encodeURIComponent(item.class)}
+		<a href={'/#/search/Pathogens/' + encodeURIComponent(item.class)}
 	            onClick={(e) => this.handleSearchItemClick(item.label[0])}>{item.label[0]}</a></li>
 	);
 	const diseases = results["diseases"].map(
 	    (item) => 
 		<li>
-		<a href={'#/Diseases/' + encodeURIComponent(item.class)}
+		<a href={'/#/search/Diseases/' + encodeURIComponent(item.class)}
 	            onClick={(e) => this.handleSearchItemClick(item.label[0])}>{item.label[0]}</a></li>
 	);
 	const phenotypes = results["phenotypes"].map(
 	    (item) => 
 		<li>
-		<a href={'#/Phenotypes/' + encodeURIComponent(item.class)}
+		<a href={'#/search/Phenotypes/' + encodeURIComponent(item.class)}
 	            onClick={(e) => this.handleSearchItemClick(item.label[0])}>{item.label[0]}</a></li>
 	);
 	var open = '';
@@ -101,10 +105,15 @@ class App extends Component {
     
 
     componentWillReceiveProps(newProps) {
+	var page = newProps.match.params.page;
 	var section = newProps.match.params.section;
 	var query = newProps.match.params.query;
-	this.executeQuery(section, query);
-	this.setState({section: section, query: query});
+	if (page == 'search') {
+	    this.executeQuery(section, query);
+	    this.setState({page: page, section: section, query: query});
+	} else {
+	    this.setState({page: page});
+	}
     }
 
     innerHTML(htmlString) {
@@ -145,27 +154,26 @@ class App extends Component {
     }
     
     renderHeader() {
-	var section = this.state.section;
+	var page = this.state.page;
 	const menuItems = [
-	    'Search', 'Browse'];
+	    'Search', 'About', 'Help'];
 	const content = menuItems.map(function(item) {
 	    var activeClass = '';
-	    if (item.toLowerCase() == section) {
+	    if (item.toLowerCase() == page) {
 		activeClass = 'active';
 	    }
 	    return (
 		    <li className={activeClass}>
-		    <a href={'#/' + item.toLowerCase()}>{ item }</a>
+		    <a href={'/#/' + item.toLowerCase()}>{ item }</a>
 		    </li>
 	    );
 	});
 	return (
 		<div className="masthead">
-        <h3 className="text-muted">Disease Pathogens</h3>
         <nav>
           <ul className="nav nav-justified">
 		{ content }
-	    	<li><a href="/media/downloads/patho_phenoDB.nt">Download</a></li>
+	    	<li><a href="/media/downloads/patho_phenoDB.nt">SPARQL</a></li>
 		<li><a target="_blank" href="http://borg.kaust.edu.sa/Pages/People.aspx">Contact</a></li>
 	    </ul>
         </nav>
@@ -213,6 +221,7 @@ class App extends Component {
 		    );
 		}
 		return (
+		    
 			<table className="table table-striped">
 			<tbody>
 			<tr><td colspan="2"><strong>
@@ -222,6 +231,14 @@ class App extends Component {
 			</table>
 		);
 	    });
+	    if (obj.subclasses.length > 0) {
+		subs = (
+		    	<div>
+			<p> <strong>Assosications of subclasses</strong></p>
+			{subs}
+			</div>
+		);
+	    }
 	    let equivs = obj.equivalents.map(function(sub){
 		let subItems = '';
 		if (sub.hasOwnProperty('Phenotypes')) {
@@ -233,6 +250,9 @@ class App extends Component {
 		    );
 		}
 		return (
+		    <div>
+		        <p> <strong>Assosications of equivalent classes</strong></p>
+		
 			<table className="table table-striped">
 			<tbody>
 			<tr><td colspan="2"><strong>
@@ -240,9 +260,19 @@ class App extends Component {
 			{subItems}
 		    </tbody>
 			</table>
+			</div>
 		);
 	    });
 
+	    if (obj.equivalents.length > 0) {
+		equivs = (
+		    	<div>
+			<p> <strong>Assosications of equivalent classes</strong></p>
+			{equivs}
+			</div>
+		);
+	    }
+	    
 	    diseases = (
 		    <div className="col-md-6">
 		    <h3>Associated Diseases</h3>
@@ -252,9 +282,7 @@ class App extends Component {
 		    {items}
 		</tbody>
 		</table>
-		    <p> <strong>Assosications of subclasses</strong></p>
 		    {subs}
-		    <p> <strong>Assosications of equivalent classes</strong></p>
 		    {equivs}
 		</div>
 	    );
@@ -289,6 +317,15 @@ class App extends Component {
 			</table>
 		);
 	    });
+	    if (obj.subclasses.length > 0) {
+		subs = (
+		    	<div>
+			<p> <strong>Assosications of subclasses</strong></p>
+			{subs}
+			</div>
+		);
+	    }
+	    
 	    let equivs = obj.equivalents.map(function(sub){
 		let subItems = '';
 		if (sub.hasOwnProperty('Pathogens')) {
@@ -299,7 +336,7 @@ class App extends Component {
 			    <td>{item.label}</td></tr>
 		    );
 		}
-		return (
+		return (	
 			<table className="table table-striped">
 			<tbody>
 			<tr><td colspan="2"><strong>
@@ -309,6 +346,15 @@ class App extends Component {
 			</table>
 		);
 	    });
+	    if (obj.equivalents.length > 0) {
+		equivs = (
+		    	<div>
+			<p> <strong>Assosications of equivalent classes</strong></p>
+			{equivs}
+			</div>
+		);
+	    }
+	    
 	    pathogens = (
 		    <div className="col-md-6">
 		    <h3>Associated Pathogens</h3>
@@ -318,9 +364,7 @@ class App extends Component {
 		       {items}
 		    </tbody>
 		    </table>
-		    <p> <strong>Assosications of subclasses</strong></p>
 		    {subs}
-		    <p> <strong>Assosications of equivalent classes</strong></p>
 		    {equivs}
 		</div>
 	    );
@@ -342,7 +386,7 @@ class App extends Component {
 		    subItems = Object.values(sub.Phenotypes).map(
 			(item) =>
 			    <tr>
-			    <td><a href={'#/Diseases/' + encodeURIComponent(item.class)}>{item.class}</a></td>
+			    <td><a href={'/#/Diseases/' + encodeURIComponent(item.class)}>{item.class}</a></td>
 			    <td>{item.label}</td></tr>
 		    );
 		}
@@ -350,32 +394,21 @@ class App extends Component {
 			<table className="table table-striped">
 			<tbody>
 			<tr><td colspan="2"><strong>
-			<a href={'#/' + objSection + '/' + encodeURIComponent(sub.class)}>{sub.label} ({sub.class})</a></strong></td></tr>
+			<a href={'/#/' + objSection + '/' + encodeURIComponent(sub.class)}>{sub.label} ({sub.class})</a></strong></td></tr>
 			{subItems}
 		    </tbody>
 			</table>
 		);
 	    });
-	    let equivs = obj.equivalents.map(function(sub){
-		let subItems = '';
-		if (sub.hasOwnProperty('Phenotypes')) {
-		    subItems = Object.values(sub.Phenotypes).map(
-			(item) =>
-			    <tr>
-			    <td><a href={'#/Diseases/' + encodeURIComponent(item.class)}>{item.class}</a></td>
-			    <td>{item.label}</td></tr>
-		    );
-		}
-		return (
-			<table className="table table-striped">
-			<tbody>
-			<tr><td colspan="2"><strong>
-			<a href={'#/' + objSection + '/' + encodeURIComponent(sub.class)}>{sub.label} ({sub.class})</a></strong></td></tr>
-			{subItems}
-		    </tbody>
-			</table>
+	    if (obj.subclasses.length > 0) {
+		subs = (
+		    	<div>
+			<p> <strong>Assosications of subclasses</strong></p>
+			{subs}
+			</div>
 		);
-	    });
+	    }
+	    
 	    phenotypes = (
 		    <div className="col-md-6">
 		    <h3>Associated Phenotypes</h3>
@@ -385,10 +418,7 @@ class App extends Component {
 		    {items}
 		</tbody>
 		    </table>
-		    <p> <strong>Assosications of subclasses</strong></p>
 		    {subs}
-		    <p> <strong>Assosications of equivalent classes</strong></p>
-		    {equivs}
 		</div>
 	    );
 	}
@@ -441,12 +471,11 @@ class App extends Component {
 	);
 	return (<div class="row">{content}</div>);
     }
-    
-    render() {
-	var section = (<div></div>);
-	return (
-		<div className="container">
-		{ this.renderHeader() }
+
+    renderSearchPage() {
+	if (this.state.page == 'search') {
+	    return (
+		<div>
 		<div className="jumbotron">
 		<h1>PathoPhenoDB Search</h1>
 		<p className="lead">
@@ -458,9 +487,9 @@ class App extends Component {
 		<p>
 		Examples:
 		<ul>
-		<li>Disease - <a href="#/Diseases/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FDOID_11263">Chlamydia</a></li>
-		<li>Pathogen - <a href="#/Pathogens/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FNCBITaxon_10255">Variola virus</a></li>
-		<li>Phenotype - <a href="#/Phenotypes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHP_0000988">Skin rash</a></li>
+		<li>Disease - <a href="/#/search/Diseases/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FDOID_11263">Chlamydia</a></li>
+		<li>Pathogen - <a href="/#/search/Pathogens/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FNCBITaxon_10255">Variola virus</a></li>
+		<li>Phenotype - <a href="/#/search/Phenotypes/http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FHP_0000988">Skin rash</a></li>
 	    </ul>
 	    </p>
 		</div></div>
@@ -469,8 +498,113 @@ class App extends Component {
 		{ this.renderSearchForm() }
 		<br/>
 		</div>
-		{ this.renderResult() }
+		    { this.renderResult() }
+		</div>
+	    );
+	} else {
+	    return (<div></div>);
+	}
+    }
 
+    renderAboutPage() {
+	if (this.state.page != 'about') {
+	    return (<div></div>);
+	}
+	return (
+		<div>
+		<h3>PathoPhenoDB</h3>
+		<br/>
+		<p>
+		PathoPhenoDB aims to support diagnosis of infectious diseases caused by known pathogens.
+		The database relies on the pathogen-to-phenotype associations.
+		Pathogen-disease relations are manually gathered from Wikipedia,
+	    Disease Ontology, Medscape, Centers for disease control and prevention,
+	    and literature and linked to disease-phenotypes by using text mining methods. 
+		</p>
+		<p>
+		Mappings:
+	    <ul>
+		<li>Pathogens are mapped to NCBI Taxonomy</li>
+	    <li>Diseases are mapped to Infectious disease class of Disease Ontology</li>
+	    <li>Phenotypes are mapped to Human Phenotype Ontology and Mammalian Phenotype ontology.</li> 
+	    <li>Drugs are mapped to PubChem</li>
+	    <li>Resistant pathogen genes are mapped to ARO</li>
+		</ul>
+		</p>
+		<p>
+		Current statistics:
+		<ul>
+		<li>1192  pathogen-disease associations</li>  
+	    <li>508 infectious diseases</li>
+	    <li>692 known pathogens (32 insects, 115 fungi, 208 bacteria, 48 protozoa, 175 viruses and 114 worms)</li>
+	    <li>476 of 508 diseases have phenotypes </li>
+	    <li>130 of 508 infectious diseases are linked to drugs from Sider.</li>
+	    <li>30 pathogens are linked to drug resistance information from ARO</li>
+		</ul>
+	    </p>
+		</div>
+	);
+    }
+
+    renderHelpPage() {
+	if (this.state.page != 'help') {
+	    return (<div></div>);
+	}
+
+	return (
+		<div>
+		<h3> How to make a search in PathoPhenoDB? </h3> 
+		<p>
+		You can search a disease name, pathogen name or a phenotype name in
+	    PathoPhenoDB. Below are the example searches for each case:
+	    </p>
+		<h4>Pathogen search:</h4>
+		<p>
+As shown in the example below, type the pathogen name in to the search
+box that you would like to search in PathoPhenoDB. The database will
+return the list of diseases associated with the searched pathogen as
+well as all the phenotypes associated with the diseases. The drug
+resistance information associated with the searched pathogen will be
+also listed. Indirect associations will cover the diseases associated
+with the subclasses of the searched pathogen based on the NCBI taxon
+Ontology.
+</p>
+
+
+		<h4> Phenotype search: </h4>
+		<p>
+As shown in the example below, type the phenotype name in to the
+search box that you would like to search in PathoPhenoDB. The database
+will return the list of diseases associated with the searched
+phenotype as well as the causative pathogens. Indirect associations
+will cover both, the phenotypes associated with the subclasses and
+equivalent classes of the searched phenotype based on the PhenomeNET
+	    ontology.
+		</p>
+
+		<h4>Disease search:</h4>
+		<p>
+As shown in the example below, type the disease name in to the search
+box that you would like to search in PathoPhenoDB. The database will
+return the list of pathogens associated with the searched disease as
+well as the phenotypes. The drugs that can be used to treat the
+disease will be also retrieved. Indirect associations will cover the
+diseases associated with the subclasses of the searched disease based
+on the Disease Ontology.
+</p>
+		</div>
+	);
+	
+    }
+    
+    render() {
+	var section = (<div></div>);
+	return (
+		<div className="container">
+		{ this.renderHeader() }
+	    { this.renderSearchPage() }
+	    { this.renderAboutPage() }
+	    { this.renderHelpPage() }
       <div className="row">
         <div className="col-lg-4">
         </div>
