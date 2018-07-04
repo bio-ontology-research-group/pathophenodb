@@ -569,7 +569,7 @@ also listed. Indirect associations will cover the diseases associated
 with the subclasses of the searched pathogen based on the NCBI taxon
 Ontology.
 </p>
-
+		<p><img src="/static/images/patho1.png"/></p>
 
 		<h4> Phenotype search: </h4>
 		<p>
@@ -581,6 +581,7 @@ will cover both, the phenotypes associated with the subclasses and
 equivalent classes of the searched phenotype based on the PhenomeNET
 	    ontology.
 		</p>
+		<p><img src="/static/images/patho2.png"/></p>
 
 		<h4>Disease search:</h4>
 		<p>
@@ -591,7 +592,8 @@ well as the phenotypes. The drugs that can be used to treat the
 disease will be also retrieved. Indirect associations will cover the
 diseases associated with the subclasses of the searched disease based
 on the Disease Ontology.
-</p>
+		</p>
+		<p><img src="/static/images/patho3.png"/></p>
 		</div>
 	);
 	
