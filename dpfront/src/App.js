@@ -206,7 +206,7 @@ class App extends Component {
 		items = Object.values(obj.Diseases).map(
 		    (item) =>
 			<tr>
-			<td><a href={'#/Diseases/' + encodeURIComponent(item.class)}>{item.class}</a></td>
+			<td><a href={'#/search/Diseases/' + encodeURIComponent(item.class)}>{item.class}</a></td>
 			<td>{item.label}</td></tr>
 		);
 	    }
@@ -216,7 +216,7 @@ class App extends Component {
 		    subItems = Object.values(sub.Diseases).map(
 		    (item) =>
 			<tr>
-			<td><a href={'#/Diseases/' + encodeURIComponent(item.class)}>{item.class}</a></td>
+			<td><a href={'#/search/Diseases/' + encodeURIComponent(item.class)}>{item.class}</a></td>
 			<td>{item.label}</td></tr>
 		    );
 		}
@@ -245,7 +245,7 @@ class App extends Component {
 		    subItems = Object.values(sub.Phenotypes).map(
 			(item) =>
 			    <tr>
-			    <td><a href={'#/Diseases/' + encodeURIComponent(item.class)}>{item.class}</a></td>
+			    <td><a href={'#/search/Diseases/' + encodeURIComponent(item.class)}>{item.class}</a></td>
 			    <td>{item.label}</td></tr>
 		    );
 		}
@@ -293,7 +293,7 @@ class App extends Component {
 		items = Object.values(obj.Pathogens).map(
 		    (item) =>
 			<tr>
-			<td><a href={'#/Pathogens/' + encodeURIComponent(item.class)}>{item.class}</a></td>
+			<td><a href={'#/search/Pathogens/' + encodeURIComponent(item.class)}>{item.class}</a></td>
 			<td>{item.label}</td></tr>
 		);
 	    }
@@ -303,7 +303,7 @@ class App extends Component {
 		    subItems = Object.values(sub.Pathogens).map(
 			(item) =>
 			    <tr>
-			    <td><a href={'#/Diseases/' + encodeURIComponent(item.class)}>{item.class}</a></td>
+			    <td><a href={'#/search/Diseases/' + encodeURIComponent(item.class)}>{item.class}</a></td>
 			    <td>{item.label}</td></tr>
 		    );
 		}
@@ -332,7 +332,7 @@ class App extends Component {
 		    subItems = Object.values(sub.Pathogens).map(
 			(item) =>
 			    <tr>
-			    <td><a href={'#/Diseases/' + encodeURIComponent(item.class)}>{item.class}</a></td>
+			    <td><a href={'#/search/Diseases/' + encodeURIComponent(item.class)}>{item.class}</a></td>
 			    <td>{item.label}</td></tr>
 		    );
 		}
@@ -376,7 +376,7 @@ class App extends Component {
 		items = Object.values(obj.Phenotypes).map(
 		    (item) =>
 			<tr>
-			<td><a href={'#/Phenotypes/' + encodeURIComponent(item.class)}>{item.class}</a></td>
+			<td><a href={'#/search/Phenotypes/' + encodeURIComponent(item.class)}>{item.class}</a></td>
 			<td>{item.label}</td></tr>
 		);
 	    }
@@ -386,7 +386,7 @@ class App extends Component {
 		    subItems = Object.values(sub.Phenotypes).map(
 			(item) =>
 			    <tr>
-			    <td><a href={'/#/Diseases/' + encodeURIComponent(item.class)}>{item.class}</a></td>
+			    <td><a href={'/#/search/Diseases/' + encodeURIComponent(item.class)}>{item.class}</a></td>
 			    <td>{item.label}</td></tr>
 		    );
 		}
@@ -394,7 +394,7 @@ class App extends Component {
 			<table className="table table-striped">
 			<tbody>
 			<tr><td colspan="2"><strong>
-			<a href={'/#/' + objSection + '/' + encodeURIComponent(sub.class)}>{sub.label} ({sub.class})</a></strong></td></tr>
+			<a href={'/#/search/' + objSection + '/' + encodeURIComponent(sub.class)}>{sub.label} ({sub.class})</a></strong></td></tr>
 			{subItems}
 		    </tbody>
 			</table>
