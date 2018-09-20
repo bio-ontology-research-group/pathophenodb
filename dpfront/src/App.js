@@ -152,6 +152,7 @@ class App extends Component {
 	    </div>
 	);
     }
+
     
     renderHeader() {
 	var page = this.state.page;
@@ -173,7 +174,7 @@ class App extends Component {
         <nav>
           <ul className="nav nav-justified">
 		{ content }
-	    	<li><a href="/media/downloads/patho_phenoDB.nt">SPARQL</a></li>
+	    	<li><a href="/media/downloads/patho_phenoDB.nt">SPARQL-File</a></li>
 		<li><a target="_blank" href="http://borg.kaust.edu.sa/Pages/People.aspx">Contact</a></li>
 	    </ul>
         </nav>
@@ -189,10 +190,19 @@ class App extends Component {
     renderResult() {
 	var obj = this.state.result;
 	var objSection = 'Diseases';
+	var infod = '';
+	var infopatho='method';
+	var infopheno='source';
 	if (obj.ontology == 'NCBITAXONSH') {
 	    objSection = 'Pathogens';
+	    infod = 'method';
+		infopheno='';
+		infopatho='';
 	} else if (obj.ontology == 'PhenomeNETSH') {
 	    objSection = 'Phenotypes';
+	    infod = 'source';
+		infopatho='';
+		infopheno='';
 	}
 	if (!obj.hasOwnProperty('class')) {
 	    return (<div className="row"></div>);
@@ -207,7 +217,7 @@ class App extends Component {
 		    (item) =>
 			<tr>
 			<td><a href={'#/search/Diseases/' + encodeURIComponent(item.class)}>{item.class}</a></td>
-			<td>{item.label}</td></tr>
+			<td>{item.label}</td><td>{item[infod]}</td></tr>
 		);
 	    }
 	    let subs = obj.subclasses.map(function(sub){
@@ -217,7 +227,7 @@ class App extends Component {
 		    (item) =>
 			<tr>
 			<td><a href={'#/search/Diseases/' + encodeURIComponent(item.class)}>{item.class}</a></td>
-			<td>{item.label}</td></tr>
+			<td>{item.label}</td><td>{item[infod]}</td></tr>
 		    );
 		}
 		return (
@@ -246,7 +256,7 @@ class App extends Component {
 			(item) =>
 			    <tr>
 			    <td><a href={'#/search/Diseases/' + encodeURIComponent(item.class)}>{item.class}</a></td>
-			    <td>{item.label}</td></tr>
+			    <td>{item.label}</td><td>{item[infod]}</td></tr>
 		    );
 		}
 		return (
@@ -277,7 +287,7 @@ class App extends Component {
 		    <div className="col-md-6">
 		    <h3>Associated Diseases</h3>
 		    <table className="table table-striped">
-		    <thead><tr><th>IRI</th><th>Label</th></tr></thead>
+		    <thead><tr><th>IRI</th><th>Label</th><th>{infod}</th></tr></thead>
 		    <tbody>
 		    {items}
 		</tbody>
@@ -294,7 +304,7 @@ class App extends Component {
 		    (item) =>
 			<tr>
 			<td><a href={'#/search/Pathogens/' + encodeURIComponent(item.class)}>{item.class}</a></td>
-			<td>{item.label}</td></tr>
+			<td>{item.label}</td><td>{item[infopatho]}</td></tr>
 		);
 	    }
 	    let subs = obj.subclasses.map(function(sub){
@@ -304,7 +314,7 @@ class App extends Component {
 			(item) =>
 			    <tr>
 			    <td><a href={'#/search/Diseases/' + encodeURIComponent(item.class)}>{item.class}</a></td>
-			    <td>{item.label}</td></tr>
+			    <td>{item.label}</td><td>{item[infod]}</td></tr>
 		    );
 		}
 		return (
@@ -333,7 +343,7 @@ class App extends Component {
 			(item) =>
 			    <tr>
 			    <td><a href={'#/search/Diseases/' + encodeURIComponent(item.class)}>{item.class}</a></td>
-			    <td>{item.label}</td></tr>
+			    <td>{item.label}</td><td>{item[infod]}</td></tr>
 		    );
 		}
 		return (	
@@ -359,7 +369,7 @@ class App extends Component {
 		    <div className="col-md-6">
 		    <h3>Associated Pathogens</h3>
 		    <table className="table table-striped">
-		    <thead><tr><th>IRI</th><th>Label</th></tr></thead>
+		    <thead><tr><th>IRI</th><th>Label</th><th>{infopatho}</th></tr></thead>
 		    <tbody>
 		       {items}
 		    </tbody>
@@ -377,7 +387,7 @@ class App extends Component {
 		    (item) =>
 			<tr>
 			<td><a href={'#/search/Phenotypes/' + encodeURIComponent(item.class)}>{item.class}</a></td>
-			<td>{item.label}</td></tr>
+			<td>{item.label}</td><td>{item[infopheno]}</td></tr>
 		);
 	    }
 	    let subs = obj.subclasses.map(function(sub){
@@ -387,7 +397,7 @@ class App extends Component {
 			(item) =>
 			    <tr>
 			    <td><a href={'/#/search/Diseases/' + encodeURIComponent(item.class)}>{item.class}</a></td>
-			    <td>{item.label}</td></tr>
+			    <td>{item.label}</td><td>{item[infod]}</td></tr>
 		    );
 		}
 		return (
@@ -413,7 +423,7 @@ class App extends Component {
 		    <div className="col-md-6">
 		    <h3>Associated Phenotypes</h3>
 		    <table className="table table-striped">
-		    <thead><tr><th>IRI</th><th>Label</th></tr></thead>
+		    <thead><tr><th>IRI</th><th>Label</th><th>{infopheno}</th></tr></thead>
 		    <tbody>
 		    {items}
 		</tbody>
@@ -598,6 +608,7 @@ on the Disease Ontology.
 	);
 	
     }
+   
     
     render() {
 	var section = (<div></div>);

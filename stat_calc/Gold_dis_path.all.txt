@@ -1,0 +1,935 @@
+DOID:11851	indeterminate leprosy	Mycobacterium leprae	1769	bacteria	wikipedia		
+DOID:11851	indeterminate leprosy	Mycobacterium lepromatosis	480418	bacteria	wikipedia		
+DOID:9861	miliary tuberculosis	Mycobacterium tuberculosis	1773	bacteria	disease-ontology.org		
+DOID:10567	late yaws	Treponema pallidum subspecies pertenue	168	bacteria	disease-ontology.org		
+DOID:0050488	early congenital syphilis	Treponema pallidum	160	bacteria	disease-ontology.org		
+DOID:0050105	endothrix infectious disease	Ascomycota	4890	fungi	disease-ontology.org		
+DOID:402	oral tuberculosis	Mycobacterium tuberculosis	1773	bacteria	disease-ontology.org		
+DOID:402	oral tuberculosis	Mycobacterium bovis	1765	bacteria	disease-ontology.org		
+DOID:9733	renal tuberculosis	Mycobacterium tuberculosis	1773	bacteria	disease-ontology.org		
+DOID:106	pleural tuberculosis	Mycobacterium lentiflavum	141349	bacteria	pubmed	https://www.ncbi.nlm.nih.gov/pubmed/26286334	
+DOID:7332	esophageal tuberculosis	Mycobacterium tuberculosis	1773	bacteria	pubmed	https://www.ncbi.nlm.nih.gov/pubmed/21902828	
+DOID:0050153	pulmonary aspergilloma	Aspergillus	5052	fungi	disease-ontology.org		
+DOID:11254	Brill-Zinsser disease	Rickettsia prowazekii	782	bacteria	disease-ontology.org		
+DOID:13565	neuroaspergillosis	Aspergillus	5052	fungi	disease-ontology.org		
+DOID:0050050	Japanese spotted fever	Dermacentor taiwanensis	1325865	insect	disease-ontology.org		
+DOID:0050050	Japanese spotted fever	Haemaphysalis flava	181088	insect	disease-ontology.org		
+DOID:10400	gonococcal seminal vesiculitis	E. coli	562	bacteria	pubmed	https://www.ncbi.nlm.nih.gov/pubmed/7039588	
+DOID:10400	gonococcal seminal vesiculitis	Streptococcus pyogenes	1314	bacteria	pubmed	https://www.ncbi.nlm.nih.gov/pubmed/7039588	streptococcus hemolyticus
+DOID:10400	gonococcal seminal vesiculitis	Staphylococcus aureus	1280	bacteria	pubmed	https://www.ncbi.nlm.nih.gov/pubmed/7039588	
+DOID:11315	African histoplasmosis	Histoplasma duboisii	149546	fungi	wikipedia		
+DOID:11315	African histoplasmosis	Histoplasma capsulatum	5037	fungi	wikipedia		
+DOID:9111	cutaneous leishmaniasis	Leishmania	5658	protozoa	disease-ontology.org		
+DOID:9111	cutaneous leishmaniasis	phlebotomine sandfly	7198	insect	wikipedia		
+DOID:0050141	intestinal botulism	Clostridium botulinum A	36826	bacteria	wikipedia		
+DOID:0050141	intestinal botulism	Clostridium botulinum B	36827	bacteria	wikipedia		
+DOID:0050141	intestinal botulism	Clostridium botulinum E	36830	bacteria	wikipedia		
+DOID:0050141	intestinal botulism	Clostridium botulinum F	36831	bacteria	wikipedia		
+DOID:407	hepatic tuberculosis	Mycobacterium tuberculosis	1773	bacteria	pubmed	https://www.ncbi.nlm.nih.gov/pubmed/26153294	
+DOID:12927	screw worm infectious disease	Chrysomya bezziana	69364	worm	disease-ontology.org		
+DOID:12927	screw worm infectious disease	Cochliomyia hominivorax	115425	worm	disease-ontology.org		
+DOID:13226	oculoglandular tularemia	Francisella tularensis	263	bacteria	disease-ontology.org		
+DOID:12919	Plasmodium ovale malaria	Plasmodium ovale	36330	protozoa	disease-ontology.org		
+DOID:1082	dirofilariasis	Dirofilaria repens	31241	worm	disease-ontology.org		
+DOID:1082	dirofilariasis	Dirofilaria immitis	6287	worm	disease-ontology.org		
+DOID:0050166	tuberculous salpingitis	Mycobacterium tuberculosis	1773	bacteria	disease-ontology.org		
+DOID:11302	cercarial dermatitis	Austrobilharzia variglandis	100588	worm	disease-ontology.org		
+DOID:0050143	asymptomatic dengue	Dengue virus 1	11053	virus	disease-ontology.org		
+DOID:0050143	asymptomatic dengue	Dengue virus 2	11060	virus	disease-ontology.org		
+DOID:0050143	asymptomatic dengue	Dengue virus 3	11069	virus	disease-ontology.org		
+DOID:0050143	asymptomatic dengue	Dengue virus 4	11070	virus	disease-ontology.org		
+DOID:0050143	asymptomatic dengue	Dengue virus	2637	virus	disease-ontology.org		
+DOID:10399	seminal vesicle chronic gonorrhea	Escherichia coli 	562	bacteria	pubmed	https://www.ncbi.nlm.nih.gov/pubmed/25721352	
+DOID:10399	seminal vesicle chronic gonorrhea	Enterococcus faecalis	1351	bacteria	pubmed	https://www.ncbi.nlm.nih.gov/pubmed/25721352	
+DOID:10399	seminal vesicle chronic gonorrhea	Chlamydia trachomatis	813	bacteria	disease-ontology.org		
+DOID:0050597	intestinal schistosomiasis	Schistosoma mansoni	6183	worm	disease-ontology.org		
+DOID:0050597	intestinal schistosomiasis	Schistosoma intercalatum	6187	worm	disease-ontology.org		
+DOID:0050597	intestinal schistosomiasis	Schistosoma japonicum	6182	worm	disease-ontology.org		
+DOID:0050042	Indian tick typhus	Rickettsia conorii	781	bacteria	disease-ontology.org		
+DOID:0050042	Indian tick typhus	Rhipicephalus sanguineus	34632	insect	disease-ontology.org		
+DOID:1639	skeletal tuberculosis	Mycobacterium tuberculosis	1773	bacteria	disease-ontology.org		
+DOID:0050354	infant botulism	Clostridium botulinum A	36826	bacteria	disease-ontology.org		
+DOID:0050354	infant botulism	Clostridium botulinum B	36827	bacteria	disease-ontology.org		
+DOID:0050354	infant botulism	Clostridium botulinum E	36830	bacteria	disease-ontology.org		
+DOID:0050354	infant botulism	Clostridium botulinum F	36831	bacteria	disease-ontology.org		
+DOID:10039	late congenital syphilis	 T. pallidum	160	bacteria	disease-ontology.org		
+DOID:0050068	pestis minor	Yersinia pestis	632	bacteria	disease-ontology.org		
+DOID:1023	borderline leprosy	M. leprae	1769	bacteria	disease-ontology.org		
+DOID:0050484	aneruptive fever	Rickettsia helvetics	35789	bacteria	disease-ontology.org		
+DOID:0050484	aneruptive fever	Dermacentor reticulatu	57047	insect	disease-ontology.org		
+DOID:2148	tuberculous oophoritis	Mycobacterium tuberculosis	1773	bacteria	pubmed	https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5663156/	
+DOID:10027	tabes dorsalis	Treponema pallidum	160	bacteria	disease-ontology.org		
+DOID:10887	lepromatous leprosy	Mycobacterium leprae	1769	bacteria	wikipedia		
+DOID:9880	cardiovascular syphilis	Treponema pallidum	160	bacteria	disease-ontology.org		
+DOID:827	ureter tuberculosis	Mycobacterium tuberculosis	1773	bacteria	disease-ontology.org		
+DOID:9153	variola minor	Variola minor	53258	virus	disease-ontology.org		
+DOID:0050268	ophthalmomyiasis	Oestrus ovis	123737	insect	disease-ontology.org		
+DOID:0050352	foodborne botulism	Clostridium botulinum A	36826	bacteria	disease-ontology.org		
+DOID:0050352	foodborne botulism	Clostridium botulinum B	36827	bacteria	disease-ontology.org		
+DOID:0050352	foodborne botulism	Clostridium botulinum E	36830	bacteria	disease-ontology.org		
+DOID:0050352	foodborne botulism	Clostridium botulinum F	36831	bacteria	disease-ontology.org		
+DOID:14456	Brucella melitensis brucellosis	Brucella melitensis	29459	bacteria	disease-ontology.org		
+DOID:0050599	abdominal tuberculosis	Mycobacterium tuberculosis	1773	bacteria	disease-ontology.org		
+DOID:0080161	cutaneous candidiasis	Candida	5475	fungi	disease-ontology.org		
+DOID:0080161	cutaneous candidiasis	Candida albicans	5476	fungi	wikipedia		
+DOID:10568	early yaws	Treponema pallidum subspecies pertenue	168	bacteria	disease-ontology.org		
+DOID:0050515	paralytic poliomyelitis	Human poliovirus 3	12086	virus	disease-ontology.org		
+DOID:0050515	paralytic poliomyelitis	Human poliovirus 2	12083	virus	disease-ontology.org		
+DOID:0050515	paralytic poliomyelitis	Human poliovirus 1	12080	virus	disease-ontology.org		
+DOID:0050308	Alkhurma hemorrhagic fever	Alkhurma hemorrhagic fever virus	172148	virus	disease-ontology.org		
+DOID:0050308	Alkhurma hemorrhagic fever	Ornithodoros savignyi	69826	insect	disease-ontology.org		
+DOID:13722	neuroschistosomiasis	Schistosoma haematobium	6185	worm	disease-ontology.org		
+DOID:13722	neuroschistosomiasis	Schistosoma mansoni	6183	worm	disease-ontology.org		
+DOID:13722	neuroschistosomiasis	Schistosoma japonicum	6182	worm	disease-ontology.org		
+DOID:10457	Legionnaires' disease	Legionella pneumophila	446	bacteria	disease-ontology.org		
+DOID:10457	Legionnaires' disease	Legionella longbeachae	450	bacteria	disease-ontology.org		
+DOID:10457	Legionnaires' disease	Legionella feeleii	453	bacteria	disease-ontology.org		
+DOID:10457	Legionnaires' disease	Legionella micdadei	451	bacteria	disease-ontology.org		
+DOID:10457	Legionnaires' disease	Legionella anisa	28082	bacteria	disease-ontology.org		
+DOID:401	multidrug-resistant tuberculosis	Mycobacterium tuberculosis	1773	bacteria	disease-ontology.org		
+DOID:1638	central nervous system tuberculosis	Mycobacterium tuberculosis	1773	bacteria	disease-ontology.org		
+DOID:9305	splenic tuberculosis	Mycobacterium tuberculosis	1773	bacteria	disease-ontology.org		
+DOID:11750	Bordetella parapertussis whooping cough	Bordetella parapertussis	519	bacteria	disease-ontology.org		
+DOID:754	bladder tuberculosis	Mycobacterium tuberculosis	1773	bacteria	disease-ontology.org		
+DOID:0050514	bulbospinal polio	Human poliovirus 3	12086	virus	disease-ontology.org		
+DOID:0050514	bulbospinal polio	Human poliovirus 2	12083	virus	disease-ontology.org		
+DOID:0050514	bulbospinal polio	Human poliovirus 1	12080	virus	disease-ontology.org		
+DOID:9531	latent syphilis	Treponema pallidum subspecies pallidum	161	bacteria	disease-ontology.org		
+DOID:11076	Brucella suis brucellosis	Brucella suis	29461	bacteria	disease-ontology.org		
+DOID:8607	herpetic whitlow	Human herpesvirus 1	10298	virus	disease-ontology.org		
+DOID:8607	herpetic whitlow	Human herpesvirus 2	10310	virus	disease-ontology.org		
+DOID:404	gastrointestinal tuberculosis	Mycobacterium tuberculosis	1773	bacteria	disease-ontology.org		
+DOID:0050051	Rickettsia parkeri spotted fever	Rickettsia parkeri	35792	bacteria	disease-ontology.org		
+DOID:0050051	Rickettsia parkeri spotted fever	Gulf Coast tick (Amblyomma maculatum)	34609	insect	disease-ontology.org		
+DOID:14095	boutonneuse fever	Rickettsia conorii subsp conorii	319546	bacteria	disease-ontology.org		
+DOID:14095	boutonneuse fever	Rhipicephalus sanguineus	34632	insect	disease-ontology.org		
+DOID:14457	Brucella abortus brucellosis	Brucella abortus	235	bacteria	disease-ontology.org		
+DOID:11990	ulceroglandular tularemia	F tularensis	263	bacteria	disease-ontology.org		
+DOID:14324	Plasmodium malariae malaria	Plasmodium malariae	5858	protozoa	disease-ontology.org		
+DOID:0050584	gummatous syphilis	Treponema pallidum	160	bacteria	wikipedia		
+DOID:0050047	Flinders Island spotted fever	Rickettsia honei	37816	bacteria	disease-ontology.org		
+DOID:0050047	Flinders Island spotted fever	Amblyomma cajennense	34607	insect	disease-ontology.org		
+DOID:0050490	parenchymatous neurosyphilis	Treponema pallidum	160	bacteria	disease-ontology.org		
+DOID:10921	Siberian tick typhus	Haemaphysalis concinna	523089	insect	disease-ontology.org		
+DOID:10921	Siberian tick typhus	Dermacentor marginatus	49202	insect	disease-ontology.org		
+DOID:10921	Siberian tick typhus	Dermacentor nuttalli	1046038	insect	disease-ontology.org		
+DOID:10921	Siberian tick typhus	Rickettsia sibirica	35793	bacteria	disease-ontology.org		
+DOID:12978	Plasmodium vivax malaria	Plasmodium vivax	5855	protozoa	disease-ontology.org		
+DOID:0050004	seminal vesicle acute gonorrhea	staphylococcus aureus	1280	bacteria	pubmed	https://www.ncbi.nlm.nih.gov/pubmed/7039588	
+DOID:0050004	seminal vesicle acute gonorrhea	streptococcus hemolyticus	1280	bacteria	pubmed	https://www.ncbi.nlm.nih.gov/pubmed/7039588	
+DOID:0050004	seminal vesicle acute gonorrhea	E. Coli	562	bacteria	pubmed	https://www.ncbi.nlm.nih.gov/pubmed/7039588	
+DOID:12926	hypodermyiasis	Dermatobia hominis	115427	insect	disease-ontology.org		
+DOID:0050097	ectothrix infectious disease	Trichophyton verrucosum	63417	fungi	disease-ontology.org		
+DOID:0050097	ectothrix infectious disease	Trichophyton equinum	63418	fungi	disease-ontology.org		
+DOID:0050097	ectothrix infectious disease	Microsporum gypseum	63402	fungi	disease-ontology.org		
+DOID:0050097	ectothrix infectious disease	Microsporum canis	63405	fungi	disease-ontology.org		
+DOID:0050491	meningovascular neurosyphilis	Treponema pallidum	160	bacteria	disease-ontology.org		
+DOID:1394	urinary schistosomiasis	Schistosoma haematobium	6185	worm	disease-ontology.org		
+DOID:14019	Brucella canis brucellosis	Brucella canis	36855	bacteria	disease-ontology.org		
+DOID:13282	intestinal tuberculosis	Mycobacterium tuberculosis	1773	bacteria	disease-ontology.org		
+DOID:2058	chronic mucocutaneous candidiasis	Candida	5475	fungi	disease-ontology.org		
+DOID:2058	chronic mucocutaneous candidiasis	human papilloma virus	10566	virus	wikipedia		
+DOID:9155	mucocutaneous leishmaniasis	Leishmania	5658	protozoa	disease-ontology.org		
+DOID:9577	neonatal candidiasis	Candida albicans	5476	fungi	wikipedia		
+DOID:9577	neonatal candidiasis	Candida	5475	fungi	disease-ontology.org		
+DOID:14239	gastrointestinal tularemia	Francisella tularensis	263	bacteria	wikipedia		
+DOID:10784	Queensland tick typhus	Rickettsia australis	787	bacteria	disease-ontology.org		
+DOID:10784	Queensland tick typhus	Ixodes holocyclus	65647	insect	disease-ontology.org		
+DOID:0050513	spinal polio	Human poliovirus 3	12086	virus	disease-ontology.org		
+DOID:0050513	spinal polio	Human poliovirus 2	12083	virus	disease-ontology.org		
+DOID:0050513	spinal polio	Human poliovirus 1	12080	virus	disease-ontology.org		
+DOID:14069	cerebral malaria	P. falciparum	5833	protozoa	wikipedia		
+DOID:14069	cerebral malaria	P. vivax	5855	protozoa	disease-ontology.org		
+DOID:14069	cerebral malaria	P. ovale	36330	protozoa	disease-ontology.org		
+DOID:14069	cerebral malaria	P. malariae	5858	protozoa	disease-ontology.org		
+DOID:4336	tinea favosa	Ascomycota	4890	fungi	disease-ontology.org		
+DOID:0050211	swine influenza	Influenza C virus	11552	virus	disease-ontology.org		
+DOID:0050211	swine influenza	Influenza A virus subtype H1N1	114727	virus	disease-ontology.org		
+DOID:0050211	swine influenza	Influenza A virus subtype H1N2	114728	virus	disease-ontology.org		
+DOID:0050211	swine influenza	Influenza A virus subtype H2N3	114731	virus	disease-ontology.org		
+DOID:0050211	swine influenza	Influenza A virus	11320	virus	disease-ontology.org	Influenza A virus subtype H3N1	Influenza A virus subtype H3N2
+DOID:2272	vulvovaginal candidiasis	Candida albicans	5476	fungi	disease-ontology.org		
+DOID:0050073	invasive aspergillosis	Aspergillus	5052	fungi	disease-ontology.org		
+DOID:0050382	glandular tularemia	Francisella tularensis	263	bacteria	wikipedia		
+DOID:4962	pericardial tuberculosis	Mycobacterium tuberculosis	1773	bacteria	disease-ontology.org		
+DOID:13369	tinea manuum	Ascomycota	4890	fungi	disease-ontology.org		
+DOID:1759	American histoplasmosis	Histoplasma capsulatum var. capsulatum	278162	fungi	disease-ontology.org		
+DOID:13166	allergic bronchopulmonary aspergillosis	Aspergillus fumigatus	746128	fungi	disease-ontology.org		
+DOID:9988	tertiary neurosyphilis	Treponema pallidum	160	bacteria	disease-ontology.org		
+DOID:0050353	wound botulism	Clostridium botulinum A	36826	bacteria	disease-ontology.org		
+DOID:0050353	wound botulism	Clostridium botulinum B	36827	bacteria	disease-ontology.org		
+DOID:0050353	wound botulism	Clostridium botulinum E	36830	bacteria	disease-ontology.org		
+DOID:0050353	wound botulism	Clostridium botulinum F	36831	bacteria	disease-ontology.org		
+DOID:0050046	Far Eastern spotted fever	Rickettsia heilongjiangensis	226665	bacteria	disease-ontology.org		
+DOID:0050046	Far Eastern spotted fever	Haemaphysalis concinna	523089	insect	disease-ontology.org		
+DOID:1079	setariasis	Setaria	48796	worm	disease-ontology.org		
+DOID:13035	louse-borne relapsing fever	Borrelia recurrentis	44449	bacteria	disease-ontology.org		
+DOID:2149	urogenital tuberculosis	M. tuberculosis	1773	bacteria	disease-ontology.org		
+DOID:2149	urogenital tuberculosis	M. bovis	1765	bacteria	disease-ontology.org		
+DOID:14512	candidal paronychia	Candida albicans	5476	fungi	wikipedia		
+DOID:1025	tuberculoid leprosy	M. leprae	1769	bacteria	disease-ontology.org		
+DOID:9856	congenital syphilis	Treponema pallidum	160	bacteria	disease-ontology.org		
+DOID:0050041	Astrakhan spotted fever	Rickettsia conorii subsp caspia	302011	bacteria	disease-ontology.org		
+DOID:0050041	Astrakhan spotted fever	Rhipicephalus pumilio	127007	insect	disease-ontology.org		
+DOID:0050041	Astrakhan spotted fever	Rhipicephalus sanguineus	34632	insect	disease-ontology.org		
+DOID:14325	mixed malaria	Plasmodium	5820	protozoa	disease-ontology.org		
+DOID:0050508	variola major	Variola major virus	12870	virus	disease-ontology.org		
+DOID:4157	secondary syphilis	Treponema pallidum subspecies pallidum	161	bacteria	wikipedia		
+DOID:0050035	African tick-bite fever	Rickettsia africae	35788	bacteria	disease-ontology.org		
+DOID:0050035	African tick-bite fever	Amblyomma hebraeum	34608	insect	disease-ontology.org		
+DOID:0050035	African tick-bite fever	Amblyomma variegatum	34610	insect	disease-ontology.org		
+DOID:0050043	Israeli tick typhus	Rickettsia conorii subsp israelensis	45258	bacteria	disease-ontology.org		
+DOID:0050043	Israeli tick typhus	Rhipicephalus sanguineus	34632	insect	disease-ontology.org		
+DOID:2957	pulmonary tuberculosis	Mycobacterium tuberculosis	1773	bacteria	disease-ontology.org		
+DOID:8200	tertiary syphilis	Treponema pallidum subspecies pallidum	161	bacteria	wikipedia		
+DOID:0050383	typhoidal tularemia	Francisella tularensis	263	bacteria	disease-ontology.org		
+DOID:0050150	Pontiac fever	Legionella pneumophila	446	bacteria	wikipedia		
+DOID:0050150	Pontiac fever	Legionella longbeachae	450	bacteria	wikipedia		
+DOID:0050150	Pontiac fever	Legionella feeleii	453	bacteria	wikipedia		
+DOID:0050150	Pontiac fever	Legionella micdadei	451	bacteria	wikipedia		
+DOID:0050150	Pontiac fever	Legionella anisa	28082	bacteria	wikipedia		
+DOID:1251	tuberculous epididymitis	Mycobacterium bovis	1765	bacteria	pubmed	https://www.ncbi.nlm.nih.gov/pubmed/12731446	
+DOID:10035	asymptomatic neurosyphilis	Treponema pallidum	160	bacteria	disease-ontology.org		
+DOID:0060570	cardiac tuberculosis	Mycobacterium tuberculosis	1773	bacteria	pubmed	https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4495593/	
+DOID:4952	postpoliomyelitis syndrome	Human poliovirus 3	12086	virus	disease-ontology.org		
+DOID:4952	postpoliomyelitis syndrome	Human poliovirus 2	12083	virus	disease-ontology.org		
+DOID:4952	postpoliomyelitis syndrome	Human poliovirus 1	12080	virus	disease-ontology.org		
+DOID:3481	septicemic plague	Yersinia pestis	632	bacteria	wikipedia		
+DOID:13521	tetanus neonatorum	Clostridium tetani	1513	bacteria	wikipedia		
+DOID:4986	nonparalytic poliomyelitis	Human poliovirus 3	12086	virus	disease-ontology.org		
+DOID:4986	nonparalytic poliomyelitis	Human poliovirus 2	12083	virus	disease-ontology.org		
+DOID:4986	nonparalytic poliomyelitis	Human poliovirus 1	12080	virus	disease-ontology.org		
+DOID:4889	lymph node tuberculosis	Mycobacterium tuberculosis	1773	bacteria	disease-ontology.org		
+DOID:14422	dipetalonemiasis	Dipetalonema	114233	worm	disease-ontology.org		
+DOID:2122	pneumonic tularemia	Francisella tularensis	263	bacteria	disease-ontology.org		
+DOID:0050598	extrapulmonary tuberculosis	Mycobacterium tuberculosis	1773	bacteria	disease-ontology.org		
+DOID:5513	Pediculus humanus corporis infestation	Pediculus humanus corporis	121224	insect	disease-ontology.org		
+DOID:9146	visceral leishmaniasis	Leishmania donovani	5661	protozoa	disease-ontology.org		
+DOID:10398	pneumonic plague	Yersinia pestis	632	bacteria	wikipedia		
+DOID:4156	primary syphilis	Treponema pallidum subspecies pallidum	161	bacteria	wikipedia		
+DOID:9801	tuberculous peritonitis	Mycobacterium tuberculous	1773	bacteria	pubmed	https://www.ncbi.nlm.nih.gov/pubmed/27443487	
+DOID:14067	Plasmodium falciparum malaria	Plasmodium falciparum	5833	protozoa	disease-ontology.org		
+DOID:0050012	Chikungunya fever	Chikungunya virus	37124	virus	disease-ontology.org		kegg
+DOID:0050059	oropharyngeal anthrax	Bacillus cereus	1396	bacteria	wikipedia		kegg
+DOID:0050059	oropharyngeal anthrax	Bacillus anthracis	1392	bacteria	disease-ontology.org		X
+DOID:0050061	erysipeloid	Erysipelothrix rhusiopathiae	1648	bacteria	disease-ontology.org		kegg
+DOID:0050118	California Encephalitis	La Crosse virus	11577	virus	disease-ontology.org		kegg
+DOID:0050118	California Encephalitis	Ochlerotatus triseriatus	7162	insect	disease-ontology.org		X
+DOID:0050125	DSS	Dengue virus	12637	virus	disease-ontology.org		kegg
+DOID:0050125	DSS	Dengue virus 1	11053	virus	disease-ontology.org		X
+DOID:0050125	DSS	Dengue virus 2	11060	virus	disease-ontology.org		X
+DOID:0050125	DSS	Dengue virus 3	11069	virus	disease-ontology.org		X
+DOID:0050125	DSS	Dengue virus 4	11070	virus	disease-ontology.org		X
+DOID:0050125	DSS	Aedes	7158	insect	disease-ontology.org		X
+DOID:0050160	inhalation anthrax	Bacillus cereus	1396	bacteria	wikipedia		kegg
+DOID:0050160	inhalation anthrax	Bacillus anthracis	1392	bacteria	disease-ontology.org		X
+DOID:0050197	Brazilian hemorrhagic fever	Sabia mammarenavirus	45709	virus	disease-ontology.org		kegg
+DOID:0050218	human polycystic hydatid disease	Echinococcus granulosus	6210	worm	wikipedia	https://en.wikipedia.org/wiki/Echinococcosis	kegg
+DOID:0050218	human polycystic hydatid disease	Echinococcus multilocularis	6211	worm	wikipedia	https://en.wikipedia.org/wiki/Echinococcosis	kegg
+DOID:0050218	human polycystic hydatid disease	Echinococcus vogeli	6213	worm	Disease-ontology.org		X
+DOID:0050218	human polycystic hydatid disease	Echinococcus oligarthrus	6212	worm	disease-ontology.org		X
+DOID:0050259	baylisascariasis	Baylisascaris procyonis	6259	worm	disease-ontology.org		kegg
+DOID:0050266	tungiasis	chigoe flea	214035	insect	disease-ontology.org		X
+DOID:0050266	tungiasis	Tunga penetrans	214035	insect	disease-ontology.org		kegg
+DOID:0050485	Sennetsu ehrlichiosis	Neorickettsia sennetsu	951	virus	disease-ontology.org		kegg
+DOID:0050495	Roseola Infantum	Human herpesvirus 6B	32604	virus	disease-ontology.org		kegg
+DOID:0050495	Roseola Infantum	Human herpesvirus 6 	10368	virus	disease-ontology.org		X
+DOID:0050495	Roseola Infantum	Human herpesvirus 7	10372	virus	Disease-ontology.org		X
+DOID:0050516	O'nyong'nyong fever	O'nyong-nyong virus	11027	virus	disease-ontology.org		kegg
+DOID:0050516	O'nyong'nyong fever	Anopheles gambiae	7165	insect	disease-ontology.org		X
+DOID:0050516	O'nyong'nyong fever	Anopheles funestus	62324	insect	disease-ontology.org		X
+DOID:0050518	Ross River fever	Ross River virus	11029	virus	disease-ontology.org		kegg
+DOID:0050518	Ross River fever	Culex	7174	insect	disease-ontology.org		X
+DOID:0050518	Ross River fever	Aedes	7158	insect	disease-ontology.org		X
+DOID:0050521	Oropouche fever	Oropouche virus (Oropouche fever)	118655	virus	disease-ontology.org		kegg
+DOID:0050521	Oropouche fever	Culicoides paraensis	1027879	insect	disease-ontology.org		X
+DOID:0060345	Bacillary Angiomatosis	Bartonella bacilliformis (Oroya fever and bacillary angiomatosis) [GN:bbk]	774	bacteria	wikipedia	https://en.wikipedia.org/wiki/Bartonella_bacilliformis	kegg
+DOID:0060345	Bacillary Angiomatosis	Bartonella quintana (Trench fever and bacillary angiomatosis) [GN:bqu]	803	bacteria	disease-ontology.org		kegg
+DOID:0060345	Bacillary Angiomatosis	Bartonella henselae	38323	bacteria	disease-ontology.org		X
+DOID:0060478	Zika fever	Zika virus	64320	virus	disease-ontology.org		kegg
+DOID:10075	Diphyllobothrium infection	Diphyllobothrium dendriticum	28845	worm	wikipedia	https://en.wikipedia.org/wiki/Diphyllobothrium	kegg
+DOID:10075	Diphyllobothrium infection	Diphyllobothrium pacificum	372152	worm	wikipedia	https://en.wikipedia.org/wiki/Diphyllobothrium	kegg
+DOID:10075	Diphyllobothrium infection	Diphyllobothrium latum	60516	worm	disease-ontology.org		kegg
+DOID:10075	Diphyllobothrium infection	Diphyllobothrium nihonkaiens	64604	worm	wikipedia	https://en.wikipedia.org/wiki/Diphyllobothrium	kegg
+DOID:10075	Diphyllobothrium infection	Diphyllobothrium ditremum	85435	worm	wikipedia	https://en.wikipedia.org/wiki/Diphyllobothrium	kegg
+DOID:10080	Infection by Sparganum	Spirometra mansonoides (United States)	46899	worm	disease-ontology.org		kegg
+DOID:10080	Infection by Sparganum	Spirometra mansoni (Asia)	99802	worm	disease-ontology.org		kegg
+DOID:10371	Bouba	Treponema pallidum subsp. Pertenue	168	bacteria	disease-ontology.org		kegg
+DOID:10458	Legionella infection (disorder)	Legionella longbeachae	450	bacteria	wikipedia	https://en.wikipedia.org/wiki/Legionella_longbeachae	kegg
+DOID:10458	Legionella infection (disorder)	Legionella pneumophila	446	bacteria	disease-ontology.org		X
+DOID:10699	Infection by Paragonimus (disorder)	Paragonimus	34503	worm	disease-ontology.org		X
+DOID:10699	Infection by Paragonimus (disorder)	Paragonimus heterotremus	100268	worm	wikipedia	https://en.wikipedia.org/wiki/Paragonimus	kegg
+DOID:10699	Infection by Paragonimus (disorder)	Paragonimus mexicanus	100270	worm	wikipedia	https://en.wikipedia.org/wiki/Paragonimus	kegg
+DOID:10699	Infection by Paragonimus (disorder)	Paragonimus miyazakii	59628	worm	wikipedia	https://en.wikipedia.org/wiki/Paragonimus	kegg
+DOID:1081	Mansonelliasis (disorder)	Mansonella perstans	42231	worm	disease-ontology.org		kegg
+DOID:1081	Mansonelliasis (disorder)	Mansonella ozzardi	122354	worm	disease-ontology.org		X
+DOID:10841	EEE	Eastern equine encephalitis virus	11021	virus	disease-ontology.org		kegg
+DOID:10841	EEE	Aedes	7158	insect	disease-ontology.org		X
+DOID:10841	EEE	Coquillettidia	329110	insect	disease-ontology.org		X
+DOID:10841	EEE	Cluex	7174	insect	disease-ontology.org		X
+DOID:10842	Australian X disease	Murray Valley encephalitis virus	11079	virus	disease-ontology.org		kegg
+DOID:10842	Australian X disease	Culex annulirostris	162997	insect	disease-ontology.org		X
+DOID:10843	WEE	Western equine encephalitis virus	11039	virus	disease-ontology.org		kegg
+DOID:10843	WEE	Culex	7174	insect	disease-ontology.org		X
+DOID:10843	WEE	Aedes	7158	insect	disease-ontology.org		X
+DOID:10844	Japanese B encephalitis	Japanese encephalitis virus	11072	virus	disease-ontology.org		kegg
+DOID:10844	Japanese B encephalitis	Culex tritaeniorhynchus	7178	insect	disease-ontology.org		X
+DOID:10881	Vesicular stomatitis and exanthem	Enterovirus A	138948	virus	wikipedia	https://en.wikipedia.org/wiki/Enterovirus	kegg
+DOID:10881	Vesicular stomatitis and exanthem	Human coxsackievirus A16	31704	virus	disease-ontology.org		X
+DOID:10881	Vesicular stomatitis and exanthem	Human enterovirus 71	39054	virus	disease-ontology.org		X
+DOID:10883	Vesicular pharyngitis	Enterovirus A	138948	virus	wikipedia	https://en.wikipedia.org/wiki/Enterovirus	kegg
+DOID:10883	Vesicular pharyngitis	Human coxsackievirus A16	31704	virus	disease-ontology.org		X
+DOID:10883	Vesicular pharyngitis	Human enterovirus 71	39054	virus	disease-ontology.org		X
+DOID:10955	Infection by Strongyloides (disorder)	Human immunodeficiency virus 1 (HIV-1)	11676	virus	pubmed	https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3409107/	kegg
+DOID:10955	Infection by Strongyloides (disorder)	Human immunodeficiency virus 2 (HIV-2)	11908	virus	pubmed	https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3409107/	kegg
+DOID:10955	Infection by Strongyloides (disorder)	Human T-lymphotropic virus 1	11908	virus	pubmed	https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3708837/	kegg
+DOID:10955	Infection by Strongyloides (disorder)	Strongyloides fuelleborni	44441	worm	disease-ontology.org	superclass in do.org	kegg
+DOID:10955	Infection by Strongyloides (disorder)	Strongyloides stercoralis	6248	worm	disease-ontology.org		X
+DOID:11055	Pasteurella infection	Pasteurella multocida subsp septica	115545	bacteria	wikipedia	https://en.wikipedia.org/wiki/Pasteurella	kegg
+DOID:11055	Pasteurella infection	Pasteurella multocida	747	bacteria	disease-ontology.org		kegg
+DOID:11055	Pasteurella infection	Pasteurella canis	753	bacteria	wikipedia	https://en.wikipedia.org/wiki/Pasteurella	kegg
+DOID:11055	Pasteurella infection	Pasteurella dagmatis	754	bacteria	wikipedia	https://en.wikipedia.org/wiki/Pasteurella	kegg
+DOID:11055	Pasteurella infection	Pasteurella stomatis	760	bacteria	wikipedia	https://en.wikipedia.org/wiki/Pasteurella	kegg
+DOID:11077	Bang's disease	Brucella abortus	235	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:11077	Bang's disease	Brucella ovis	236	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:11077	Bang's disease	Brucella melitensis	29459	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:11077	Bang's disease	Brucella suis	29461	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:11077	Bang's disease	Brucella canis	36855	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:11077	Bang's disease	Brucella	234	bacteria	disease-ontology.org		X
+DOID:11080	Infestation by fly larvae (disorder)	Dermatobia hominis (botfly myiasis)	115427	insect	wikipedia	https://en.wikipedia.org/wiki/Dermatobia_hominis	kegg
+DOID:11080	Infestation by fly larvae (disorder)	Oestrus ovis	123737	insect	wikipedia	https://en.wikipedia.org/wiki/Oestrus_ovis	kegg
+DOID:11080	Infestation by fly larvae (disorder)	Cordylobia anthropophaga	226132	insect	wikipedia	https://en.wikipedia.org/wiki/Cordylobia_anthropophaga	kegg
+DOID:11080	Infestation by fly larvae (disorder)	Lucilia spp. (secondary/wound myiasis)	7374	insect	wikipedia	https://en.wikipedia.org/wiki/Myiasis	kegg
+DOID:11101	His-Werner disease	Bartonella quintana	803	bacteria	disease-ontology.org		kegg
+DOID:11101	His-Werner disease	Pediculus humanus corporis	121224	insect	disease-ontology.org		X
+DOID:11102	Bartonella infectious disease	Candidatus Bartonella ancashi	1318743	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:11102	Bartonella infectious disease	Bartonella henselae (Cat-scratch disease)	38323	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:11102	Bartonella infectious disease	Bartonella bacilliformis (Oroya fever and bacillary angiomatosis)	774	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:11102	Bartonella infectious disease	Bartonella quintana (Trench fever and bacillary angiomatosis)	803	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:11102	Bartonella infectious disease	Bartonella elizabethae	807	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:11102	Bartonella infectious disease	Bartonella	773	bacteria	disease-ontology.org		X
+DOID:11104	Spotted fever group rickettsial disease (disorder)	Rickettsia heilongjiangensis (Far-Eastern spotted fever)	226665	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:11104	Spotted fever group rickettsial disease (disorder)	Rickettsia africae	35788	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:11104	Spotted fever group rickettsial disease (disorder)	Rickettsia japonica (Japanese spotted fever)	35790	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:11104	Spotted fever group rickettsial disease (disorder)	Rickettsia massiliae	35791	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:11104	Spotted fever group rickettsial disease (disorder)	Rickettsia sibirica (North Asian tick fever / Siberian tick typhus)	35793	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:11104	Spotted fever group rickettsial disease (disorder)	Rickettsia conorii (African tick typhus / Boutonneuse fever)	781	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:11104	Spotted fever group rickettsial disease (disorder)	Rickettsia rickettsii (Rocky Mountain spotted fever)	783	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:11104	Spotted fever group rickettsial disease (disorder)	Rickettsia	780	bacteria	disease-ontology.org		X
+DOID:1116	WC - Whooping cough	Bordetella parapertussis	519	bacteria	disease-ontology.org		kegg
+DOID:1116	WC - Whooping cough	Bordetella pertussis	520	bacteria	disease-ontology.org		X
+DOID:11168	Anogenital Human papilloma Virus Infectious Disease	human papillomavirus type 11	10580	virus	disease-ontology.org		kegg
+DOID:11168	Anogenital Human papilloma Virus Infectious Disease	Human papillomavirus type 6b	10600	virus	disease-ontology.org		kegg
+DOID:11168	Anogenital Human papilloma Virus Infectious Disease	Gammapapillomavirus	325455	virus	wikipedia	https://en.wikipedia.org/wiki/Human_papillomavirus_infection	kegg
+DOID:11168	Anogenital Human papilloma Virus Infectious Disease	Alphapapillomavirus	333750	virus	wikipedia	https://en.wikipedia.org/wiki/Human_papillomavirus_infection	kegg
+DOID:11168	Anogenital Human papilloma Virus Infectious Disease	Human papillomavirus type 10	333759	virus	wikipedia	https://en.wikipedia.org/wiki/Human_papillomavirus_infection	kegg
+DOID:11168	Anogenital Human papilloma Virus Infectious Disease	Betapapillomavirus	333922	virus	wikipedia	https://en.wikipedia.org/wiki/Human_papillomavirus_infection	kegg
+DOID:11168	Anogenital Human papilloma Virus Infectious Disease	Mupapillomavirus	334202	virus	wikipedia	https://en.wikipedia.org/wiki/Human_papillomavirus_infection	kegg
+DOID:11168	Anogenital Human papilloma Virus Infectious Disease	human papillomaviruses type 6	31552	virus	disease-ontology.org		X
+DOID:11227	Apollo disease	Human coxsackievirus A24	12089	virus	disease-ontology.org		kegg
+DOID:11227	Apollo disease	Human enterovirus 70	12090	virus	disease-ontology.org		kegg
+DOID:11256	Classical typhus (fever)	Rickettsia felis  (feline flea-borne typhus)	42862	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:11256	Classical typhus (fever)	Rickettsia prowazekii  (epidemic louse-borne typhus)	782	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:11256	Classical typhus (fever)	Rickettsia bacteria	780	bacteria	disease-ontology.org		X
+DOID:11260	Lyssa	European bat lyssavirus 1	57482	virus	wikipedia	https://en.wikipedia.org/wiki/Lyssavirus	kegg
+DOID:11260	Lyssa	European bat lyssavirus 2	57483	virus	wikipedia	https://en.wikipedia.org/wiki/Lyssavirus	kegg
+DOID:11260	Lyssa	Australian bat lyssavirus	90961	virus	wikipedia	https://en.wikipedia.org/wiki/Lyssavirus	kegg
+DOID:11260	Rabies	Rabies virus	11292	virus	disease-ontology.org		X
+DOID:11266	HFRS	Hantaan virus	1980471	virus	disease-ontology.org		kegg
+DOID:11266	HFRS	Puumala virus	1980486	virus	disease-ontology.org		kegg
+DOID:11266	HFRS	Seoul virus	1980490	virus	disease-ontology.org		kegg
+DOID:11266	HFRS	Dobrava-Belgrade virus	1980467	virus	disease-ontology.org		X
+DOID:11320	Kyasanur forest disease	Kyasanur forest disease virus (KFDV)	33743	virus	disease-ontology.org		kegg
+DOID:11320	Kyasanur forest disease	Haemaphysalis spinigera	1134476	insect	disease-ontology.org		X
+DOID:11360	Phlebotomus fever	Sandfly fever Naples virus	206160	virus	disease-ontology.org		kegg
+DOID:11360	Phlebotomus fever	Phlebotomus papatasi sandfly	29031	insect	disease-ontology.org		X
+DOID:11379	Gnathostomiasis	Gnathostoma doloresi	279402	worm	wikipedia	https://en.wikipedia.org/wiki/Gnathostoma	kegg
+DOID:11379	Gnathostomiasis	Gnathostoma spinigerum	75299	worm	disease-ontology.org		X
+DOID:11379	Gnathostomiasis	Gnathostoma hispidum	279404	worm	disease-ontology.org		X
+DOID:11976	Botulism	Clostridium butyricum	1492	bacteria	wikipedia	https://en.wikipedia.org/wiki/Clostridium_butyricum	kegg
+DOID:11976	Botulism	Clostridium baratii	1561	bacteria	wikipedia	https://en.wikipedia.org/wiki/Clostridium_baratii	kegg
+DOID:11976	Botulism	Clostridium botulinum A	36826	bacteria	disease-ontology.org		X
+DOID:11976	Botulism	Clostridium botulinum B	36827	bacteria	disease-ontology.org		X
+DOID:11976	Botulism	Clostridium botulinum E	36830	bacteria	disease-ontology.org		X
+DOID:11976	Botulism	Clostridium botulinum F	36831	bacteria	disease-ontology.org		X
+DOID:12053	(Cryptococcosis & European) or (torula) or (Busse Buschkes disease)	Cryptococcus gattii	37769	fungi	disease-ontology.org		kegg
+DOID:12053	(Cryptococcosis & European) or (torula) or (Busse Buschkes disease)	Cryptococcus neoformans	5207	fungi	disease-ontology.org		X
+DOID:12148	Multilocular hydatid	Echinococcus granulosus	6210	worm	disease-ontology.org	superclass in do.org	kegg
+DOID:12148	Multilocular hydatid	Echinococcus multilocularis	6211	worm	disease-ontology.org		kegg
+DOID:1218	Echinostomiasis (disorder)	Echinostoma	27847	worm	disease-ontology.org		X
+DOID:1218	Echinostomiasis (disorder)	Echinostoma hortense	48216	worm	wikipedia	https://en.wikipedia.org/wiki/Echinostoma_hortense	kegg
+DOID:12205	Dengue Fever	Dengue virus	12637	virus	disease-ontology.org		kegg
+DOID:12205	Dengue Fever	Dengue virus 1	11053	virus	disease-ontology.org		X
+DOID:12205	Dengue Fever	Dengue virus 2	11060	virus	disease-ontology.org		X
+DOID:12205	Dengue Fever	Dengue virus 3	11069	virus	disease-ontology.org		X
+DOID:12205	Dengue Fever	Dengue virus 4	11070	virus	disease-ontology.org		X
+DOID:12205	Dengue Fever	Aedes	7158	insect	disease-ontology.org		X
+DOID:12206	DHF	Dengue virus	12637	virus	disease-ontology.org		kegg
+DOID:12206	DHF	Aedes	7158	insect	disease-ontology.org		X
+DOID:12211	Bancroftian elephantiasis (disorder)	Brugia timori	42155	worm	disease-ontology.org		kegg
+DOID:12211	Bancroftian elephantiasis (disorder)	Wuchereria bancrofti	6293	worm	disease-ontology.org		X
+DOID:12211	Bancroftian elephantiasis (disorder)	Brugia malayi	6279	worm	disease-ontology.org		X
+DOID:12211	Bancroftian elephantiasis (disorder)	Brugia timori	42155	worm	disease-ontology.org		X
+DOID:12365	Induced malaria (disorder)	Plasmodium ovale	36330	protozoa	disease-ontology.org	superclass in do.org	kegg
+DOID:12365	Induced malaria (disorder)	Plasmodium knowlesi H	5851	protozoa	disease-ontology.org	superclass in do.org	kegg
+DOID:12365	Induced malaria (disorder)	Plasmodium	418103	protozoa	disease-ontology.org		X
+DOID:12385	Shigella boydii infectious disease	Shigella boydii	621	bacteria	disease-ontology.org		kegg
+DOID:12385	Shigella boydii infectious disease	Shigella dysenteriae	622	bacteria	disease-ontology.org		kegg
+DOID:12385	Shigella boydii infectious disease	Shigella flexneri	623	bacteria	disease-ontology.org		kegg
+DOID:12385	Shigella boydii infectious disease	Shigella sonnei	624	bacteria	disease-ontology.org		kegg
+DOID:12662	Mucocutaneous-lymphangitic paracoccidioidomycosis	Paracoccidioides brasiliensis	121759	fungi	disease-ontology.org		X
+DOID:12662	Mucocutaneous-lymphangitic paracoccidioidomycosis	Paracoccidioides lutzii	1048829	fungi	wikipedia	https://en.wikipedia.org/wiki/Paracoccidioidomycosis	kegg
+DOID:12841	Ancylostomiasis (disorder)	Ancylostoma duodenale	51022	worm	disease-ontology.org		kegg
+DOID:12841	Ancylostomiasis (disorder)	Ancylostoma braziliense	369059	worm	disease-ontology.org		X
+DOID:12841	Ancylostomiasis (disorder)	Ancylostoma ceylanicum	53326	worm	disease-ontology.org		X
+DOID:12841	Ancylostomiasis (disorder)	Ancylostoma caninum	29170	worm	disease-ontology.org		X
+DOID:13026	Cutaneous blastomycosis	Lacazia loboi	121752	fungi	disease-ontology.org		kegg
+DOID:13034	Relapsing fever	Borrelia turicatae [GN:btu] (Tick-borne relapsing fever)	142	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:13034	Relapsing fever	Borrelia crocidurae [GN:bcw] (Tick-borne relapsing fever)	29520	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:13034	Relapsing fever	Borrelia duttonii [GN:bdu] (Tick-borne relapsing fever)	40834	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:13036	Relapsing fever	Borrelia turicatae [GN:btu] (Tick-borne relapsing fever)	142	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:13036	Relapsing fever	Borrelia crocidurae [GN:bcw] (Tick-borne relapsing fever)	29520	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:13036	Relapsing fever	Borrelia duttonii [GN:bdu] (Tick-borne relapsing fever)	40834	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:13036	Relapsing fever	Borrelia	138	bacteria	disease-ontology.org		X
+DOID:13371	Chigger-borne rickettsiosis	Orientia tsutsugamushi (mite-borne typhus)	784	bacteria	disease-ontology.org		kegg
+DOID:13371	Chigger-borne rickettsiosis	Leptotrombidium deliense	299467	insect	disease-ontology.org		X
+DOID:13386	gastrointestinal anthrax	Bacillus cereus [GN:bal]	1396	bacteria	wikipedia		kegg
+DOID:13386	gastrointestinal anthrax	Bacillus anthracis	1392	bacteria	disease-ontology.org		X
+DOID:13431	Bejel (disorder)	Treponema pallidum subsp. Endemicum	53436	bacteria	disease-ontology.org		kegg
+DOID:13523	loiasis	Loa loa	7209	worm	disease-ontology.org		kegg
+DOID:13564	Aspergillosis	Aspergillus flavus [GN:afv]	5059	fungi	disease-ontology.org	superclass in do.org	kegg
+DOID:13564	Aspergillosis	Aspergillus fumigatus [GN:afm]	746128	fungi	disease-ontology.org	superclass in do.org	kegg
+DOID:13564	Aspergillosis	Aspergillus	5052	fungi	Disease-ontology.org		X
+DOID:13622	(Campylobacter GIT infection (& diarrhea or enteritis) or (helicobacter gastritis)	Campylobacter coli	195	bacteria	wikipedia	https://en.wikipedia.org/wiki/Campylobacter	kegg
+DOID:13622	(Campylobacter GIT infection (& diarrhea or enteritis) or (helicobacter gastritis)	Campylobacter fetus	196	bacteria	wikipedia	https://en.wikipedia.org/wiki/Campylobacter	kegg
+DOID:13622	(Campylobacter GIT infection (& diarrhea or enteritis) or (helicobacter gastritis)	Campylobacter jejuni	197	bacteria	disease-ontology.org		kegg
+DOID:13622	(Campylobacter GIT infection (& diarrhea or enteritis) or (helicobacter gastritis)	Campylobacter curvus	200	bacteria	wikipedia	https://en.wikipedia.org/wiki/Campylobacter	kegg
+DOID:13622	(Campylobacter GIT infection (& diarrhea or enteritis) or (helicobacter gastritis)	Campylobacter lari	201	bacteria	wikipedia	https://en.wikipedia.org/wiki/Campylobacter	kegg
+DOID:13622	(Campylobacter GIT infection (& diarrhea or enteritis) or (helicobacter gastritis)	Campylobacter concisus 13826	360104	bacteria	wikipedia	https://en.wikipedia.org/wiki/Campylobacter	kegg
+DOID:13767	Clonorchiasis (disorder)	Fasciola gigantica	46835	worm	wikipedia	https://en.wikipedia.org/wiki/Clonorchiasis	kegg
+DOID:13767	Clonorchiasis (disorder)	Fasciola hepatica	6192	worm	wikipedia	https://en.wikipedia.org/wiki/Clonorchiasis	kegg
+DOID:13767	Clonorchiasis (disorder)	Clonorchis sinensis	79923	worm	disease-ontology.org		X
+DOID:13801	Adenoviral pharyngoconjunctivitis (disorder)	Human mastadenovirus B	108098	virus	pubmed	http://onlinelibrary.wiley.com/doi/10.1111/j.1365-2672.2005.02650.x/full	kegg
+DOID:13801	Adenoviral pharyngoconjunctivitis (disorder)	Human adenovirus 3	754032	virus	disease-ontology.org		X
+DOID:13801	Adenoviral pharyngoconjunctivitis (disorder)	Human adenovirus 7	316517	virus	disease-ontology.org		X
+DOID:13819	Climatic or tropical bubo	Chlamydia trachomatis	813	bacteria	disease-ontology.org		kegg
+DOID:14068	Black water fever (disorder)	Plasmodium ovale	36330	protozoa	wikipedia	https://en.wikipedia.org/wiki/Malaria	kegg
+DOID:14068	Black water fever (disorder)	Plasmodium knowlesi H	5851	protozoa	wikipedia	https://en.wikipedia.org/wiki/Malaria	kegg
+DOID:14068	Black water fever (disorder)	Plasmodium falciparum	5833	protozoa	disease-ontology.org		X
+DOID:14068	Black water fever (disorder)	Plasmodium vivax	5855	protozoa	disease-ontology.org		X
+DOID:14472	hantavirus pulmonary syndrome	Andes virus	1980456	virus	disease-ontology.org		kegg
+DOID:14472	hantavirus pulmonary syndrome	Sin Nombre virus	1980491	virus	disease-ontology.org		X
+DOID:14472	hantavirus pulmonary syndrome	Black Creek Canal virus	1980460	virus	disease-ontology.org		X
+DOID:14472	hantavirus pulmonary syndrome	Bayou virus	1980459	virus	disease-ontology.org		X
+DOID:14472	hantavirus pulmonary syndrome	Laguna Negra virus	1980476	virus	disease-ontology.org		X
+DOID:14472	hantavirus pulmonary syndrome	Andes virus	1980456	virus	disease-ontology.org		X
+DOID:1495	Echinococcus granulosus infection (disorder)	Echinococcus granulosus	6210	worm	disease-ontology.org		kegg
+DOID:1495	Echinococcus granulosus infection (disorder)	Echinococcus multilocularis	6211	worm	wikipedia	https://en.wikipedia.org/wiki/Echinococcus_multilocularis	kegg
+DOID:1498	(Cholera) or (Vibrio cholerae)	Vibrio cholerae O1 [GN:vch vcm vcj vci vce vcs]	127906	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:1498	(Cholera) or (Vibrio cholerae)	Vibrio cholerae O395 [GN:vco vcr]	345073	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:1498	(Cholera) or (Vibrio cholerae)	Vibrio cholerae	666	bacteria	disease-ontology.org		X
+DOID:1508	Disseminated candidiasis	Clavispora lusitaniae	36911	fungi	wikipedia	https://en.wikipedia.org/wiki/Candidiasis	kegg
+DOID:1508	Disseminated candidiasis	Candida dubliniensis	42374	fungi	disease-ontology.org		kegg
+DOID:1508	Disseminated candidiasis	Meyerozyma guilliermondii	4929	fungi	wikipedia	https://en.wikipedia.org/wiki/Candidiasis	kegg
+DOID:1508	Disseminated candidiasis	Candida auris	498019	fungi	disease-ontology.org		kegg
+DOID:1508	Disseminated candidiasis	Candida albicans	5476	fungi	disease-ontology.org		kegg
+DOID:1508	Disseminated candidiasis	Candida glabrata	5478	fungi	disease-ontology.org		kegg
+DOID:1508	Disseminated candidiasis	Candida tropicalis	5482	fungi	disease-ontology.org		kegg
+DOID:1508	Disseminated candidiasis	C. glabrata	5478	fungi	wikipedia	https://en.wikipedia.org/wiki/Candidiasis	X
+DOID:1508	Disseminated candidiasis	C. krusei	4909	fungi	wikipedia	https://en.wikipedia.org/wiki/Candidiasis	X
+DOID:1508	Disseminated candidiasis	C. parapsilosis	5480	fungi	wikipedia	https://en.wikipedia.org/wiki/Candidiasis	X
+DOID:1508	Disseminated candidiasis	Candida	5475	fungi	disease-ontology.org	superclass in do.org	X
+DOID:1562	Chromoblastomycosis (disorder)	Rhinocladiella aquaspersa	37936	fungi	pubmed	Chromoblastomycosis (disorder) Rhinocladiella aquaspersa	kegg
+DOID:1562	Chromoblastomycosis (disorder)	Phialophora verrucosa	39412	fungi	disease-ontology.org		kegg
+DOID:1562	Chromoblastomycosis (disorder)	Cladosporium carrionii	86049	fungi	disease-ontology.org		kegg
+DOID:1562	Chromoblastomycosis (disorder)	Fonsecaea compactum	86057	fungi	disease-ontology.org		kegg
+DOID:1562	Chromoblastomycosis (disorder)	Fonsecaea pedrosoi	40355	fungi	disease-ontology.org		X
+DOID:1733	Cryptosporidial gastroenteritis (disorder)	Cryptosporidium hominis	237895	protozoa	disease-ontology.org	superclass in do.org	kegg
+DOID:1733	Cryptosporidial gastroenteritis (disorder)	Cryptosporidium parvum	5807	protozoa	disease-ontology.org	superclass in do.org	kegg
+DOID:1733	Cryptosporidial gastroenteritis (disorder)	Cryptosporidium	5806	protozoa	disease-ontology.org		X
+DOID:1947	trichomonas infection	Trichomonas foetus	1144522	protozoa	wikipedia	https://en.wikipedia.org/wiki/Tritrichomonas_foetus	kegg
+DOID:1947	trichomonas infection	Trichomonas vaginalis	5722	protozoa	disease-ontology.org		X
+DOID:1947	trichomonas infection	Trichomonas tenax	43075	protozoa	disease-ontology.org		X
+DOID:2297	Fort Bragg fever	Leptospira interrogans	173	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:2297	Fort Bragg fever	Leptospira borgpetersenii	174	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:2297	Fort Bragg fever	Leptospira santarosai	28183	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:2297	Fort Bragg fever	Leptospira	171	bacteria	disease-ontology.org		X
+DOID:2312	Nocardia infectious disease	Nocardia asteroides	1824	bacteria	disease-ontology.org		X
+DOID:2312	Nocardia infectious disease	Nocardia cyriacigeorgica [GN:ncy]	135487	bacteria	wikipedia	https://en.wikipedia.org/wiki/Nocardia	kegg
+DOID:2312	Nocardia infectious disease	Nocardia brasiliensis	37326	bacteria	wikipedia	https://en.wikipedia.org/wiki/Nocardia	kegg
+DOID:2312	Nocardia infectious disease	Nocardia farcinica [GN:nfa]	37329	bacteria	wikipedia	https://en.wikipedia.org/wiki/Nocardia	kegg
+DOID:2312	Nocardia infectious disease	Nocardia nova	37330	bacteria	wikipedia	https://en.wikipedia.org/wiki/Nocardia	kegg
+DOID:2790	necatoriasis	Necator americanus	51031	bacteria	wikipedia	https://en.wikipedia.org/wiki/Nocardia	kegg
+DOID:321	HTLV-associated myelopathy	human T-lymphotropic virus type 1 	11908	virus	disease-ontology.org		kegg
+DOID:3482	plague	Yersinia pestis KIM (biovar Mediaevalis) [GN:ypk] (Black Death)	187410	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:3482	plague	Yersinia pestis CO92 (biovar Orientalis) [GN:ype] (Third Pandemic)	214092	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:3482	plague	Yersinia pestis Angola [GN:ypg]	349746	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:3482	plague	Yersinia pestis Pestoides F [GN:ypp]	386656	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:3482	plague	Yersinia pestis D106004 [GN:ypd]	637382	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:3482	plague	Yersinia pestis D182038 [GN:ypx]	637385	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:3482	plague	Yersinia pestis	632	bacteria	disease-ontology.org		X
+DOID:4270	Infection by Encephalitozoon (disorder)	Encephalitozoon intestinalis	58839	fungi	disease-ontology.org		kegg
+DOID:4270	Infection by Encephalitozoon (disorder)	Encephalitozoon cuniculi	6035	fungi	disease-ontology.org		kegg
+DOID:4270	Infection by Encephalitozoon (disorder)	Encephalitozoon hellem	27973	fungi	disease-ontology.org		X
+DOID:4325	Ebola hemorrhagic fever	Zaire ebolavirus	186538	virus	disease-ontology.org		kegg
+DOID:4325	Ebola hemorrhagic fever	Reston ebolavirus	186539	virus	wikipedia	https://en.wikipedia.org/wiki/Reston_virus	kegg
+DOID:4325	Ebola hemorrhagic fever	Sudan ebolavirus	186540	virus	disease-ontology.org		kegg
+DOID:4325	Ebola hemorrhagic fever	Tai Forest ebolavirus	186541	virus	wikipedia	https://en.wikipedia.org/wiki/Taï_Forest_ebolavirus	kegg
+DOID:4325	Ebola hemorrhagic fever	Bundibugyo virus	565995	virus	disease-ontology.org		kegg
+DOID:4325	Ebola hemorrhagic fever	Cote d'Ivoire ebolavirus	128999	virus	disease-ontology.org		X
+DOID:4327	Marburg disease	Marburg marburgvirus	11269	virus	disease-ontology.org		kegg
+DOID:4492	avian flu	Influenza A virus 	11320	virus	disease-ontology.org		kegg
+DOID:4492	avian flu	avian influenza A viruses (H7N2)	119214	virus	disease-ontology.org		X
+DOID:4492	avian flu	avian influenza A viruses (H7N7)	119218	virus	disease-ontology.org		X
+DOID:526	HIV infection	Human immunodeficiency virus 1 (HIV-1)	11676	virus	disease-ontology.org		kegg
+DOID:526	HIV infection	Human immunodeficiency virus 2 (HIV-2)	11709	virus	disease-ontology.org		kegg
+DOID:5502	Infestation by Pediculus (disorder)	Pediculus humanus corporis (body louse)	121224	insect	wikipedia	https://en.wikipedia.org/wiki/Body_louse	kegg
+DOID:5502	Infestation by Pediculus (disorder)	Pediculus humanus capitis (head louse)	121226	insect	wikipedia	https://en.wikipedia.org/wiki/Head_louse	kegg
+DOID:5502	Infestation by Pediculus (disorder)	Pthirus pubis (crab louse)	121228	insect	disease-ontology.org	superclass in do.org	kegg
+DOID:5502	Infestation by Pediculus (disorder)	Phthiraptera	85819	insect	disease-ontology.org		X
+DOID:7033	Anisakiasis (disorder)	Anisakis simplex	6269	worm	disease-ontology.org		kegg
+DOID:7033	Anisakiasis (disorder)	Pseudoterranova decipiens	6271	worm	disease-ontology.org		kegg
+DOID:7426	cutaneous anthrax	Bacillus anthracis	1392	bacteria	disease-ontology.org		X
+DOID:7426	cutaneous anthrax	Bacillus cereus	1396	bacteria	wikipedia		kegg
+DOID:7427	anthrax disease	Bacillus cereus	1396	bacteria	wikipedia		kegg
+DOID:7427	anthrax disease	Bacillus anthracis	1392	bacteria	disease-ontology.org		X
+DOID:8469	Influenza with non-respiratory manifestation (disorder)	Influenza B virus	11520	virus	disease-ontology.org		kegg
+DOID:8469	Influenza with non-respiratory manifestation (disorder)	Influenza C virus	11552	virus	disease-ontology.org		kegg
+DOID:8469	Influenza with non-respiratory manifestation (disorder)	Influenzavirus A	11320	virus	disease-ontology.org		X
+DOID:8478	Actinomycotic madura foot (disorder)	Actinomyces naeslundii	1655	bacteria	disease-ontology.org		kegg
+DOID:8478	Actinomycotic madura foot (disorder)	Actinomyces viscosus	1656	bacteria	disease-ontology.org		kegg
+DOID:8478	Actinomycotic madura foot (disorder)	Actinomyces odontolyticus	1660	bacteria	disease-ontology.org		kegg
+DOID:8478	Actinomycotic madura foot (disorder)	Nocardia brasiliensis	37326	bacteria	wikipedia	https://en.wikipedia.org/wiki/Nocardia_brasiliensis	kegg
+DOID:8478	Actinomycotic madura foot (disorder)	Actinomyces meyeri	52773	bacteria	disease-ontology.org		kegg
+DOID:8478	Actinomycotic madura foot (disorder)	Actinomyces israelii	1659	bacteria	disease-ontology.org		X
+DOID:8478	Actinomycotic madura foot (disorder)	Actinomyces gerencseriae	52769	bacteria	disease-ontology.org		X
+DOID:8478	Actinomycotic madura foot (disorder)	Propionibacterium propionicum	1750	bacteria	disease-ontology.org		X
+DOID:8704	Genital herpes	Human herpesvirus 1	10298	virus	disease-ontology.org		kegg
+DOID:8704	Genital herpes	Human herpesvirus 2	10310	virus	disease-ontology.org		kegg
+DOID:8736	Ordinary smallpox	Variola virus	10255	virus	disease-ontology.org		kegg
+DOID:882	heterophyes infectious disease	Heterophyidae heterophyes	104454	worm	wikipedia	https://en.wikipedia.org/wiki/Heterophyes_heterophyes	kegg
+DOID:882	heterophyes infectious disease	Heterophyes	104454	worm	disease-ontology.org		X
+DOID:885	Fasciola hepatica infection (disorder)	Fasciola gigantica	46835	worm	disease-ontology.org		kegg
+DOID:885	Fasciola hepatica infection (disorder)	Fasciola hepatica	6192	worm	disease-ontology.org		kegg
+DOID:8913	dermatophytosis	Trichophyton interdigitale	101480	fungi	wikipedia	https://en.wikipedia.org/wiki/Dermatophytosis	kegg
+DOID:8913	dermatophytosis	Trichophyton tonsurans	34387	fungi	wikipedia	https://en.wikipedia.org/wiki/Dermatophytosis	kegg
+DOID:8913	dermatophytosis	Trichophyton mentagrophytes	523103	fungi	wikipedia	https://en.wikipedia.org/wiki/Dermatophytosis	kegg
+DOID:8913	dermatophytosis	Trichophyton rubrum	5551	fungi	wikipedia	https://en.wikipedia.org/wiki/Dermatophytosis	kegg
+DOID:8913	dermatophytosis	Trichophyton verrucosum [GN:tve]	63417	fungi	wikipedia	https://en.wikipedia.org/wiki/Dermatophytosis	kegg
+DOID:8913	dermatophytosis	Ascomycota	4890	fungi	disease-ontology.org		X
+DOID:9060	Infection by Pityrosporum furfur	Malassezia globosa	76773	fungi	wikipedia	https://en.wikipedia.org/wiki/Malassezia	kegg
+DOID:9060	Infection by Pityrosporum furfur	Malassezia furfur	55194	fungi	disease-ontology.org	superclass in do.org	X
+DOID:9063	Dermatitis exfoliativa neonatorum	Staphylococcus haemolyticus [GN:sha]	1283	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:9063	Dermatitis exfoliativa neonatorum	Staphylococcus lugdunensis [GN:slg sln]	28035	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:9063	Dermatitis exfoliativa neonatorum	Staphylococcus pseudintermedius [GN:ssd]	283734	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:9063	Dermatitis exfoliativa neonatorum	Staphylococcus aureus	1280	bacteria	disease-ontology.org		X
+DOID:9065	Leishmaniasis (disorder)	Leishmania donovani [GN:ldo]	5661	protozoa	wikipedia	https://en.wikipedia.org/wiki/Leishmaniasis	kegg
+DOID:9065	Leishmaniasis (disorder)	Leishmania major [GN:lma] (Cutaneous leishmaniasis)	5664	protozoa	wikipedia	https://en.wikipedia.org/wiki/Leishmaniasis	kegg
+DOID:9065	Leishmaniasis (disorder)	Leishmania infantum [GN:lif] (Kala-azar / Visceral leishmaniasis)	5671	protozoa	wikipedia	https://en.wikipedia.org/wiki/Leishmaniasis	kegg
+DOID:9065	Leishmaniasis (disorder)	Leishmania mexicana MHOM/GT/2001/U1103 [GN:lmi]	929439	protozoa	wikipedia	https://en.wikipedia.org/wiki/Leishmaniasis	kegg
+DOID:9065	Leishmaniasis (disorder)	Leishmania	5658	protozoa	disease-ontology.org		X
+DOID:9065	Leishmaniasis (disorder)	sand fly (subfamily Phlebotominae)	7198	insect	disease-ontology.org		X
+DOID:9123	Eczema herpeticum (disorder)	Human herpesvirus 1	10298	virus	disease-ontology.org		kegg
+DOID:9123	Eczema herpeticum (disorder)	Human herpesvirus 2	10310	virus	disease-ontology.org		kegg
+DOID:9537	Lassa fever	Lassa mammarenavirus	11618	virus	disease-ontology.org	superclass in do.org	kegg
+DOID:96	Staphylococcal food poisoning	Staphylococcus haemolyticus [GN:sha]	1283	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:96	Staphylococcal food poisoning	Staphylococcus lugdunensis [GN:slg sln]	28035	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:96	Staphylococcal food poisoning	Staphylococcus pseudintermedius [GN:ssd]	283734	bacteria	disease-ontology.org	superclass in do.org	kegg
+DOID:96	Staphylococcal food poisoning	Staphylococcus aureus	1280	bacteria	disease-ontology.org		X
+DOID:9643	Babesiasis	Babesia bovis	5865	protozoa	disease-ontology.org	superclass in do.org	kegg
+DOID:9643	Babesiasis	Babesia canis	5867	protozoa	disease-ontology.org	superclass in do.org	kegg
+DOID:9643	Babesiasis	Babesia microti	5868	protozoa	disease-ontology.org	superclass in do.org	kegg
+DOID:9643	Babesiasis	Babesia	5864	protozoa	disease-ontology.org		X
+DOID:9786	bulbar polio	Poliovirus	138950	virus	wikipedia	https://en.wikipedia.org/wiki/Poliovirus	kegg
+DOID:9786	bulbar polio	Human poliovirus 1	12080	virus	disease-ontology.org		X
+DOID:9786	bulbar polio	Human poliovirus 2	12083	virus	disease-ontology.org		X
+DOID:9786	bulbar polio	Human poliovirus 3	12086	virus	disease-ontology.org		X
+DOID:992	Omsk hemorrhagic fever	Omsk hemorrhagic fever virus	12542	virus	disease-ontology.org		kegg
+DOID:992	Omsk hemorrhagic fever	Dermacentor	34619	insect	disease-ontology.org		X
+DOID:992	Omsk hemorrhagic fever	Ixodes	65647	insect	disease-ontology.org		X
+DOID:13258	Fever: typhoid or enteric	Salmonella enterica serovar Typhi#Salmonella enterica subsp. enterica serovar Typhi [GN:sty stt sex]	90370	bacteria	wikipedia		
+DOID:12365	Induced malaria (disorder)	Plasmodium falciparum#Plasmodium falciparum [GN:pfa pfd pfh] (Falciparum malaria)	5833	protozoa	wikipedia		
+DOID:14068	Black water fever (disorder)	Plasmodium vivax#Plasmodium vivax [GN:pvx] (Vivax malaria)	5855	protozoa	wikipedia		
+DOID:13760	Infestation by Phthirus pubis (disorder)	Phthirus pubis#Pthirus pubis (crab louse)	121228	insect	wikipedia		
+DOID:11265	Trachoma (disorder)	Chlamydia trachomatis#Chlamydia trachomatis [GN:ctr cta ctb ctl ctj ctct]	813	bacteria	wikipedia		
+DOID:13146	Candida Esophagitis	Candida <Saccharomycetales>	5475	fungi	wikipedia		
+DOID:11678	Infection by Onchocerca volvulus (disorder)	Onchocerca volvulus#Onchocerca volvulus	6282	worm	wikipedia		
+DOID:9790	Infection by Toxascaris (disorder)	Toxocara canis#Toxocara canis	6265	worm	wikipedia		
+DOID:1395	schistosomiasis	Schistosoma mekongi	38744	worm	wikipedia		
+DOID:1496	Echinococcosis of liver (disorder)	Echinococcus vogeli	6213	worm	wikipedia		
+DOID:10881	Vesicular stomatitis and exanthem	Enterovirus 71#Human enterovirus 71	39054	virus	wikipedia		
+DOID:11976	Botulism	Clostridium botulinum#Clostridium botulinum [GN:cbo cba cbh cby cbl cbk cbb cbi cbt cbf]	1491	bacteria	wikipedia		
+DOID:12205	Dengue Fever	Flavivirus	11051	virus	wikipedia		
+DOID:14068	Black water fever (disorder)	Plasmodium ovale wallikeri	864142	protozoa	wikipedia		
+DOID:0050480	epidemic typhus	Rickettsia prowazekii	782	bacteria	wikipedia		
+DOID:14262	Candidiasis of mouth	Candida albicans	5476	fungi	wikipedia		
+DOID:12474	Capillaria infection (disorder)	Capillaria aerophila	1172388	worm	wikipedia		
+DOID:13074	Dermatophytic onychia	Trichophyton	5550	fungi	wikipedia		
+DOID:11100	Infection due to Coxiella burnetii (disorder)	Coxiella burnetii#Coxiella burnetii [GN:cbu cbs cbg cbc]	777	bacteria	wikipedia		
+DOID:14068	Black water fever (disorder)	Plasmodium knowlesi	5850	protozoa	wikipedia		
+DOID:13622	(Campylobacter GIT infection (& diarrhea or enteritis) or (helicobacter gastritis)	Campylobacter	194	bacteria	wikipedia		
+DOID:2409	Infection by Rhinosporidium seeberi	Rhinosporidium seeberi	90339	protozoa	wikipedia		
+DOID:12211	Bancroftian elephantiasis (disorder)	Brugia malayi#Brugia malayi [GN:bmy]	6279	worm	wikipedia		
+DOID:884	Infection by Metagonimus yokogawai	Metagonimus yokogawai#Metagonimus yokogawai	84529	worm	wikipedia		
+DOID:10882	Bamble disease	Coxsackievirus	12066	virus	wikipedia		
+DOID:13386	gastrointestinal anthrax	Bacillus anthracis#Bacillus anthracis [GN:ban bar bat bai bax bans]	1392	bacteria	wikipedia		
+DOID:8568	Filatov's disease	Epstein-Barr virus#Human herpesvirus 4 (Epstein-Barr virus) [GN:T40079]	10376	virus	wikipedia		
+DOID:10881	Vesicular stomatitis and exanthem	Enteroviruses	12059	virus	wikipedia		
+DOID:13034	Relapsing fever	Borrelia	138	bacteria	wikipedia		
+DOID:9181	amebiasis	Entamoeba histolytica#Entamoeba histolytica [GN:ehi]	5759	protozoa	wikipedia		
+DOID:13778	(Chancroid & bubo) or (Ducrey's chancre)	Haemophilus ducreyi#Haemophilus ducreyi [GN:hdu]	730	bacteria	wikipedia		
+DOID:13450	coccidioidomycosis	Coccidioides posadasii#Coccidioides posadasii [GN:cpw]	199306	fungi	wikipedia		
+DOID:7427	anthrax disease	Bacillus anthracis#Bacillus anthracis [GN:ban bar bat bai bax bans]	1392	bacteria	wikipedia		
+DOID:13801	Adenoviral pharyngoconjunctivitis (disorder)	Adenovirus	10535	virus	wikipedia		
+DOID:9790	Infection by Toxascaris (disorder)	Toxocara cati#Toxocara cati	6266	worm	wikipedia		
+DOID:11260	Lyssa	Rabies virus#Rabies virus (RABV) [GN:T40022]	11292	virus	wikipedia		
+DOID:9784	Trichinella spiralis infection	Trichinella spiralis#Trichinella spiralis  [GN:tsp]	6334	worm	wikipedia		
+DOID:4953	poliomyelitis	Poliovirus	138950	virus	wikipedia		
+DOID:635	AIDS	HIV <HIV-1>#Human immunodeficiency virus 1 (HIV-1) [GN:T40001]	11676	virus	wikipedia		
+DOID:635	AIDS	HIV <HIV-3>	35274	virus	wikipedia		
+DOID:11917	(Dermatophytosis of groin & perianal area) or (Dhobie itch) or (tinea cruris)	Epidermophyton floccosum	34391	fungi	wikipedia		
+DOID:13036	Relapsing fever	Borrelia hermsii#Borrelia hermsii [GN:bhr] (Tick-borne relapsing fever)	140	bacteria	wikipedia		
+DOID:14262	Candidiasis of mouth	Candida <Debaryomycetaceae>	1535326	fungi	wikipedia		
+DOID:11917	(Dermatophytosis of groin & perianal area) or (Dhobie itch) or (tinea cruris)	Trichophyton mentagrophytes	523103	fungi	wikipedia		
+DOID:10075	Diphyllobothrium infection	Diphyllobothrium	28844	protozoa	wikipedia		
+DOID:11729	Bannwarth syndrome (disorder)	Borrelia afzelii	29518	bacteria	wikipedia		
+DOID:2945	SARS	SARS coronavirus#SARS coronavirus [GN:T40069]	227859	virus	wikipedia		
+DOID:12386	Balantidiasis (disorder)	Balantidium coli#Balantidium coli	71585	protozoa	wikipedia		
+DOID:0050026	Ehrlichiosis chafeensis	Ehrlichia ewingii	947	bacteria	wikipedia		
+DOID:11103	Rickettsia akari spotted fever	Rickettsia akari	786	bacteria	wikipedia		
+DOID:0050596	Beef tapeworm infection	Taenia	6202	worm	wikipedia		
+DOID:1116	WC - Whooping cough	Bordetella pertussis#Bordetella pertussis [GN:bpe bpc bpet]	520	bacteria	wikipedia		
+DOID:8478	Actinomycotic madura foot (disorder)	Propionibacterium propionicus	1750	bacteria	wikipedia		
+DOID:2297	Fort Bragg fever	Leptospira	171	bacteria	wikipedia		
+DOID:2047	delta hepatitis	Hepatitis D virus#Hepatitis delta virus [GN:T40085]	12475	virus	wikipedia		
+DOID:12474	Capillaria infection (disorder)	Capillaria philippinensis	1457282	worm	wikipedia		
+DOID:1883	NANBH	Hepatitis C virus#Hepatitis C virus (HCV) [GN:T40066]	11103	virus	wikipedia		
+DOID:11917	(Dermatophytosis of groin & perianal area) or (Dhobie itch) or (tinea cruris)	Trichophyton rubrum	5551	fungi	wikipedia		
+DOID:1328	Rift Valley fever	Coccidioides posadasii	199306	fungi	wikipedia		
+DOID:9113	(Granuloma inguinale) or (donovanosis) or (pudendal ulcer)	Klebsiella granulomatis#Klebsiella granulomatis	39824	bacteria	wikipedia		
+DOID:2366	West Nile fever	West Nile virus#West Nile virus [GN:T40029]	11082	virus	wikipedia		
+DOID:4271	Infection by Microspora (disorder)	Microsporidia	6029	fungi	wikipedia		
+DOID:10718	Infection by Giardia lamblia	Giardia lamblia#Giardia lamblia [GN:gla]	5741	protozoa	wikipedia		
+DOID:635	AIDS	HIV <HIV-2>#Human immunodeficiency virus 2 (HIV-2) [GN:T40002]	11709	virus	wikipedia		
+DOID:14374	(Scabies (& Norwegian)) or (sarcoptic itch)	Sarcoptes scabiei#Sarcoptes scabiei	52283	insect	wikipedia		
+DOID:12205	Dengue Fever	Dengue virus type 4	11070	virus	wikipedia		
+DOID:10074	Hymenolepis infectious disease	Hymenolepis nana	102285	worm	wikipedia		
+DOID:0050242	Naegleria fowleri infection	Naegleria fowleri	5763	bacteria	wikipedia		
+DOID:4327	Marburg disease	Marburgvirus	186537	virus	wikipedia		
+DOID:13036	Relapsing fever	Borrelia	138	bacteria	wikipedia		
+DOID:8469	Influenza with non-respiratory manifestation (disorder)	Influenza virus	11309	virus	wikipedia		
+DOID:8622	measles	Measles virus#Measles virus [GN:T40033]	11234	virus	wikipedia		
+DOID:96	Staphylococcal food poisoning	Staphylococcus	1279	bacteria	wikipedia		
+DOID:13902	Tinea blanca	Trichosporon beigelii	5553	fungi	wikipedia		
+DOID:11729	Bannwarth syndrome (disorder)	Borrelia garinii	29519	bacteria	wikipedia		
+DOID:4411	hepatitis E	Hepatitis E virus#Hepatitis E virus (HEV) [GN:T40067]	12461	virus	wikipedia		
+DOID:9965	disseminated toxoplasmosis	Toxoplasma gondii#Toxoplasma gondii [GN:tgo]	5811	protozoa	wikipedia		
+DOID:0050026	Ehrlichiosis chafeensis	Ehrlichia chaffeensis#Ehrlichia chaffeensis [GN:ech]	945	bacteria	wikipedia		
+DOID:0050012	Chikungunya fever	Alphavirus	11019	virus	wikipedia		
+DOID:4885	Colorado tick fever	Colorado tick fever virus#Colorado tick fever virus [GN:T40063] (Colorado tick fever)	46839	virus	wikipedia		
+DOID:1328	Rift Valley fever	Coccidioides immitis	5501	fungi	wikipedia		
+DOID:1496	Echinococcosis of liver (disorder)	Echinococcus	6209	worm	wikipedia		
+DOID:12549	Viral hepatitis A	Hepatitis A virus#Hepatovirus A [GN:T40068]	12092	virus	wikipedia		
+DOID:4166	Syphilis (disorder)	Treponema pallidum#Treponema pallidum [GN:tpa tpp tpu tph tpo tpas]	160	bacteria	wikipedia		
+DOID:1395	schistosomiasis	Schistosoma intercalatum	6187	worm	wikipedia		
+DOID:10699	Infection by Paragonimus (disorder)	Paragonimus	34503	worm	wikipedia		
+DOID:5501	Pediculosis capitis (disorder)	Pediculus humanus capitis	121226	insect	wikipedia		
+DOID:13146	Candida Esophagitis	Candida <Debaryomycetaceae>	1535326	fungi	wikipedia		
+DOID:14472	hantavirus pulmonary syndrome	Sin Nombre virus#Sin Nombre virus [GN:T40020]	1980491	virus	wikipedia		
+DOID:11379	Gnathostomiasis	Gnathostoma spinigerum#Gnathostoma spinigerum	75299	worm	wikipedia		
+DOID:13768	Infection by Opisthorchis	Opisthorchis felineus#Opisthorchis felineus	147828	worm	wikipedia		
+DOID:643	PML	JC virus#JC polyomavirus [GN:T40072]	10632	virus	wikipedia		
+DOID:2043	Serum hepatitis	Hepatitis B virus#Hepatitis B virus (HBV) [GN:T40004]	10407	virus	wikipedia		
+DOID:13444	Farcy pipes	Burkholderia mallei#Burkholderia mallei [GN:bma bml bmn]	13373	bacteria	wikipedia		
+DOID:12205	Dengue Fever	Dengue virus 2	11060	virus	wikipedia		
+DOID:1733	Cryptosporidial gastroenteritis (disorder)	Cryptosporidium	5806	protozoa	wikipedia		
+DOID:9682	Sylvatic yellow fever	Yellow fever virus#Yellow fever virus [GN:T40057]	11089	virus	wikipedia		
+DOID:10881	Vesicular stomatitis and exanthem	Coxsackie A virus type 4	42785	virus	wikipedia		
+DOID:1080	Filariasis (disorder)	Filarioidea	6295	worm	wikipedia		
+DOID:12205	Dengue Fever	dengue virus-1 DEN-1	11053	virus	wikipedia		
+DOID:9643	Babesiasis	Babesia divergens#Babesia divergens	32595	protozoa	wikipedia		
+DOID:7033	Anisakiasis (disorder)	Anisakis	6268	worm	wikipedia		
+DOID:8867	molluscum contagiosum	Molluscum contagiosum virus#Molluscum contagiosum virus [GN:T40124]	10279	virus	wikipedia		
+DOID:8469	Influenza with non-respiratory manifestation (disorder)	Orthomyxoviridae	11308	virus	wikipedia		
+DOID:1498	(Cholera) or (Vibrio cholerae)	Vibrio cholerae	666	bacteria	wikipedia		
+DOID:12365	Induced malaria (disorder)	Plasmodium ovale curtisi	864141	protozoa	wikipedia		
+DOID:1947	trichomonas infection	Trichomonas vaginalis#Trichomonas vaginalis [GN:tva]	5722	protozoa	wikipedia		
+DOID:13034	Relapsing fever	Borrelia hermsii#Borrelia hermsii [GN:bhr] (Tick-borne relapsing fever)	140	bacteria	wikipedia		
+DOID:11379	Gnathostomiasis	Gnathostoma hispidum#Gnathostoma hispidum	279404	worm	wikipedia		
+DOID:10699	Infection by Paragonimus (disorder)	Paragonimus caliensis	1902345	worm	wikipedia		
+DOID:10242	ehrlichiosis	Ehrlichia	943	bacteria	wikipedia		
+DOID:11168	Anogenital Human papilloma Virus Infectious Disease	Human papillomavirus	10566	virus	wikipedia		
+DOID:0050456	Bairnsdale ulcer	Mycobacterium ulcerans#Mycobacterium ulcerans [GN:mul]	1809	bacteria	wikipedia		
+DOID:11102	Bartonella infectious disease	Bartonella	773	bacteria	wikipedia		
+DOID:14068	Black water fever (disorder)	Plasmodium ovale curtisi	864141	protozoa	wikipedia		
+DOID:9643	Babesiasis	Babesia	5864	protozoa	wikipedia		
+DOID:888	Infection by Fasciolopsis buski (disorder)	Fasciolopsis buski#Fasciolopsis buski	27845	worm	wikipedia		
+DOID:11077	Bang's disease	Brucella	234	bacteria	wikipedia		
+DOID:1731	Reticuloendothelial hyperplasia	Histoplasma capsulatum#Histoplasma capsulatum [GN:aje]	5037	fungi	wikipedia		
+DOID:3482	plague	Yersinia pestis	632	bacteria	wikipedia		
+DOID:13146	Candida Esophagitis	Candida albicans	5476	fungi	wikipedia		
+DOID:14068	Black water fever (disorder)	Plasmodium falciparum#Plasmodium falciparum [GN:pfa pfd pfh] (Falciparum malaria)	5833	protozoa	wikipedia		
+DOID:13036	Relapsing fever	Borrelia recurrentis#Borrelia recurrentis [GN:bre] (Louse-borne relapsing fever)	44449	bacteria	wikipedia		
+DOID:12365	Induced malaria (disorder)	Plasmodium vivax#Plasmodium vivax [GN:pvx] (Vivax malaria)	5855	protozoa	wikipedia		
+DOID:13450	coccidioidomycosis	Coccidioides immitis#Coccidioides immitis [GN:cim]	5501	fungi	wikipedia		
+DOID:8970	Immunosuppressive measles encephalitis	Measles virus#Measles virus [GN:T40033]	11234	virus	wikipedia		
+DOID:0050495	Roseola Infantum	Human herpesvirus 6	10368	virus	wikipedia		
+DOID:10699	Infection by Paragonimus (disorder)	Paragonimus westermani#Paragonimus westermani	34504	worm	wikipedia		
+DOID:2123	tularemia	Francisella tularensis#Francisella tularensis [GN:ftu ftw ftl fth fta ftr fts]	263	bacteria	wikipedia		
+DOID:12663	(Other dermatophytosis) or (blastomycosis)	Blastomyces dermatitidis#Blastomyces dermatitidis	5039	fungi	wikipedia		
+DOID:14068	Black water fever (disorder)	Plasmodium malariae#Plasmodium malariae	5858	protozoa	wikipedia		
+DOID:9643	Babesiasis	Babesia bigemina#Babesia bigemina	5866	protozoa	wikipedia		
+DOID:4337	Dermatophytosis of Scalp and Beard	Trichophyton tonsurans	34387	fungi	wikipedia		
+DOID:11266	HFRS	Bunyaviridae	1980416	virus	wikipedia		
+DOID:12365	Induced malaria (disorder)	Plasmodium <genus>	5820	protozoa	wikipedia		
+DOID:8566	Herpesvirus hominis disease	Herpes simplex virus 1#Human herpesvirus 1 [GN:T40073]	10298	virus	wikipedia		
+DOID:10079	Pork tapeworm infection	Taenia solium#Taenia solium	6204	worm	wikipedia		
+DOID:11104	Spotted fever group rickettsial disease (disorder)	Rickettsia	780	bacteria	wikipedia		
+DOID:11729	Bannwarth syndrome (disorder)	Borrelia burgdorferi#Borrelia burgdorferi (Lyme disease) [GN:bbu bbn bbj]	139	bacteria	wikipedia		
+DOID:0050059	oropharyngeal anthrax	Bacillus anthracis#Bacillus anthracis [GN:ban bar bat bai bax bans]	1392	bacteria	wikipedia		
+DOID:0050195	Bolivian hemorrhagic fever	Machupo virus#Machupo mammarenavirus [GN:T40006]	11628	virus	wikipedia		
+DOID:0050025	HGE	Anaplasma phagocytophilum#Anaplasma phagocytophilum [GN:aph]	948	bacteria	wikipedia		
+DOID:12365	Induced malaria (disorder)	Plasmodium ovale wallikeri	864142	protozoa	wikipedia		
+DOID:1024	leprosy	Mycobacterium lepromatosis	480418	bacteria	wikipedia		
+DOID:12140	American trypanosomiasis	Trypanosoma cruzi#Trypanosoma cruzi [GN:tcr]	5693	protozoa	wikipedia		
+DOID:11055	Pasteurella infection	Pasteurella	745	bacteria	wikipedia		
+DOID:1395	schistosomiasis	Schistosoma mansoni#Schistosoma mansoni [GN:smm]	6183	worm	wikipedia		
+DOID:0050256	angiostrongyliasis	Angiostrongylus costaricensis	334426	worm	wikipedia		
+DOID:11338	Infection due to Clostridium tetani (disorder)	Clostridium tetani#Clostridium tetani [GN:ctc]	1513	bacteria	wikipedia		
+DOID:1562	Chromoblastomycosis (disorder)	Fonsecaea pedrosoi#Fonsecaea pedrosoi	40355	fungi	wikipedia		
+DOID:8781	german measles	Rubella virus#Rubella virus [GN:T40070]	11041	virus	wikipedia		
+DOID:1496	Echinococcosis of liver (disorder)	Echinococcus granulosus#Echinococcus granulosus	6210	worm	wikipedia		
+DOID:2312	Nocardia infectious disease	Nocardia	1817	bacteria	wikipedia		
+DOID:13336	Congenital toxoplasmosis	Toxoplasma gondii#Toxoplasma gondii [GN:tgo]	5811	protozoa	wikipedia		
+DOID:10074	Hymenolepis infectious disease	Hymenolepis diminuta#Hymenolepis diminuta	6216	worm	wikipedia		
+DOID:12155	LCM	Lymphocytic choriomeningitis virus#Lymphocytic choriomeningitis mammarenavirus [GN:T40091]	11623	virus	wikipedia		
+DOID:0050398	Carrion's Disease	Bartonella bacilliformis#Bartonella bacilliformis (Oroya fever and bacillary angiomatosis) [GN:bbk]	774	bacteria	wikipedia		
+DOID:7551	chronic gonococcal infectious disease of lower genitourinary tract	Neisseria gonorrhoeae#Neisseria gonorrhoeae [GN:ngo ngk]	485	bacteria	wikipedia		
+DOID:12365	Induced malaria (disorder)	Plasmodium <subgenus>	418103	protozoa	wikipedia		
+DOID:12750	cyclosporiasis	Cyclospora cayetanensis	88456	protozoa	wikipedia		
+DOID:14068	Black water fever (disorder)	Plasmodium <subgenus>	418103	protozoa	wikipedia		
+DOID:399	Tuberculoma (finding)	Mycobacterium tuberculosis#Mycobacterium tuberculosis [GN:mtu mtc mra mtf mtb mtg mti mte mtl mtj mtuh mtuc mtue]	1773	bacteria	wikipedia		
+DOID:0050596	Beef tapeworm infection	Taenia multiceps	94034	worm	wikipedia		
+DOID:11263	Chlamydia trachomatis infectious disease	Chlamydia trachomatis#Chlamydia trachomatis [GN:ctr cta ctb ctl ctj]	813	bacteria	wikipedia		
+DOID:11258	Debre's Syndrome	Bartonella henselae#Bartonella henselae (Cat-scratch disease) [GN:bhe]	38323	bacteria	wikipedia		
+DOID:12403	Athlete's foot	Trichophyton	5550	fungi	wikipedia		
+DOID:456	Ascariasis (disorder)	Ascaris lumbricoides#Ascaris lumbricoides	6252	worm	wikipedia		
+DOID:10881	Vesicular stomatitis and exanthem	Coxsackie A virus type 16	31704	virus	wikipedia		
+DOID:12205	Dengue Fever	Dengue virus type 3	11069	virus	wikipedia		
+DOID:9643	Babesiasis	Babesia duncani#Babesia duncani	323732	protozoa	wikipedia		
+DOID:10699	Infection by Paragonimus (disorder)	Paragonimus skrjabini#Paragonimus skrjabini	59630	worm	wikipedia		
+DOID:11262	ornithosis	Chlamydophila psittaci#Chlamydophila psittaci [GN:chp chb cht]	83554	bacteria	wikipedia		
+DOID:0050596	Beef tapeworm infection	Taenia saginata#Taenia saginata	6206	worm	wikipedia		
+DOID:1024	leprosy	Mycobacterium leprae#Mycobacterium leprae [GN:mlb] (from Brazil)#Mycobacterium leprae [GN:mle] (from India)	1769	bacteria	wikipedia		
+DOID:10699	Infection by Paragonimus (disorder)	Paragonimus kellicotti#Paragonimus kellicotti	100269	worm	wikipedia		
+DOID:9065	Leishmaniasis (disorder)	Leishmania <subgenus>	38568	protozoa	wikipedia		
+DOID:11405	corynebacterium infection	Corynebacterium diphtheriae#Corynebacterium diphtheriae [GN:cdi cdd cdw cdz]	1717	bacteria	wikipedia		
+DOID:8536	Shingles	Varicella Zoster Virus	10335	virus	wikipedia		
+DOID:12053	(Cryptococcosis & European) or (torula) or (Busse Buschkes disease)	Cryptococcus neoformans#Cryptococcus neoformans [GN:cne cnb]	5207	fungi	wikipedia		
+DOID:0050025	HGE	Ehrlichia ewingii	947	bacteria	wikipedia		
+DOID:8659	chickenpox	Varicella Zoster Virus#Human herpesvirus 3 [GN:T40078]	10335	virus	wikipedia		
+DOID:3292	monkeypox	Monkeypox virus#Monkeypox virus [GN:T40083]	10244	virus	wikipedia		
+DOID:13767	Clonorchiasis (disorder)	Clonorchis sinensis#Clonorchis sinensis	79923	worm	wikipedia		
+DOID:14068	Black water fever (disorder)	Plasmodium <genus>	5820	protozoa	wikipedia		
+DOID:11165	common wart	Human papillomavirus	10566	virus	wikipedia		
+DOID:7426	cutaneous anthrax	Bacillus anthracis#Bacillus anthracis [GN:ban bar bat bai bax bans]	1392	bacteria	wikipedia		
+DOID:12211	Bancroftian elephantiasis (disorder)	Wuchereria bancrofti#Wuchereria bancrofti	6293	worm	wikipedia		
+DOID:0050096	dermatophytosis of beard	Trichophyton	5550	fungi	wikipedia		
+DOID:8478	Actinomycotic madura foot (disorder)	Actinomyces israelii#Actinomyces israelii	1659	bacteria	wikipedia		
+DOID:14418	Dracontiasis	Dracunculus medinensis#Dracunculus medinensis	318479	worm	wikipedia		
+DOID:8912	Infection by Cladosporium werneckii	Hortaea werneckii	91943	fungi	wikipedia		
+DOID:9584	Venezuelan equine encephalitis	Venezuelan equine encephalitis virus#Venezuelan equine encephalitis virus [GN:T40028]	11036	virus	wikipedia		
+DOID:13768	Infection by Opisthorchis	Opisthorchis viverrini#Opisthorchis viverrini	6198	worm	wikipedia		
+DOID:13564	Aspergillosis	Aspergillus	5052	fungi	wikipedia		
+DOID:12711	black piedra	Piedraia hortae	147573	fungi	wikipedia		
+DOID:0050495	Roseola Infantum	Human herpesvirus 7#Human herpesvirus 7 [GN:T40076]	10372	virus	wikipedia		
+DOID:635	AIDS	HIV <SHIV>	57667	virus	wikipedia		
+DOID:8478	Actinomycotic madura foot (disorder)	Actinomyces gerencseriae#Actinomyces gerencseriae	52769	bacteria	wikipedia		
+DOID:8295	Infestation by Sarcoptes scabiei	Sarcoptes scabiei#Sarcoptes scabiei	52283	insect	wikipedia		
+DOID:0050196	Venezuelan hemorrhagic fever	Guanarito virus#Guanarito mammarenavirus [GN:T40007]	45219	virus	wikipedia		
+DOID:12179	Dermatophytosis of the body (disorder)	Trichophyton	5550	fungi	wikipedia		
+DOID:12662	Mucocutaneous-lymphangitic paracoccidioidomycosis	Paracoccidioides brasiliensis#Paracoccidioides brasiliensis [GN:pbn]	121759	fungi	wikipedia		
+DOID:10112	African sleeping sickness	Trypanosoma brucei#Trypanosoma brucei [GN:tbr]	5691	protozoa	wikipedia		
+DOID:0050052	Brazillian spotted	Rickettsia rickettsii	783	bacteria	wikipedia		
+DOID:7457	Enterobius vermicularis infection	Enterobius vermicularis#Enterobius vermicularis	51028	worm	wikipedia		
+DOID:14262	Candidiasis of mouth	Candida <Saccharomycetales>	5475	fungi	wikipedia		
+DOID:14484	Sporotrichosis (disorder)	Sporothrix schenckii#Sporothrix schenckii	29908	fungi	wikipedia		
+DOID:9060	Infection by Pityrosporum furfur	Malassezia	55193	fungi	wikipedia		
+DOID:12365	Induced malaria (disorder)	Plasmodium malariae#Plasmodium malariae	5858	protozoa	wikipedia		
+DOID:635	AIDS	HIV	12721	virus	wikipedia		
+DOID:10458	Legionella infection (disorder)	Legionella pneumophila#Legionella pneumophila [GN:lpf lpp lpn lpc lpa lpe]	446	bacteria	wikipedia		
+DOID:2312	Nocardia infectious disease	Nocardia asteroides	1824	bacteria	wikipedia		
+DOID:0050256	angiostrongyliasis	Angiostrongylus	6312	worm	wikipedia		
+DOID:1395	schistosomiasis	Schistosoma	6181	worm	wikipedia		
+DOID:2832	Geotrichosis (disorder)	Geotrichum candidum	1173061	fungi	wikipedia		
+DOID:10881	Vesicular stomatitis and exanthem	Coxsackie A virus type 6	86107	virus	wikipedia		
+DOID:8566	Herpesvirus hominis disease	Herpes simplex virus 2#Human herpesvirus 2 [GN:T40074]	10310	virus	wikipedia		
+DOID:0050194	Argentine hemorrhagic fever	Junin virus#Junin mammarenavirus [GN:T40005]	11619	virus	wikipedia		
+DOID:11573	Infection by Listeria monocytogenes	Listeria monocytogenes#Listeria monocytogenes [GN:lmo lmf lmc lmn lmy lmp lmx lmoj lmz lmoa lmoc lmot lmon lmol lmoz lmom]	1639	bacteria	wikipedia		
+DOID:9065	Leishmaniasis (disorder)	Leishmania <genus>	5658	protozoa	wikipedia		
+DOID:1496	Echinococcosis of liver (disorder)	Echinococcus oligarthrus	6212	worm	wikipedia		
+DOID:13034	Relapsing fever	Borrelia recurrentis#Borrelia recurrentis [GN:bre] (Louse-borne relapsing fever)	44449	bacteria	wikipedia		
+DOID:12287	CHF Congo virus	Crimean-Congo hemorrhagic fever virus#Crimean-Congo hemorrhagic fever virus [GN:T40011]	1980519	virus	wikipedia		
+DOID:8469	Influenza with non-respiratory manifestation (disorder)	Influenza A virus (A/Hong Kong/1073/99(H9N2)) [GN:T40038]#Influenza A virus (A/Korea/426/1968(H2N2)) [GN:T40036]#Influenza A virus (A/New York/392/2004(H3N2)) [GN:T40037]#Influenza A virus (A/Puerto Rico/8/1934(H1N1)) [GN:T40035]	11320	virus	wikipedia		
+DOID:12385	Shigella boydii infectious disease	Shigella	620	bacteria	wikipedia		
+DOID:10699	Infection by Paragonimus (disorder)	Paragonimus africanus#Paragonimus africanus	434055	worm	wikipedia		
+DOID:11256	Classical typhus (fever)	Rickettsia	780	bacteria	wikipedia		
+DOID:9643	Babesiasis	Babesia equi	5872	protozoa	wikipedia		
+DOID:1252	Infection by Trichuris trichura	Trichuris trichiura#Trichuris trichiura	36087	worm	wikipedia		
+DOID:1395	schistosomiasis	Schistosoma japonicum#Schistosoma japonicum	6182	worm	wikipedia		
+DOID:1496	Echinococcosis of liver (disorder)	Echinococcus multilocularis#Echinococcus multilocularis	6211	worm	wikipedia		
+DOID:13775	PLANTAR WART	Human papillomavirus	10566	virus	wikipedia		
+DOID:4325	Ebola hemorrhagic fever	Ebolavirus	186536	virus	wikipedia		
+DOID:10773	Black death	Yersinia pestis	632	bacteria	wikipedia		
+DOID:13258	Fever: typhoid or enteric	Salmonella enterica subsp. enterica	59201	bacteria	wikipedia		
+DOID:0050481	Rat-Flea Typhus	Rickettsia typhi	785	bacteria	wikipedia		
+DOID:1328	Rift Valley fever	Rift Valley fever virus#Rift Valley fever virus [GN:T40030]	11588	virus	wikipedia		
+DOID:9159	(Gas gangrene) or (Clostridium infection)	Clostridium perfringens#Clostridium perfringens [GN:cpe cpf cpr]	1502	bacteria	wikipedia		
+DOID:1395	schistosomiasis	Schistosoma haematobium#Schistosoma haematobium	6185	worm	wikipedia		
+DOID:0050160	inhalation anthrax	Bacillus anthracis#Bacillus anthracis [GN:ban bar bat bai bax bans]	1392	bacteria	wikipedia		
+DOID:9537	Lassa fever	Lassa virus	11620	virus	wikipedia		
+DOID:946	dientamoebiasis	Dientamoeba fragilis#Dientamoeba fragilis	43352	protozoa	wikipedia		
+DOID:11339	Pneumocystis carinii pneumonia	Pneumocystis jirovecii#Pneumocystis jirovecii	42068	fungi	wikipedia		
+DOID:10242	ehrlichiosis	Ehrlichia ewingii	947	bacteria	wikipedia		
+DOID:10955	Infection by Strongyloides (disorder)	Strongyloides stercoralis#Strongyloides stercoralis	6248	worm	wikipedia		
+DOID:5052	Melioidosis	Burkholderia pseudomallei#Burkholderia pseudomallei [GN:bps bpm bpl bpd bpr bpse bpz bpq]	28450	bacteria	wikipedia		
+DOID:11256	Classical typhus (fever)	Rickettsia typhi#Rickettsia typhi [GN:rty] (murine flea-borne typhus)	785	bacteria	wikipedia		
+DOID:12365	Induced malaria (disorder)	Plasmodium knowlesi	5850	protozoa	wikipedia		
+DOID:10881	Vesicular stomatitis and exanthem	Coxsackie A virus type 9	12067	virus	wikipedia		
+DOID:9159	(Gas gangrene) or (Clostridium infection)	Clostridium	1485	bacteria	wikipedia		
+DOID:10264	mumps	Mumps virus#Mumps virus [GN:T40034]	1979165	virus	wikipedia		
+DOID:12474	Capillaria infection (disorder)	Capillaria hepatica	1239592	worm	wikipedia		
+DOID:1022	pinta disease	Treponema pallidum	160	bacteria	wikipedia		
+DOID:3055	Paratyphoid	Paratyphi A	54388	bacteria	wikipedia		
+DOID:3055	Paratyphoid	Paratyphi B	57045	bacteria	wikipedia		
+DOID:3055	Paratyphoid	Paratyphi C	57046	bacteria	wikipedia		
+DOID:9063	Dermatitis exfoliativa neonatorum	Staphylococcus aureus	1280	bacteria	wikipedia		
+DOID:934	viral infectious disease	no_match	no_taxid	no_type	disease-ontology.org		
+DOID:0050117	disease by infectious agent	no_match	no_taxid	no_type	disease-ontology.org		
+DOID:0050338	primary bacterial infectious disease	no_match	no_taxid	no_type	disease-ontology.org		
+DOID:1398	parasitic infectious disease	Trichomonas vaginalis	5722	bacteria	pubmed	PMID:29035239	
+DOID:1564	fungal infectious disease	Rhizopus microspores	58291	fungi	pubmed	PMID:29049207	
+DOID:104	bacterial infectious disease	no_match	no_taxid	no_type	disease-ontology.org		
+DOID:2789	parasitic protozoa infectious disease	no_match	no_taxid	no_type	disease-ontology.org		
+DOID:0050339	commensal bacterial infectious disease	no_match	no_taxid	no_type	disease-ontology.org		
+DOID:0050340	opportunistic bacterial infectious disease	Mycobacterium avium complex	37162	bacteria	pubmed	PMID:26023092	
+DOID:4110	parasitic ectoparasitic infectious disease	scabies	1408500	insect	pubmed	PMID:29018829	
+DOID:7894	mite infestation	scabies	1408500	insect	pubmed	PMID:28797273	
+DOID:11079	leech infestation	leeches	55824	insect	pubmed	PMID:26809923	
+DOID:4109	tick infestation	Haemaphysalis longicornis	44386	insect	pubmed	PMID:29085376	
+DOID:13078	eumycotic mycetoma	Madurella mycetomatis	100816	fungi	pubmed	PMID:19886776	
+DOID:2473	opportunistic mycosis	Candida albicans	5476	fungi	pubmed	PMID:27452427	
+DOID:0050133	superficial mycosis	Hortaea werneckii	91943	fungi	pubmed	PMID:28954116	
+DOID:0050135	subcutaneous mycosis	Nocardia brasiliensis	37326	bacteria	pubmed	PMID:29033815	
+DOID:0050292	primary systemic mycosis	no_match	no_taxid	no_type	disease-ontology.org		
+DOID:0050136	systemic mycosis	Paracoccidioides sp.	1939674	protozoa	pubmed	PMID:29048286	
+DOID:0050136	systemic mycosis	Cryptococcus gattii	37769	fungi	pubmed	PMID:28992125	
+DOID:883	parasitic helminthiasis infectious disease	Ascaris lumbricoides	6252	worm	pubmed	PMID:29039336	
+DOID:883	parasitic helminthiasis infectious disease	Trichuris trichura	36087	worm	pubmed	PMID:29039336	
+DOID:883	parasitic helminthiasis infectious disease	Enterobius vermicularis	51028	worm	pubmed	PMID:29039336	
+DOID:883	parasitic helminthiasis infectious disease	Ancylostoma duodenale	51022	worm	pubmed	PMID:29039336	
+DOID:12096	sodoku disease	Spirillium minus(minor)	967	bacteria	disease-ontology.org	TaxID is for Spirillium, superclass of the bacteria	
+DOID:11285	tick paralysis	Dermacentor andersoni	34620	insect	disease-ontology.org		
+DOID:11285	tick paralysis	Dermacentor variabilis	34621	insect	disease-ontology.org		
+DOID:11285	tick paralysis	Amblyomma americanum	6943	insect	disease-ontology.org		
+DOID:11285	tick paralysi	Amblyomma maculatum	34609	insect	disease-ontology.org		
+DOID:11285	tick paralysi	Ixodes scapularis	6945	insect	disease-ontology.org		
+DOID:11285	tick paralysi	Ixodes pacificus	29930	insect	disease-ontology.org		
+DOID:11285	tick paralysi	Ixodes holocyclus	65647	insect	disease-ontology.org		
+DOID:11285	tick paralysi	Rhipicephalus sanguineus	34632	insect	disease-ontology.org		
+DOID:11285	tick paralysi	Otobius megnini	34606	insect	disease-ontology.org		
+DOID:0050134	cutaneous mycosis	Arthrodermataceae(dermatophytes)	34384	fungi	disease-ontology.org		
+DOID:0050134	cutaneous mycosis	Microsporum	34392	fungi	disease-ontology.org		
+DOID:0050134	cutaneous mycosis	Trichophyton	5550	fungi	disease-ontology.org		
+DOID:0050134	cutaneous mycosis	Epidermophyton	34390	fungi	disease-ontology.org		
+DOID:14049	phaeohyphomycosis	Exophiala dermatitidis	5970	fungi	disease-ontology.org		
+DOID:14049	phaeohyphomycosis	Phialophora	5600	fungi	disease-ontology.org		
+DOID:14049	phaeohyphomycosis	Bipolaris hawaiiensis(Curvularia hawaiiensis)	1230527	fungi	disease-ontology.org		
+DOID:14049	phaeohyphomycosis	Exserohilum	91493	fungi	disease-ontology.org		
+DOID:14049	phaeohyphomycosis	Cladophialophora bantiana	89940	fungi	disease-ontology.org		
+DOID:14049	phaeohyphomycosis	Phaeoannellomyces	66225	fungi	disease-ontology.org		
+DOID:14049	phaeohyphomycosis	Aureobasidium	5579	fungi	disease-ontology.org		
+DOID:14049	phaeohyphomycosis	Cladosporium cladosporoides	29917	fungi	disease-ontology.org		
+DOID:14049	phaeohyphomycosis	Alternaria	5598	fungi	disease-ontology.org		
+DOID:14049	phaeohyphomycosis	Rhinocladiella mackenziei	86056	fungi	disease-ontology.org		
+DOID:11165	common wart	Human papillomavirus type 2	333751	virus	disease-ontology.org		
+DOID:11165	common wart	Human papillomavirus type 4	10617	virus	disease-ontology.org		
+DOID:13775	plantar wart	Human papillomavirus type 2	333751	virus	disease-ontology.org		
+DOID:13775	plantar wart	Human papillomavirus type 4	10617	virus	disease-ontology.org		
+DOID:13775	plantar wart	Human papillomavirus type 63	28311	virus	disease-ontology.org		
+DOID:0050072	adiaspiromycosis	Chrysosporium parvum	41283	fungi	disease-ontology.org		
+DOID:0050072	adiaspiromycosis	Emmonsia crescens	73230	fungi	disease-ontology.org		
+DOID:0050246	granulomatous amebic encephalitis	Balamuthia mandrillaris	66527	protozoa	disease-ontology.org		
+DOID:0050251	coenurosis	Taenia multiceps	94034	worm	disease-ontology.org		
+DOID:0050251	coenurosis	Taenia serialis	94035	worm	disease-ontology.org		
+DOID:0050254	acanthocephaliasis	Macracanthorhynchus	60533	worm	disease-ontology.org		
+DOID:0050254	acanthocephaliasis	Moniliformis moniliformis	10237	worm	disease-ontology.org		
+DOID:0050289	fusariosis	Fusarium solani	169388	fungi	disease-ontology.org		
+DOID:0050289	fusariosis	Fusarium oxysporum	5507	fungi	disease-ontology.org		
+DOID:1254	trichostrongylosis	Trichostrongylus colubriformis	6319	worm	disease-ontology.org		
+DOID:1254	trichostrongylosis	Trichostrongylus axei	40349	worm	disease-ontology.org		
+DOID:14115	toxic shock syndrome	Streptococcus pyogenes	1314	bacteria	disease-ontology.org		
+DOID:14115	toxic shock syndrome	Staphylococcus aureus	1280	bacteria	disease-ontology.org		
+DOID:5362	focal epithelial hyperplasia	human papillomavirus type 13	10573	virus	disease-ontology.org		
+DOID:5362	focal epithelial hyperplasia	human papillomavirus type 32	333763	virus	disease-ontology.org		
+DOID:0050291	parasitic Ichthyosporea infectious disease	Ichthyosporea	127916	protozoa	disease-ontology.org		
+DOID:2755	Mycobacterium avium complex disease	Mycobacterium avium comple	37162	bacteria	disease-ontology.org		
+DOID:1273	respiratory syncytial virus infectious disease	Respiratory syncytial virus	12814	virus	disease-ontology.org		
+DOID:0050517	Barmah Forest virus disease	Barmah Forest virus	11020	virus	disease-ontology.org		
+DOID:3107	toxascariasis	Toxascaris leonina	59264	worm	disease-ontology.org		
+DOID:0050253	mesocestoidiasis	Mesocestoides lineatus	160008	worm	disease-ontology.org		
+DOID:0050174	Kunjin encephalitis	Kunjin virus	11077	virus	disease-ontology.org		
+DOID:0050175	tick-borne encephalitis	Tick-borne encephalitis virus	11084	virus	disease-ontology.org		
+DOID:0050179	Powassan encephalitis	Powassan encephalitis	11083	virus	disease-ontology.org		
+DOID:10845	St. Louis encephalitis	St. Louis encephalitis virus	11080	virus	disease-ontology.org		
+DOID:2365	West Nile encephalitis	West Nile virus	11082	virus	disease-ontology.org		
+DOID:0050198	Chapare hemorrhagic fever	Chapare mammarenavirus	499556	virus	disease-ontology.org		
+DOID:0050199	Whitewater Arroyo hemorrhagic fever	Whitewater Arroyo mammarenavirus	46919	virus	disease-ontology.org		
+DOID:0050202	lujo hemorrhagic fever	Lujo mammarenavirus	649188	virus	disease-ontology.org		
+DOID:0050250	philophthalmiasis	Philophthalmus	685953	worm	disease-ontology.org		
+DOID:0050260	dioctophymiasis	Dioctophyme renale	513045	worm	disease-ontology.org		
+DOID:0050261	thelaziasis	Thelazia callipaeda	103827	worm	disease-ontology.org		
+DOID:0050278	basidiobolomycosis	Basidiobolus ranarum	34480	fungi	disease-ontology.org		
+DOID:0050279	conidiobolomycosis	Conidiobolus	34487	fungi	disease-ontology.org		
+DOID:0050288	penicilliosis	Talaromyces marneffei(Penicillium marneffei)	37727	fungi	disease-ontology.org		
+DOID:0050290	trichosporonosis	Trichosporon	5552	fungi	disease-ontology.org		
+DOID:0060859	salmonellosis	Salmonella	590	bacteria	disease-ontology.org		
+DOID:10113	trypanosomiasis	Trypanosoma	5690	protozoa	disease-ontology.org		
+DOID:10250	louping ill	Louping ill virus	11086	virus	disease-ontology.org		
+DOID:10882	epidemic pleurodynia	Enterovirus B	138949	virus	disease-ontology.org		
+DOID:11186	allescheriosis	Scedosporium boydii	5597	fungi	disease-ontology.org		
+DOID:11336	rhinoscleroma	Klebsiella pneumoniae subsp. Rhinoscleromatis	39831	bacteria	disease-ontology.org		
+DOID:11337	Lemierre's syndrome	Fusobacterium necrophorum	859	bacteria	disease-ontology.org		
+DOID:1217	fascioloidiasis	Fascioloides magna	394415	worm	disease-ontology.org		
+DOID:1219	dicrocoeliasis	Dicrocoelium dendriticum	57078	worm	disease-ontology.org		
+DOID:1255	trichostrongyloidiasis	Trichostrongyloidea	6314	worm	disease-ontology.org		
+DOID:13238	Haverhill fever	Streptobacillus moniliformis	34105	bacteria	disease-ontology.org		
+DOID:13800	inclusion conjunctivitis	Chlamydia trachomatis	813	bacteria	disease-ontology.org		
+DOID:1563	dermatomycosis	Ascomycota	4890	fungi	disease-ontology.org		
+DOID:2112	cystoisosporiasis	Cystoisospora belli	482538	protozoa	disease-ontology.org		
+DOID:2113	coccidiosis	Coccidia 	5796	protozoa	disease-ontology.org		
+DOID:2929	Newcastle disease	Newcastle disease virus(Avian avulavirus 1)	11176	virus	disease-ontology.org		
+DOID:2934	aleutian mink disease	 Aleutian mink disease virus	28314	virus	disease-ontology.org		
+DOID:3108	ascaridiasis	Ascaridia	46684	worm	disease-ontology.org		
+DOID:3298	vaccinia	Vaccinia virus	10245	virus	disease-ontology.org		
+DOID:8729	milker's nodule	 Pseudocowpox virus	129726	virus	disease-ontology.org		
+DOID:3332	haemonchiasis	Haemonchus	6288	worm	disease-ontology.org		
+DOID:3733	theileriasis	Theileria	5873	protozoa	disease-ontology.org		
+DOID:3983	oesophagostomiasis	Oesophagostomum bifurcum	61179	worm	disease-ontology.org		
+DOID:3985	ostertagiasis	Ostertagia	6316	worm	disease-ontology.org		
+DOID:4974	actinobacillosis	Actinobacillus ureae	723	bacteria	disease-ontology.org		
+DOID:5154	borna disease	Borna disease virus	12455	virus	disease-ontology.org		
+DOID:8399	trombiculiasis	Leptotrombidium deliense	299467	insect	disease-ontology.org		
+DOID:8484	maple bark strippers' lung	Cryptostroma corticale	1463975	fungi	disease-ontology.org		
+DOID:8771	contagious pustular dermatitis	Orf virus	10258	virus	disease-ontology.org		
+DOID:8956	cowpox	Cowpox virus	10243	virus	disease-ontology.org		
+DOID:9210	geniculate herpes zoster	Human alphaherpesvirus 3	10335	virus	disease-ontology.org		
+DOID:931	monieziasis	Moniezia expansa	28841	worm	disease-ontology.org		
+DOID:9640	sarcocystosis	Sarcocystis	5812	protozoa	disease-ontology.org		
+DOID:11266	Hemorrhagic fever	Puumala virus	1980486	virus	disease-ontology.org		
+DOID:11266	Hemorrhagic fever	Saaremaa virus	159479	virus	disease-ontology.org		
+DOID:11266	Hemorrhagic fever	Seoul virus	1980490	virus	disease-ontology.org		
+DOID:11266	Hemorrhagic fever	Tula virus	1980494	virus	disease-ontology.org		
+DOID:11266	Hemorrhagic fever	Sin Nombre virus	1980491	virus	disease-ontology.org		
+DOID:11266	Hemorrhagic fever	Andes virus	1980456	virus	disease-ontology.org		
+DOID:11266	Hemorrhagic fever	Hantavirus	1980442	virus	disease-ontology.org		

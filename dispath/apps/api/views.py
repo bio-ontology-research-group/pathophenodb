@@ -32,29 +32,76 @@ links = read_links()
 def load_annotations(result):
     url = ABEROWL_API_URL + 'api/classes/'
     if 'Phenotypes' in result:
+        ids = []
+        sources = {}
+        methods = {}
+        for item in result['Phenotypes']:
+            ids.append(item['id'])
+            if 'source' in item:
+                sources[item['id']] = item['source']
+            if 'method' in item:
+                methods[item['id']] = item['method']
+            
         params = {
             'ontology': 'PhenomeNETSH',
-            'iri': result['Phenotypes']}
-        r = requests.get(url, params=params)
+            'iri':  ids}
+        r = requests.post(url, data=params)
         data = r.json()
         if data['status'] == 'ok':
             result['Phenotypes'] = data['result']
+            for key, item in result['Phenotypes'].items():
+                if item['class'] in sources:
+                    item['source'] = sources[item['class']]
+                if item['class'] in methods:
+                    item['method'] = methods[item['class']]
     if 'Diseases' in result:
+        ids = []
+        sources = {}
+        methods = {}
+        for item in result['Diseases']:
+            ids.append(item['id'])
+            if 'source' in item:
+                sources[item['id']] = item['source'] 
+            if 'method' in item:
+                methods[item['id']] = item['method'] 
         params = {
             'ontology': 'DOIDSH',
-            'iri': result['Diseases']}
-        r = requests.get(url, params=params)
+            'iri': ids}
+        r = requests.post(url, data=params)
         data = r.json()
         if data['status'] == 'ok':
             result['Diseases'] = data['result']
+            for key, item in result['Diseases'].items():
+                if item['class'] in sources:
+                    item['source'] = sources[item['class']]
+                if item['class'] in methods:
+                    item['method'] = methods[item['class']]
+
     if 'Pathogens' in result:
+        ids = []
+        sources = {}
+        methods = {}
+        for item in result['Pathogens']:
+            ids.append(item['id'])
+            if 'source' in item:
+                sources[item['id']] = item['source']
+            if 'method' in item:
+                methods[item['id']] = item['method'] 
         params = {
             'ontology': 'NCBITAXONSH',
-            'iri': result['Pathogens']}
-        r = requests.get(url, params=params)
+            'iri': ids}
+        r = requests.post(url, data=params)
+        print(r.text)
         data = r.json()
         if data['status'] == 'ok':
             result['Pathogens'] = data['result']
+            for key, item in result['Pathogens'].items():
+                if item['class'] in sources:
+                    item['source'] = sources[item['class']]
+                if item['class'] in methods:
+                    item['method'] = methods[item['class']]
+
+                
     return result
 
 
@@ -98,7 +145,7 @@ class SearchAPIView(APIView):
                     item.update(links[key])
                     item = load_annotations(item)
                     equivs.append(item)
-
+            #print(equivs)
             result['equivalents'] = equivs
 
             params['type'] = 'subclass'
@@ -113,7 +160,6 @@ class SearchAPIView(APIView):
                     item = load_annotations(item)
                     subs.append(item)
             result['subclasses'] = subs
-
             return Response({'status': 'ok', 'result': result})
         except Exception as e:
             traceback.print_exc(file=sys.stdout)
