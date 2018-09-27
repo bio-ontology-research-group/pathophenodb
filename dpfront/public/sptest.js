@@ -25,6 +25,7 @@ $.ajaxSetup({
 
 function runQuery() {
     $("#TableCont").empty();
+    $("#error").empty();
     var url = "http://patho.phenomebrowser.net/sparql/sparql/";
     var query = $("#query").val();
     var queryUrl = url + "?query=" + encodeURIComponent(query) + "&format=json";
@@ -41,6 +42,7 @@ function runQuery() {
         type: "post",
         dataType: 'jsonp',
         jsonp: 'callback',
+        timeout: 10000,
         success: function(data) {
 
             var mydata = eval(data.results.bindings);
@@ -48,17 +50,12 @@ function runQuery() {
             $(table).appendTo("#TableCont");
 
         },
-        error: function(xhr, status, error) {
-            var errorMessage = xhr.status + ': ' + xhr.statusText;
-            console.log(errorMessage);
-
+        error: function(xhr, textStatus, thrownError) {
+            $("#error").append('<iframe src="' + queryUrl + '" style="border:2px solid red;width: 100%;"></iframe>');
         }
-    })
+    });
 
 }
-$(document).ajaxError(function(event, jqxhr, settings, thrownError) {
-    alert(jqXHR.responseText);
-});
 $.makeTable = function(mydata) {
     console.log("processing");
     var table = $('<table border=1>').addClass("table table-striped");
@@ -89,7 +86,7 @@ WHERE
   {
     ?s1 RO:0002200 ?phenotype .
     ?s1 RO:0002556 ?pathogen  
-  }`);
+  } limit 20`);
     } else if (example_no == 2) {
         $("#query").val(`PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
 
@@ -98,7 +95,7 @@ WHERE
   {
     ?s RO:0002200 ?o 
   
-  }`);
+  } limit 20`);
     } else if (example_no == 3) {
         $("#query").val(`PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
 SELECT ?s ?o 
@@ -106,7 +103,7 @@ WHERE
   {
     ?s RO:0002556 ?o 
   
-  }`);
+  } limit 20`);
     } else if (example_no == 4) {
         $("#query").val(`PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
 SELECT ?s ?o 
@@ -114,7 +111,7 @@ WHERE
   {
     ?s RO:0002302 ?o 
   
-  }`);
+  } limit 20`);
     } else if (example_no == 5) {
         $("#query").val(`PREFIX RO: <http://bio2vec.net/RO#>
 SELECT  ?pathogen ?protein
@@ -122,7 +119,7 @@ WHERE
   {
     ?s1 RO:resistant_protein ?protein .
     ?pathogen RO:antibiotic_resistance ?s1 
-  }`);
+  } limit 20`);
     } else if (example_no == 6) {
         $("#query").val(`PREFIX RO: <http://bio2vec.net/RO#>
 SELECT ?pathogen ?DNA_accessions 
@@ -130,7 +127,7 @@ WHERE
   {
     ?s RO:resistant_DNAaccession ?DNA_accessions.
     ?pathogen RO:antibiotic_resistance ?s
-  }`);
+  } limit 20`);
     } else if (example_no == 7) {
         $("#query").val(`PREFIX RO: <http://bio2vec.net/RO#>
 SELECT ?pathogen ?drug
@@ -138,7 +135,7 @@ WHERE
   {
     ?s RO:resistant_to_drug ?drug .
     ?pathogen RO:antibiotic_resistance ?s
-  }`);
+  } limit 20`);
     } else if (example_no == 8) {
         $("#query").val(`PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
   PREFIX NCBITaxon: <http://purl.obolibrary.org/obo/NCBITaxon_>
