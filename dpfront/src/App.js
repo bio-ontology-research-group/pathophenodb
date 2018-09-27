@@ -174,8 +174,9 @@ class App extends Component {
         <nav>
           <ul className="nav nav-justified">
 		{ content }
-	    	<li><a href="/media/downloads/patho_phenoDB.nt">SPARQL-File</a></li>
-		<li><a target="_blank" href="http://borg.kaust.edu.sa/Pages/People.aspx">Contact</a></li>
+	    	<li><a href="html2.html">SPARQL-Examples</a></li>	
+	    	<li><a target="_blank" href="http://patho.phenomebrowser.net/sparql/sparql/">Sparql endpoint</a></li>
+			<li><a target="_blank" href="http://borg.kaust.edu.sa/Pages/People.aspx">Contact</a></li>
 	    </ul>
         </nav>
 		</div>
@@ -608,7 +609,7 @@ on the Disease Ontology.
 	);
 	
     }
-   
+
     
     render() {
 	var section = (<div></div>);
