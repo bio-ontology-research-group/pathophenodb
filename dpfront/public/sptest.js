@@ -42,7 +42,7 @@ function runQuery() {
         type: "post",
         dataType: 'jsonp',
         jsonp: 'callback',
-        timeout: 10000,
+        timeout: 10500,
         success: function(data) {
 
             var mydata = eval(data.results.bindings);
@@ -80,101 +80,145 @@ $.makeTable = function(mydata) {
 function changetext(example_no) {
 
     if (example_no == 1) {
-        $("#query").val(`PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
-SELECT  ?pathogen ?phenotype 
-WHERE 
+        $("#query").val(`#List all the pathogens with their disease-phenotypes
+
+PREFIX SIO: <http://semanticscience.org/resource/SIO_>
+PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT distinct ?PA_ID ?pathogen  ?D_ID ?disease ?disease_pathogen_evidenced_code  ?P_ID ?phenotype ?disease_phenotype_evidenced_code  
+WHERE
   {
-    ?s1 RO:0002200 ?phenotype .
-    ?s1 RO:0002556 ?pathogen  
+    ?D_ID SIO:000255 ?o1 .
+    ?o1 RO:0002558 ?EC1_ID . 
+    ?o1 RO:0002200 ?P_ID .
+    ?D_ID SIO:000255 ?o .
+    ?o RO:0002558 ?EC2_ID .
+    ?o RO:0002556 ?PA_ID .
+    SERVICE <http://sparql.hegroup.org/sparql/> {
+       ?PA_ID rdfs:label ?pathogen.
+       ?P_ID rdfs:label ?phenotype .
+       ?D_ID rdfs:label ?disease .
+       ?EC1_ID rdfs:label ?disease_phenotype_evidenced_code .
+       ?EC2_ID rdfs:label ?disease_pathogen_evidenced_code .
+     }
+  
+
   } limit 20`);
     } else if (example_no == 2) {
-        $("#query").val(`PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
+        $("#query").val(`#List all disease with their phenotypes
 
-SELECT ?s ?o 
+PREFIX SIO: <http://semanticscience.org/resource/SIO_>
+PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT distinct ?Disease_ID ?Disease  ?Evidenced_Code  ?Phenotype_ID  ?Phenotype 
 WHERE 
   {
-    ?s RO:0002200 ?o 
-  
+    ?Disease_ID SIO:000255 ?o .  
+    ?o RO:0002558 ?EC_ID .
+    ?o RO:0002200 ?Phenotype_ID .
+  SERVICE <http://sparql.hegroup.org/sparql/> {
+       ?Disease_ID rdfs:label ?Disease .
+       ?Phenotype_ID rdfs:label ?phenotype .
+       ?EC_ID rdfs:label ?Evidenced_Code .
+     }
+
   } limit 20`);
     } else if (example_no == 3) {
-        $("#query").val(`PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
-SELECT ?s ?o 
+        $("#query").val(`#List all diseases which caused by pathogens
+
+PREFIX SIO: <http://semanticscience.org/resource/SIO_>
+PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT  ?Disease_ID ?Disease ?Pathogen_ID ?Pathogen ?Evidenced_Code  
 WHERE 
   {
-    ?s RO:0002556 ?o 
-  
+    ?Disease_ID SIO:000255 ?o .  
+    ?o RO:0002558 ?o1 .
+    ?o RO:0002556  ?Pathogen_ID .
+  SERVICE <http://sparql.hegroup.org/sparql/> {
+       ?Disease_ID rdfs:label ?Disease .
+       ?Pathogen_ID rdfs:label ?Pathogen .
+       ?o1 rdfs:label ?Evidenced_Code .
+     }
+
   } limit 20`);
     } else if (example_no == 4) {
-        $("#query").val(`PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
-SELECT ?s ?o 
+        $("#query").val(`#List all diseases along with the drugs used to treat them
+
+PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
+SELECT ?Disease_ID  ?Disease ?Drug_ID
 WHERE 
   {
-    ?s RO:0002302 ?o 
+    ?Disease_ID RO:0002302 ?Drug_ID .
+    SERVICE <http://sparql.hegroup.org/sparql/> {
+       ?Disease_ID rdfs:label  ?Disease .
+    }
+  } limit 50`);
+    } else if (example_no == 5) {
+        $("#query").val(`#List all the pathogens with their resistant proteins
+
+PREFIX RO: <http://bio2vec.net/RO#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT  ?Pathogen_ID ?Pathogen ?Protein_ID 
+WHERE   
+  {
+    ?s1 RO:resistant_protein ?Protein_ID .
+    ?Pathogen_ID RO:antibiotic_resistance ?s1 .
+    SERVICE <http://sparql.hegroup.org/sparql/> {
+       ?Pathogen_ID  rdfs:label  ?Pathogen.
+    }
+  
+  } limit 50`);
+    } else if (example_no == 6) {
+        $("#query").val(`#List all the pathogens with their resistant DNA accessions
+
+ PREFIX RO: <http://bio2vec.net/RO#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?Pathogen_ID ?Pathogen  ?DNA_accessions_ID 
+WHERE 
+  {
+    ?s RO:resistant_DNAaccession ?DNA_accessions_ID.
+    ?Pathogen_ID RO:antibiotic_resistance ?s .
+    SERVICE <http://sparql.hegroup.org/sparql/> {
+       ?Pathogen_ID  rdfs:label  ?Pathogen.
+    } 
+  
+  
+  } limit 10`);
+    } else if (example_no == 7) {
+        $("#query").val(`#List all the pathogens along with the resistant drugs
+
+PREFIX RO: <http://bio2vec.net/RO#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?Pathogen_ID ?Pathogen ?Drug_ID
+WHERE 
+  {
+    ?s RO:resistant_to_drug ?Drug_ID .
+    ?Pathogen_ID  RO:antibiotic_resistance ?s .
+    SERVICE <http://sparql.hegroup.org/sparql/> {
+       #?Drug_ID  rdfs:label  ?Drug .
+       ?Pathogen_ID  rdfs:label  ?Pathogen.
+    }
   
   } limit 20`);
-    } else if (example_no == 5) {
-        $("#query").val(`PREFIX RO: <http://bio2vec.net/RO#>
-SELECT  ?pathogen ?protein
-WHERE 
-  {
-    ?s1 RO:resistant_protein ?protein .
-    ?pathogen RO:antibiotic_resistance ?s1 
-  } limit 20`);
-    } else if (example_no == 6) {
-        $("#query").val(`PREFIX RO: <http://bio2vec.net/RO#>
-SELECT ?pathogen ?DNA_accessions 
-WHERE 
-  {
-    ?s RO:resistant_DNAaccession ?DNA_accessions.
-    ?pathogen RO:antibiotic_resistance ?s
-  } limit 20`);
-    } else if (example_no == 7) {
-        $("#query").val(`PREFIX RO: <http://bio2vec.net/RO#>
-SELECT ?pathogen ?drug
-WHERE 
-  {
-    ?s RO:resistant_to_drug ?drug .
-    ?pathogen RO:antibiotic_resistance ?s
-  } limit 20`);
     } else if (example_no == 8) {
-        $("#query").val(`PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
+        $("#query").val(`#For a given specific pathogen, list all the diseases that it can cause
+
+PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
+PREFIX SIO: <http://semanticscience.org/resource/SIO_>
   PREFIX NCBITaxon: <http://purl.obolibrary.org/obo/NCBITaxon_>
   PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT distinct ?id ?diseases 
+SELECT distinct ?D_ID ?Disease ?Evidenced_Code
 WHERE 
   {
-    ?id RO:0002556 NCBITaxon:1993
-    SERVICE <http://sparql.hegroup.org/sparql/> {
-       ?id rdfs:label ?diseases
+    ?D_ID SIO:000255  ?o .  
+    ?o RO:0002558  ?EC_ID .
+    ?o RO:0002556  NCBITaxon:1993 .
+     SERVICE <http://sparql.hegroup.org/sparql/> {
+        ?D_ID rdfs:label ?Disease .
+        ?EC_ID rdfs:label ?Evidenced_Code .
      }
+
   }`);
     }
 }
-
-/*
-
-    $.ajaxSetup({
-        error: function(jqXHR, exception) {
-            if (jqXHR.status === 0) {
-                alert('Not connect.n Verify Network.');
-            } else if (jqXHR.status == 404) {
-                alert('Requested page not found. [404]');
-            } else if (jqXHR.status == 500) {
-                alert('Internal Server Error [500].');
-            } else if (exception === 'parsererror') {
-                alert('Requested JSON parse failed.');
-            } else if (exception === 'timeout') {
-                alert('Time out error.');
-            } else if (exception === 'abort') {
-                alert('Ajax request aborted.');
-            } else {
-                alert('Uncaught Error.n' + jqXHR.responseText);
-            }
-        }
-    });
-
-
-.done(function(msg){  }).fail(function(jqXHR, exception) {
-        alert('Error - ' + exception);
-        console.log(exception);
-    });*/
