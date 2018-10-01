@@ -28,12 +28,27 @@ import groovyx.gpars.GParsPool;
 import groovy.json.JsonSlurper;
 
 
-def ontFile = this.args[0];
-def clsFile = this.args[1];
+def ont = this.args[0];
+
+def params = [
+    "phenomenet":[
+	"id": "Phenotype",
+	"file": "data/phenotype.4web.json"
+    ],
+    "ncbitaxon":[
+	"id": "TaxID",
+	"file": "data/pathogens.4web.json"
+    ],
+    "doid":[
+	"id": "DOID",
+	"file": "data/diseases.4web.json"
+    ],
+]
+
 
 OWLOntologyManager manager = OWLManager.createOWLOntologyManager()
 OWLOntology ontology = manager.loadOntologyFromOntologyDocument(
-    new File(ontFile))
+    new File("data/${ont}.owl"))
 
 OWLDataFactory fac = manager.getOWLDataFactory()
 ConsoleProgressMonitor progressMonitor = new ConsoleProgressMonitor()
@@ -51,16 +66,16 @@ def getAnchestors = { cls ->
 
 def classes = new HashSet<OWLClass>();
 
-def jsonObjects = new JsonSlurper().parseText(new File(clsFile).text);
+def jsonObjects = new JsonSlurper().parseText(new File(params[ont]["file"]).text);
 
 jsonObjects.each {
-    OWLClass cls = dataFactory.getOWLClass(IRI.create(it["TaxID"]));
+    OWLClass cls = dataFactory.getOWLClass(IRI.create(it[params[ont]["id"]]));
     classes.add(cls)
     classes.addAll(getAnchestors(cls))
 }
 
 def newManager = OWLManager.createOWLOntologyManager()
-def newOntology = newManager.createOntology(IRI.create("http://purl.obolibrary.org/obo/ncbitaxon.owl"))
+def newOntology = newManager.createOntology(IRI.create("http://purl.obolibrary.org/obo/${ont}.owl"))
 classes.each { cls ->
     ontology.getReferencingAxioms(cls, Imports.INCLUDED).each { ax ->
 	newOntology.addAxiom(ax);
@@ -71,4 +86,4 @@ classes.each { cls ->
     }
 }
 
-newManager.saveOntology(newOntology, IRI.create("file:/home/kulmanm/KAUST/CBRC/dispath/data/ncbitaxon-sh.owl"));
+newManager.saveOntology(newOntology, new FileOutputStream(new File("data/${ont}-sh.owl")));
