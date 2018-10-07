@@ -544,13 +544,21 @@ class App extends Component {
 		</p>
 		<p>
 		Current statistics:
-		<ul>
-		<li>1192  pathogen-disease associations</li>  
-	    <li>508 infectious diseases</li>
-	    <li>692 known pathogens (32 insects, 115 fungi, 208 bacteria, 48 protozoa, 175 viruses and 114 worms)</li>
-	    <li>476 of 508 diseases have phenotypes </li>
-	    <li>130 of 508 infectious diseases are linked to drugs from Sider.</li>
-	    <li>30 pathogens are linked to drug resistance information from ARO</li>
+		<ul> 
+		<li>1143  pathogen-disease associations with Manual Curation.</li> 
+		<li>4169  pathogen-disease associations with Manual Curation, and text mining.</li>
+		<li>1140  pathogen-disease associations linked to phenotypes with Manual Curation.</li>
+	    <li>3989  pathogen-disease associations linked to phenotypes with Manual Curation, and text mining.</li>
+	    <li>508   diseases linked to pathogens with Manual Curation.</li>
+	    <li>538   diseases linked to pathogens with Manual Curation, and text mining.</li>
+	    <li>488   diseases linked to pathogens and phenotypes with Manual Curation.</li>
+	    <li>511   diseases linked to pathogens and phenotypes with Manual Curation, and text mining.</li>
+	    <li>692   pathogens linked to phenotypes(insect: 32, fungi: 115, bacteria: 208, virus: 175, protozoa: 47, worm: 115) with Manual Curation.</li>
+	    <li>1642  pathogens linked to phenotypes(fungi: 220, insect: 367, bacteria: 404, virus: 358, worm: 199, protozoa: 98) with Manual Curation, and text mining.</li>
+	    <li>130   diseases with Drug information from Sider with Manual Curation.</li>
+	    <li>139   diseases with Drug information from Sider with Manual Curation, and text mining.</li>
+	    <li>30    pathogens with resistant information from ARO with Manual Curation.</li>
+	    <li>47    pathogens with resistant information from ARO with Manual Curation, and text mining.</li>
 		</ul>
 	    </p>
 		</div>
