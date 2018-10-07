@@ -1,5 +1,6 @@
 var result = '';
 $('#loading').hide();
+var ex_no=1;
 $(document).ready(function() {
     changetext(1);
 });
@@ -29,8 +30,8 @@ function runQuery() {
     var url = "http://patho.phenomebrowser.net/sparql/sparql/";
     var query = $("#query").val();
     var queryUrl = url + "?query=" + encodeURIComponent(query) + "&format=json";
-    console.log(query);
-    console.log(queryUrl);
+    //console.log(query);
+    //console.log(queryUrl);
     $.ajax({
         url: queryUrl,
         beforeSend: function() {
@@ -42,16 +43,16 @@ function runQuery() {
         type: "post",
         dataType: 'jsonp',
         jsonp: 'callback',
-        timeout: 15000,
+        timeout: 40000,
         success: function(data) {
-
             var mydata = eval(data.results.bindings);
             var table = $.makeTable(mydata);
             $(table).appendTo("#TableCont");
 
         },
         error: function(xhr, textStatus, thrownError) {
-            $("#error").append('<iframe src="' + queryUrl + '" style="border:2px solid red;width: 100%;"></iframe>');
+            queryUrl = url + "?query=" + encodeURIComponent(query) + "&format=text%2Fhtml";
+            $("#error").append('<iframe src="' + queryUrl + '" style="border:2px solid red;width: 100%;height:400px;"></iframe>');
         }
     });
 
@@ -78,7 +79,7 @@ $.makeTable = function(mydata) {
 
 
 function changetext(example_no) {
-
+    ex_no=example_no;
     if (example_no == 1) {
         $("#query").val(`#EX1:List all the pathogens with their disease-phenotypes
 
@@ -152,8 +153,9 @@ WHERE
     ?Disease_ID RO:0002302 ?Drug_ID .
     SERVICE <http://sparql.hegroup.org/sparql/> {
        ?Disease_ID rdfs:label  ?Disease .
+       FILTER (langMatches(lang(?Disease), "EN"))
     }
-  } limit 30`);
+  } limit 5`);
     } else if (example_no == 5) {
         $("#query").val(`#EX5:List all the pathogens with their resistant proteins
 
@@ -166,9 +168,10 @@ WHERE
     ?Pathogen_ID RO:antibiotic_resistance ?s1 .
     SERVICE <http://sparql.hegroup.org/sparql/> {
        ?Pathogen_ID  rdfs:label  ?Pathogen.
+       FILTER (langMatches(lang(?Pathogen), "EN"))
     }
   
-  } limit 30`);
+  } limit 10`);
     } else if (example_no == 6) {
         $("#query").val(`#EX6:List all the pathogens with their resistant DNA accessions
 
@@ -181,10 +184,11 @@ WHERE
     ?Pathogen_ID RO:antibiotic_resistance ?s .
     SERVICE <http://sparql.hegroup.org/sparql/> {
        ?Pathogen_ID  rdfs:label  ?Pathogen.
+       FILTER (langMatches(lang(?Pathogen), "EN"))
     } 
   
   
-  } limit 10`);
+  } limit 5`);
     } else if (example_no == 7) {
         $("#query").val(`#EX7:List all the pathogens along with the resistant drugs
 
@@ -198,9 +202,10 @@ WHERE
     SERVICE <http://sparql.hegroup.org/sparql/> {
        #?Drug_ID  rdfs:label  ?Drug .
        ?Pathogen_ID  rdfs:label  ?Pathogen.
+       FILTER (langMatches(lang(?Pathogen), "EN"))
     }
   
-  } limit 20`);
+  } limit 10`);
     } else if (example_no == 8) {
         $("#query").val(`#EX8:For a given specific pathogen, list all the diseases that it can cause
 
