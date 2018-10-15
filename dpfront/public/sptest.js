@@ -1,61 +1,50 @@
 var result = '';
 $('#loading').hide();
-var ex_no=1;
+var ex_no = 1;
 $(document).ready(function() {
     changetext(1);
 });
-$.ajaxSetup({
-    error: function(jqXHR, exception) {
-        if (jqXHR.status === 0) {
-            alert('Not connect.n Verify Network.');
-        } else if (jqXHR.status == 404) {
-            alert('Requested page not found. [404]');
-        } else if (jqXHR.status == 500) {
-            alert('Internal Server Error [500].');
-        } else if (exception === 'parsererror') {
-            alert('Requested JSON parse failed.');
-        } else if (exception === 'timeout') {
-            alert('Time out error.');
-        } else if (exception === 'abort') {
-            alert('Ajax request aborted.');
-        } else {
-            alert('Uncaught Error.n' + jqXHR.responseText);
-        }
-    }
-});
+
 
 function runQuery() {
-    $("#TableCont").empty();
-    $("#error").empty();
+    $("#result").empty();
+    var format = $('#format').val();
     var url = "http://patho.phenomebrowser.net/sparql/sparql/";
     var query = $("#query").val();
-    var queryUrl = url + "?query=" + encodeURIComponent(query) + "&format=json";
-    //console.log(query);
-    //console.log(queryUrl);
-    $.ajax({
-        url: queryUrl,
-        beforeSend: function() {
-            $('#loading').show();
-        },
-        complete: function() {
-            $('#loading').hide();
-        },
-        type: "post",
-        dataType: 'jsonp',
-        jsonp: 'callback',
-        timeout: 40000,
-        success: function(data) {
-            var mydata = eval(data.results.bindings);
-            var table = $.makeTable(mydata);
-            $(table).appendTo("#TableCont");
+    var queryUrl = '';
+    if (format != 'table') {
 
-        },
-        error: function(xhr, textStatus, thrownError) {
-            queryUrl = url + "?query=" + encodeURIComponent(query) + "&format=text%2Fhtml";
-            $("#error").append('<iframe src="' + queryUrl + '" style="border:2px solid red;width: 100%;height:400px;"></iframe>');
-        }
-    });
+        queryUrl = url + "?query=" + encodeURIComponent(query) + "&format=" + format;
+        console.log(queryUrl);
+        $("#result").append('<iframe src="' + queryUrl + '" style="border:2px solid black;width: 95%;height:400px;" name="PathoPhenoDB"></iframe>');
+    } else {
+        queryUrl = url + "?query=" + encodeURIComponent(query) + "&format=json";
+        console.log(queryUrl);
+        $.ajax({
+            url: queryUrl,
+            beforeSend: function() {
+                $('#loading').show();
+            },
+            complete: function() {
+                $('#loading').hide();
+            },
+            type: "post",
+            dataType: 'jsonp',
+            jsonp: 'callback',
+            timeout: 40000,
+            success: function(data) {
+                var mydata = eval(data.results.bindings);
+                var table = $.makeTable(mydata);
+                $(table).appendTo("#result");
 
+            },
+            error: function(xhr, textStatus, thrownError) {
+                queryUrl = url + "?query=" + encodeURIComponent(query) + "&format=text%2Fhtml";
+                $("#result").append('<iframe src="' + queryUrl + '" style="border:2px solid black;width: 100%;height:400px;"></iframe>');
+            }
+        });
+
+    }
 }
 $.makeTable = function(mydata) {
     console.log("processing");
@@ -79,7 +68,7 @@ $.makeTable = function(mydata) {
 
 
 function changetext(example_no) {
-    ex_no=example_no;
+    ex_no = example_no;
     if (example_no == 1) {
         $("#query").val(`#EX1:List all the pathogens with their disease-phenotypes
 

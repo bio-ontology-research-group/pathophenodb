@@ -19,9 +19,8 @@
                      <li class="active"><a href="/#/search">Search</a></li>
                      <li class=""><a href="/#/about">About</a></li>
                      <li class=""><a href="/#/help">Help</a></li>
-                     <li><a href="/html2.html">SPARQL-Examples</a></li>
-                     <li><a target="_blank" href="http://patho.phenomebrowser.net/sparql/sparql/">Sparql endpoint</a></li>
-                     <li><a target="_blank" href="http://borg.kaust.edu.sa/Pages/People.aspx">Contact</a></li>
+                     <li class=""><a href="/#/contact us">Contact Us</a></li>
+                     <li><a href="/html2.html">SPARQL</a></li>
                   </ul>
                </nav>
             </div>
@@ -32,12 +31,16 @@
                </div>
                
                <div class="row"></div>
-               <div class="row"></div>
+                             <div class="row"><div class='col-lg-12'>
+               <div >
+                  <strong>To programmatically query our SPARQL endpoint,</strong> please visit URL <strong><a href="http://patho.phenomebrowser.net/sparql/sparql/" target="_blank">  http://patho.phenomebrowser.net/sparql/sparql/</a></strong>.</br></br>
+               </div>
+               <div class="row">
                <div class="row">
                   
                   <div class='col-lg-6'>
                      <p>
-                        Examples queries:
+                        <strong><u>Examples queries:</u></strong>
                      </p>
                   </div>
                </div>
@@ -62,7 +65,6 @@
                   </div>
                   
                </div>
-               <div class="row">
                   <div class='col-lg-12'>
                      <textarea id="query" rows="10" cols="150" align="left" style="margin-bottom: 15px;">
                      PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
@@ -73,27 +75,35 @@
                      ?s1 RO:0002556 ?pathogen
                      }
                      </textarea>
-                     <div>
-                        <button type="button" style="margin-bottom: 15px;" onclick="runQuery()">Run query</button>
-                     </div>
-                     <div id="loading">Processing Query</div>
-                     <div id="TableCont"></div>
                   </div>
                </div>
-               <div class="row"><div class='col-lg-12' id="error"></div></div>
+               <div class="row"><div class='col-lg-6'>
+                  <button type="button" style="margin-bottom: 15px;" onclick="runQuery()">Run query</button>
+               </div>
+               <div class='col-lg-6'>
+                  <select id='format'>
+                     <option value="text%2Fhtml">HTML</option>
+                     <option value="json">JSON</option>
+                     <option value="xml">XML</option>
+                     <option value="table">Table</option>
+                  </select>
+               </div>
             </div>
-            <div></div>
-            <div></div>
-            <div class="row">
-               <div class="col-lg-4"></div>
-               <div class="col-lg-4"></div>
-               <div class="col-lg-4"></div>
+             <div class="row"><div class='col-lg-12' id="loading">Processing Query</div></div>
+            <div class="row"><div class='col-lg-12' id="result"><iframe height="200px" src="result.html" width="95%" name="PathoPhenoDB"></iframe>
             </div>
-            <footer class="footer">
-               <p>© 2017 BORG, CBRC, KAUST.</p>
-            </footer>
          </div>
+            </div>
+         <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4"></div>
+         </div>
+         <footer class="footer">
+            <p>© 2017 BORG, CBRC, KAUST.</p>
+         </footer>
       </div>
-      <script src="sptest.js?rndstr=<%= getRandomStr() %"></script>
-   </body>
+   </div>
+   <script src="sptest.js?rndstr=<%= getRandomStr() %"></script>
+</body>
 </html>

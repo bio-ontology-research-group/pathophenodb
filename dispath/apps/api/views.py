@@ -38,17 +38,14 @@ def load_annotations(result):
         for item in result['Phenotypes']:
             ids.append(item['id'])
             if 'source' in item:
-                #print(item)
                 sources[item['id']] = item['source']
             if 'method' in item:
-                methods[item['id']] = item['method']
-        print(ids)   
+                methods[item['id']] = item['method']  
         params = {
             'ontology': 'PhenomeNETSH',
             'iri':  ids}
         r = requests.post(url, data=params)
         data = r.json()
-        print(data)
         if data['status'] == 'ok':
             result['Phenotypes'] = data['result']
             for key, item in result['Phenotypes'].items():
@@ -71,7 +68,6 @@ def load_annotations(result):
             'iri': ids}
         r = requests.post(url, data=params)
         data = r.json()
-        print(data)
         if data['status'] == 'ok':
             result['Diseases'] = data['result']
             for key, item in result['Diseases'].items():
@@ -95,7 +91,7 @@ def load_annotations(result):
             'iri': ids}
         r = requests.post(url, data=params)
         data = r.json()
-        print(data)
+        #print(data)
         if data['status'] == 'ok':
             result['Pathogens'] = data['result']
             for key, item in result['Pathogens'].items():
@@ -134,7 +130,7 @@ class SearchAPIView(APIView):
             url = ABEROWL_API_URL + 'api/backend/'
 
             r = requests.get(url, params=params)
-            print(r.text)    
+            #print(r.text)    
             results = {}
             for res in r.json()["result"]:
                 results[res["class"]] = res

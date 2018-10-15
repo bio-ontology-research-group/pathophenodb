@@ -123,7 +123,6 @@ class App extends Component {
 
     executeQuery(section, query) {
 	var that = this;
-	    
 	fetch('/api/search?query=' + query + '&section=' + section)
 	    .then(function(response){
 		return response.json();
@@ -132,7 +131,9 @@ class App extends Component {
 		console.log(data);
 		if (data.status == 'ok') {
 		    console.log(data);
-		    that.setState({result: data.result});
+		    that.setState({ 
+		    	search: data.result.label,
+		    	result: data.result});
 		}
 	    });
 
@@ -157,7 +158,7 @@ class App extends Component {
     renderHeader() {
 	var page = this.state.page;
 	const menuItems = [
-	    'Search', 'About', 'Help'];
+	    'Search', 'About', 'Help','Contact Us'];
 	const content = menuItems.map(function(item) {
 	    var activeClass = '';
 	    if (item.toLowerCase() == page) {
@@ -174,9 +175,7 @@ class App extends Component {
         <nav>
           <ul className="nav nav-justified">
 		{ content }
-	    	<li><a href="html2.html">SPARQL-Examples</a></li>	
-	    	<li><a target="_blank" href="http://patho.phenomebrowser.net/sparql/sparql/">Sparql endpoint</a></li>
-			<li><a target="_blank" href="http://borg.kaust.edu.sa/Pages/People.aspx">Contact</a></li>
+	    	<li><a href="html2.html">SPARQL</a></li>	
 	    </ul>
         </nav>
 		</div>
@@ -245,7 +244,7 @@ class App extends Component {
 	    if (obj.subclasses.length > 0) {
 		subs = (
 		    	<div>
-			<p> <strong>Assosications of subclasses</strong></p>
+			<p> <strong>Associations of subclasses</strong></p>
 			{subs}
 			</div>
 		);
@@ -529,11 +528,11 @@ class App extends Component {
 		PathoPhenoDB aims to support diagnosis of infectious diseases caused by known pathogens.
 		The database relies on the pathogen-to-phenotype associations.
 		Pathogen-disease relations are manually gathered from Wikipedia,
-	    Disease Ontology, Medscape, Centers for disease control and prevention,
+	    Disease Ontology, Medscape, Centers for Disease Control and Prevention,
 	    and literature and linked to disease-phenotypes by using text mining methods. 
 		</p>
 		<p>
-		Mappings:
+		<h5><u>Mappings:</u></h5>
 	    <ul>
 		<li>Pathogens are mapped to NCBI Taxonomy</li>
 	    <li>Diseases are mapped to Infectious disease class of Disease Ontology</li>
@@ -543,24 +542,52 @@ class App extends Component {
 		</ul>
 		</p>
 		<p>
-		Current statistics:
-		<ul> 
-		<li>1143  pathogen-disease associations with Manual Curation.</li> 
-		<li>4169  pathogen-disease associations with Manual Curation, and text mining.</li>
-		<li>1140  pathogen-disease associations linked to phenotypes with Manual Curation.</li>
-	    <li>3989  pathogen-disease associations linked to phenotypes with Manual Curation, and text mining.</li>
-	    <li>508   diseases linked to pathogens with Manual Curation.</li>
-	    <li>538   diseases linked to pathogens with Manual Curation, and text mining.</li>
-	    <li>488   diseases linked to pathogens and phenotypes with Manual Curation.</li>
-	    <li>511   diseases linked to pathogens and phenotypes with Manual Curation, and text mining.</li>
-	    <li>692   pathogens linked to phenotypes(insect: 32, fungi: 115, bacteria: 208, virus: 175, protozoa: 47, worm: 115) with Manual Curation.</li>
-	    <li>1642  pathogens linked to phenotypes(fungi: 220, insect: 367, bacteria: 404, virus: 358, worm: 199, protozoa: 98) with Manual Curation, and text mining.</li>
-	    <li>130   diseases with Drug information from Sider with Manual Curation.</li>
-	    <li>139   diseases with Drug information from Sider with Manual Curation, and text mining.</li>
-	    <li>30    pathogens with resistant information from ARO with Manual Curation.</li>
-	    <li>47    pathogens with resistant information from ARO with Manual Curation, and text mining.</li>
-		</ul>
-	    </p>
+		<h5><u>Current statistics:</u></h5>
+		</p>
+		<table className="table table-striped">
+  			<thead>
+    			<th></th>
+    			<th>Manual Curation</th> 
+    			<th>Text mining + Manual Curation</th>
+  			</thead>
+  			<tbody>
+  			<tr>
+  				<td>Distinct pathogen-disease associations</td>
+  				<td>1143</td>
+  				<td>4169</td>
+  			</tr>
+  			<tr>
+  				<td>Pathogen-disease associations linked to phenotypes</td>
+  				<td>1140</td>
+  				<td>3989</td>
+  			</tr>
+  			<tr>
+  				<td>Diseases linked to pathogens</td>
+  				<td>508</td>
+  				<td>538</td>
+  			</tr>
+  			<tr>
+  				<td>Diseases linked to pathogens and phenotypes</td>
+  				<td>488</td>
+  				<td>511</td>
+  			</tr>
+  			<tr>
+  				<td>Pathogens linked to phenotypes</td>
+  				<td>692  (insect: 32, fungi: 115, bacteria: 208, virus: 175, protozoa: 47, worm: 115)</td>
+  				<td>1642  (fungi: 220, insect: 367, bacteria: 404, virus: 358, worm: 199, protozoa: 98)</td>
+  			</tr>
+  			<tr>
+  				<td>Diseases with Drug information from Sider</td>
+  				<td>130</td>
+  				<td>139</td>
+  			</tr>
+  			<tr>
+  				<td>Pathogens with resistant information from ARO</td>
+  				<td>30</td>
+  				<td>47</td>
+  			</tr>
+  		</tbody>
+ 		</table>
 		</div>
 	);
     }
@@ -588,7 +615,7 @@ also listed. Indirect associations will cover the diseases associated
 with the subclasses of the searched pathogen based on the NCBI taxon
 Ontology.
 </p>
-		<p><img src="/static/images/patho1.png"/></p>
+		<p><img src="/static/images/pathogen.png"/></p>
 
 		<h4> Phenotype search: </h4>
 		<p>
@@ -600,7 +627,7 @@ will cover both, the phenotypes associated with the subclasses and
 equivalent classes of the searched phenotype based on the PhenomeNET
 	    ontology.
 		</p>
-		<p><img src="/static/images/patho2.png"/></p>
+		<p><img src="/static/images/phenotype.png"/></p>
 
 		<h4>Disease search:</h4>
 		<p>
@@ -612,7 +639,28 @@ disease will be also retrieved. Indirect associations will cover the
 diseases associated with the subclasses of the searched disease based
 on the Disease Ontology.
 		</p>
-		<p><img src="/static/images/patho3.png"/></p>
+		<p><img src="/static/images/disease.png"/></p>
+		</div>
+	);
+	
+    }
+
+
+    renderContactPage() {
+	if (this.state.page != 'contact us') {
+	    return (<div></div>);
+	}
+
+	return (
+		<div className="row"><div className="col-md-12">
+
+			<p> <br/><br/>For academic questions contact prof.Hoehndorf at: 
+				<a href="mailto:robert.hoehndorf@kaust.edu.sa" target="_top"> robert.hoehndorf@kaust.edu.sa,</a>
+			</p>
+			<p>Report technical issues through 
+				<a href="https://github.com/bio-ontology-research-group/pathophenodb/issues" target="_blank">  here</a>
+			</p>
+		</div>
 		</div>
 	);
 	
@@ -627,6 +675,7 @@ on the Disease Ontology.
 	    { this.renderSearchPage() }
 	    { this.renderAboutPage() }
 	    { this.renderHelpPage() }
+	    { this.renderContactPage() }
       <div className="row">
         <div className="col-lg-4">
         </div>
