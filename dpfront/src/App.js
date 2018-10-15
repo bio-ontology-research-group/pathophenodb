@@ -261,7 +261,6 @@ class App extends Component {
 		}
 		return (
 		    <div>
-		        <p> <strong>Assosications of equivalent classes</strong></p>
 		
 			<table className="table table-striped">
 			<tbody>
