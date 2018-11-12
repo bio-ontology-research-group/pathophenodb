@@ -16,7 +16,8 @@ function runQuery() {
 
         queryUrl = url + "?query=" + encodeURIComponent(query) + "&format=" + format;
         console.log(queryUrl);
-        $("#result").append('<iframe src="' + queryUrl + '" style="border:2px solid black;width: 95%;height:400px;" name="PathoPhenoDB"></iframe>');
+        //$('#result_frame').attr('src', queryUrl)
+        $("#result").append('<iframe src="' + queryUrl + '" style="border:2px white;width: 92%;height:400px;" name="PathoPhenoDB"></iframe>');
     } else {
         queryUrl = url + "?query=" + encodeURIComponent(query) + "&format=json";
         console.log(queryUrl);
@@ -40,7 +41,7 @@ function runQuery() {
             },
             error: function(xhr, textStatus, thrownError) {
                 queryUrl = url + "?query=" + encodeURIComponent(query) + "&format=text%2Fhtml";
-                $("#result").append('<iframe src="' + queryUrl + '" style="border:2px solid black;width: 100%;height:400px;"></iframe>');
+                $("#result").append('<iframe src="' + queryUrl + '" style="border:2px solid black;width: 92%;height:400px;"></iframe>');
             }
         });
 
@@ -75,7 +76,7 @@ function changetext(example_no) {
 PREFIX SIO: <http://semanticscience.org/resource/SIO_>
 PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT distinct ?PA_ID ?pathogen  ?D_ID ?disease ?disease_pathogen_evidenced_code  ?P_ID ?phenotype ?disease_phenotype_evidenced_code  
+SELECT distinct ?PA_ID ?pathogen  ?D_ID ?disease ?disease_pathogen_evidence_code  ?P_ID ?phenotype ?disease_phenotype_evidence_code  
 WHERE
   {
     ?D_ID SIO:000255 ?o1 .
@@ -88,8 +89,8 @@ WHERE
        ?PA_ID rdfs:label ?pathogen.
        ?P_ID rdfs:label ?phenotype .
        ?D_ID rdfs:label ?disease .
-       ?EC1_ID rdfs:label ?disease_phenotype_evidenced_code .
-       ?EC2_ID rdfs:label ?disease_pathogen_evidenced_code .
+       ?EC1_ID rdfs:label ?disease_phenotype_evidence_code .
+       ?EC2_ID rdfs:label ?disease_pathogen_evidence_code .
      }
   
 
@@ -100,7 +101,7 @@ WHERE
 PREFIX SIO: <http://semanticscience.org/resource/SIO_>
 PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT distinct ?Disease_ID ?Disease  ?Evidenced_Code  ?Phenotype_ID  ?Phenotype 
+SELECT distinct ?Disease_ID ?Disease  ?evidence_Code  ?Phenotype_ID  ?Phenotype 
 WHERE 
   {
     ?Disease_ID SIO:000255 ?o .  
@@ -109,7 +110,7 @@ WHERE
   SERVICE <http://sparql.hegroup.org/sparql/> {
        ?Disease_ID rdfs:label ?Disease .
        ?Phenotype_ID rdfs:label ?phenotype .
-       ?EC_ID rdfs:label ?Evidenced_Code .
+       ?EC_ID rdfs:label ?evidence_Code .
      }
 
   } limit 20`);
@@ -119,7 +120,7 @@ WHERE
 PREFIX SIO: <http://semanticscience.org/resource/SIO_>
 PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT distinct ?Disease_ID ?Disease ?Pathogen_ID ?Pathogen ?Evidenced_Code  
+SELECT distinct ?Disease_ID ?Disease ?Pathogen_ID ?Pathogen ?evidence_Code  
 WHERE 
   {
     ?Disease_ID SIO:000255 ?o .  
@@ -128,7 +129,7 @@ WHERE
   SERVICE <http://sparql.hegroup.org/sparql/> {
        ?Disease_ID rdfs:label ?Disease .
        ?Pathogen_ID rdfs:label ?Pathogen .
-       ?o1 rdfs:label ?Evidenced_Code .
+       ?o1 rdfs:label ?evidence_Code .
      }
 
   } limit 20`);
@@ -202,7 +203,7 @@ PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
 PREFIX SIO: <http://semanticscience.org/resource/SIO_>
   PREFIX NCBITaxon: <http://purl.obolibrary.org/obo/NCBITaxon_>
   PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT distinct ?D_ID ?Disease ?Evidenced_Code
+SELECT distinct ?D_ID ?Disease ?evidence_Code
 WHERE 
   {
     ?D_ID SIO:000255  ?o .  
@@ -210,7 +211,7 @@ WHERE
     ?o RO:0002556  NCBITaxon:1993 .
      SERVICE <http://sparql.hegroup.org/sparql/> {
         ?D_ID rdfs:label ?Disease .
-        ?EC_ID rdfs:label ?Evidenced_Code .
+        ?EC_ID rdfs:label ?evidence_Code .
      }
 
   }`);

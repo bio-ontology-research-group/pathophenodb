@@ -158,7 +158,7 @@ class App extends Component {
     renderHeader() {
 	var page = this.state.page;
 	const menuItems = [
-	    'Search', 'About', 'Help','Contact Us'];
+	    'Search', 'About', 'Help','Contact Us','Downloads'];
 	const content = menuItems.map(function(item) {
 	    var activeClass = '';
 	    if (item.toLowerCase() == page) {
@@ -175,7 +175,7 @@ class App extends Component {
         <nav>
           <ul className="nav nav-justified">
 		{ content }
-	    	<li><a href="html2.html">SPARQL</a></li>	
+	    	<li><a href="RDFquery.html">SPARQL</a></li>	
 	    </ul>
         </nav>
 		</div>
@@ -643,7 +643,23 @@ on the Disease Ontology.
 	);
 	
     }
+    renderDownloadsPage() {
+	if (this.state.page != 'downloads') {
+	    return (<div></div>);
+	}
 
+	return (
+		<div>
+			<br/><br/>
+			<h3> Download all .nt versions</h3>
+			<ul>
+			<li><a href="/media/downloads/patho_pheno.nt" download><b>Version 1</b></a></li>
+			<li><a href="/media/downloads/patho_pheno.v2.nt" download><b>Version 2</b></a></li>
+			</ul>
+		</div>
+	);
+	
+    }
 
     renderContactPage() {
 	if (this.state.page != 'contact us') {
@@ -675,6 +691,7 @@ on the Disease Ontology.
 	    { this.renderAboutPage() }
 	    { this.renderHelpPage() }
 	    { this.renderContactPage() }
+	    {this.renderDownloadsPage()}
       <div className="row">
         <div className="col-lg-4">
         </div>
