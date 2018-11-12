@@ -651,7 +651,8 @@ on the Disease Ontology.
 	return (
 		<div>
 			<br/><br/>
-			<h3> Download all .nt versions</h3>
+			<h4><u> Data is available in RDF format</u></h4>
+			<br/>
 			<ul>
 			<li><a href="/media/downloads/patho_pheno.nt" download><b>Version 1</b></a></li>
 			<li><a href="/media/downloads/patho_pheno.v2.nt" download><b>Version 2</b></a></li>
@@ -702,7 +703,7 @@ on the Disease Ontology.
       </div>
 
       <footer className="footer">
-		<p>&copy; 2017 BORG, CBRC, KAUST.</p>
+		<p>&copy; 2018 BORG, CBRC, KAUST.</p>
       </footer>
 
     </div>
