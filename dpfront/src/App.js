@@ -277,7 +277,7 @@ class App extends Component {
 	    if (obj.equivalents.length > 0) {
 		equivs = (
 		    	<div>
-			<p> <strong>Assosications of equivalent classes</strong></p>
+			<p> <strong>Associations of equivalent classes</strong></p>
 			{equivs}
 			</div>
 		);
@@ -330,7 +330,7 @@ class App extends Component {
 	    if (obj.subclasses.length > 0) {
 		subs = (
 		    	<div>
-			<p> <strong>Assosications of subclasses</strong></p>
+			<p> <strong>Associations of subclasses</strong></p>
 			{subs}
 			</div>
 		);
@@ -359,7 +359,7 @@ class App extends Component {
 	    if (obj.equivalents.length > 0) {
 		equivs = (
 		    	<div>
-			<p> <strong>Assosications of equivalent classes</strong></p>
+			<p> <strong>Associations of equivalent classes</strong></p>
 			{equivs}
 			</div>
 		);
@@ -707,7 +707,7 @@ on the Disease Ontology.
 			<br/>
 			<ul>
 			<li><a href="/media/downloads/patho_pheno.nt" download><b>Version 1 (30 October 2018)</b></a></li>
-			<li><a href="/media/downloads/patho_pheno.v2.nt" download><b>Version 2 (30 December 2018)</b></a></li>
+			<li><a href="/media/downloads/patho_pheno.v2.nt" download><b>Version 2 (30 November 2018)</b></a></li>
 			</ul>
 		</div>
 	);
