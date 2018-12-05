@@ -4,9 +4,11 @@
   "private": true,
   "dependencies": {
     "cors": "^2.8.4",
+    "plotly.js": "^1.42.5",
     "react": "^16.2.0",
     "react-bootstrap": "^0.31.5",
     "react-dom": "^16.2.0",
+    "react-plotly.js": "^2.2.0",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.17"

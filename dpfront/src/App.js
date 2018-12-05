@@ -708,6 +708,8 @@ on the Disease Ontology.
 
 	return (
 		<div className="row">
+		<br/>
+		<p>Visualization of pathogens based on phenotypes they elicit in their hosts.</p>
 		{ this.explore() }
 		<br/>
 		</div>
@@ -735,7 +737,7 @@ on the Disease Ontology.
       </div>
 
       <footer className="footer">
-		<p>&copy; 2018 BORG, CBRC, KAUST.<b>Report technical issues through<a href="https://github.com/bio-ontology-research-group/pathophenodb/issues" target="_blank"> here</a></b></p>
+		<p>Report and issues at <a href="https://github.com/bio-ontology-research-group/pathophenodb/issues" target="_blank">the issue tracker</a></p><p>&copy; 2018 BORG, CBRC, KAUST.</p>
       </footer>
 
     </div>

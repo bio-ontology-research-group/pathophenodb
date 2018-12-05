@@ -33,83 +33,83 @@
                
                <div class="row"></div>
                
+               <div class="row">
                   <div class="row">
-                     <div class="row">
-                        
-                        <div class='col-lg-6'>
-                           <p>
-                              <strong><u>Examples queries:</u></strong>
-                           </p>
-                        </div>
+                     
+                     <div class='col-lg-6'>
+                        <p>
+                           <strong><u>Examples queries:</u></strong>
+                        </p>
                      </div>
-                     <div class="row">
-                        <div class='col-lg-6'>
-                           <ul>
-                              
-                              <li><a href="javascript:void(0)" onclick="changetext('1')" style=" padding-right: 7px;">Example1</a>(List all the pathogens with their disease-phenotypes)</li>
-                              <li><a href="javascript:void(0)" onclick="changetext('2')" style=" padding-right: 7px;">Example2</a>(List all disease with their phenotypes)</li>
-                              <li><a href="javascript:void(0)" onclick="changetext('3')" style=" padding-right: 7px;">Example3</a>(List all diseases which caused by pathogens)</li>
-                              <li><a href="javascript:void(0)" onclick="changetext('4')" style=" padding-right: 7px;">Example4</a>(List all diseases along with the drugs used to treat them)</li>
-                              
-                           </ul>
-                        </div>
-                        <div class='col-lg-6'>
-                           <ul>
-                              <li><a href="javascript:void(0)" onclick="changetext('5')" style=" padding-right: 7px;">Example5</a>(List all the pathogens with their resistant proteins)</li>
-                              <li><a href="javascript:void(0)" onclick="changetext('6')" style=" padding-right: 7px;">Example6</a>(List all the pathogens with their resistant DNA accessions)</li>
-                              <li><a href="javascript:void(0)" onclick="changetext('7')" style=" padding-right: 7px;">Example7</a>(List all the pathogens along with the resistant drugs)</li>
-                              <li><a href="javascript:void(0)" onclick="changetext('8')" style=" padding-right: 7px;">Example8</a>(for a given specific pathogen, list all the diseases that it can cause)</li>
-                           </ul>
-                        </div>
-                        
-                     </div>
-                     <div class="row">
-                        <div class='col-lg-6'>
-                           <select id='format' style="margin-bottom: 10px;">
-                              <option value="text%2Fhtml">HTML</option>
-                              <option value="json">JSON</option>
-                              <option value="xml">XML</option>
-                              <option value="table">Table</option>
-                           </select>
-                        </div>
-                     </div>
-                     <div class="row">
-                        <div class='col-lg-12'>
+                  </div>
+                  <div class="row">
+                     <div class='col-lg-6'>
+                        <ul>
                            
-                              <strong>SPARQL Endpoint</strong>:<strong><a href="http://patho.phenomebrowser.net/sparql/" target="_blank">  http://patho.phenomebrowser.net/sparql/</a></strong>.</br></br>
-            
-                           <textarea id="query" rows="10" cols="150" align="left" style="margin-bottom: 15px;">
-                           PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
-                           SELECT  ?pathogen ?phenotype
-                           WHERE
-                           {
-                           ?s1 RO:0002200 ?phenotype .
-                           ?s1 RO:0002556 ?pathogen
-                           }
-                           </textarea>
-                        </div>
+                           <li><a href="javascript:void(0)" onclick="changetext('1')" style=" padding-right: 7px;">Example1</a>(List all the pathogens with their disease-phenotypes)</li>
+                           <li><a href="javascript:void(0)" onclick="changetext('2')" style=" padding-right: 7px;">Example2</a>(List all disease with their phenotypes)</li>
+                           <li><a href="javascript:void(0)" onclick="changetext('3')" style=" padding-right: 7px;">Example3</a>(List all diseases which caused by pathogens)</li>
+                           <li><a href="javascript:void(0)" onclick="changetext('4')" style=" padding-right: 7px;">Example4</a>(List all diseases along with the drugs used to treat them)</li>
+                           
+                        </ul>
                      </div>
-                     
-                     <div class="row"><div class='col-lg-6'>
-                        <button type="button" style="margin-bottom: 15px;" onclick="runQuery()">Run query</button>
+                     <div class='col-lg-6'>
+                        <ul>
+                           <li><a href="javascript:void(0)" onclick="changetext('5')" style=" padding-right: 7px;">Example5</a>(List all the pathogens with their resistant proteins)</li>
+                           <li><a href="javascript:void(0)" onclick="changetext('6')" style=" padding-right: 7px;">Example6</a>(List all the pathogens with their resistant DNA accessions)</li>
+                           <li><a href="javascript:void(0)" onclick="changetext('7')" style=" padding-right: 7px;">Example7</a>(List all the pathogens along with the resistant drugs)</li>
+                           <li><a href="javascript:void(0)" onclick="changetext('8')" style=" padding-right: 7px;">Example8</a>(for a given specific pathogen, list all the diseases that it can cause)</li>
+                        </ul>
                      </div>
                      
                   </div>
-                  <div class="row"><div class='col-lg-12' id="loading">Processing Query</div></div>
-                  <div class="row"><div class='col-lg-12' id="result"><iframe id="result_frame" height="400px" src="result.html" width="92%" style="border:2px white;"" name="PathoPhenoDB"></iframe>
+                  <div class="row">
+                     <div class='col-lg-6'>
+                        <select id='format' style="margin-bottom: 10px;">
+                           <option value="text%2Fhtml">HTML</option>
+                           <option value="json">JSON</option>
+                           <option value="xml">XML</option>
+                           <option value="table">Table</option>
+                        </select>
+                     </div>
                   </div>
+                  <div class="row">
+                     <div class='col-lg-12'>
+                        
+                        <strong>SPARQL Endpoint</strong>:<strong><a href="http://patho.phenomebrowser.net/sparql/" target="_blank">  http://patho.phenomebrowser.net/sparql/</a></strong>.</br></br>
+                        
+                        <textarea id="query" rows="10" cols="150" align="left" style="margin-bottom: 15px;">
+                        PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
+                        SELECT  ?pathogen ?phenotype
+                        WHERE
+                        {
+                        ?s1 RO:0002200 ?phenotype .
+                        ?s1 RO:0002556 ?pathogen
+                        }
+                        </textarea>
+                     </div>
+                  </div>
+                  
+                  <div class="row"><div class='col-lg-6'>
+                     <button type="button" style="margin-bottom: 15px;" onclick="runQuery()">Run query</button>
+                  </div>
+                  
+               </div>
+               <div class="row"><div class='col-lg-12' id="loading">Processing Query</div></div>
+               <div class="row"><div class='col-lg-12' id="result"><iframe id="result_frame" height="400px" src="result.html" width="92%" style="border:2px white;"" name="PathoPhenoDB"></iframe>
                </div>
             </div>
-            <div class="row">
-               <div class="col-lg-4"></div>
-               <div class="col-lg-4"></div>
-               <div class="col-lg-4"></div>
-            </div>
-            <footer class="footer">
-               <p>© 2017 BORG, CBRC, KAUST.<b>Report technical issues through<a href="https://github.com/bio-ontology-research-group/pathophenodb/issues" target="_blank"> here</a></b></p>
-            </footer>
          </div>
+         <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4"></div>
+         </div>
+         <footer className="footer">
+            <p>Report and issues at <a href="https://github.com/bio-ontology-research-group/pathophenodb/issues" target="_blank">the issue tracker</a></p><p>&copy; 2018 BORG, CBRC, KAUST.</p>
+         </footer>
       </div>
-      <script src="sptest.js?rndstr=<%= getRandomStr() %"></script>
-   </body>
+   </div>
+   <script src="sptest.js?rndstr=<%= getRandomStr() %"></script>
+</body>
 </html>
