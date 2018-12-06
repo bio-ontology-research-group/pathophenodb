@@ -15,4 +15,4 @@ The website making our data available is at http://patho.phenomebrowser.net/ and
 
 # Issues
 
-Some parts of PathoPhenoDB contain textmined information. If you identify potential issues that should be resolved, please create a new issue at the (https://github.com/bio-ontology-research-group/pathophenodb/issues)[issue tracker].
+Some parts of PathoPhenoDB contain textmined information. If you identify potential issues that should be resolved, please create a new issue at the [issue tracker](https://github.com/bio-ontology-research-group/pathophenodb/issues).
