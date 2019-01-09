@@ -256,7 +256,7 @@ class App extends Component {
 		    subItems = Object.values(sub.Phenotypes).map(
 			(item) =>
 			    <tr>
-			    <td><a href={'#/search/Diseases/' + encodeURIComponent(item.class)}>{item.class}</a></td>
+			    <td><a href={'#/search/Phenotypes/' + encodeURIComponent(item.class)}>{item.class}</a></td>
 			    <td>{item.label}</td><td>{item[infod]}</td></tr>
 		    );
 		}
@@ -313,7 +313,7 @@ class App extends Component {
 		    subItems = Object.values(sub.Pathogens).map(
 			(item) =>
 			    <tr>
-			    <td><a href={'#/search/Diseases/' + encodeURIComponent(item.class)}>{item.class}</a></td>
+			    <td><a href={'#/search/Pathogens/' + encodeURIComponent(item.class)}>{item.class}</a></td>
 			    <td>{item.label}</td><td>{item[infod]}</td></tr>
 		    );
 		}
@@ -342,7 +342,7 @@ class App extends Component {
 		    subItems = Object.values(sub.Pathogens).map(
 			(item) =>
 			    <tr>
-			    <td><a href={'#/search/Diseases/' + encodeURIComponent(item.class)}>{item.class}</a></td>
+			    <td><a href={'#/search/Pathogens/' + encodeURIComponent(item.class)}>{item.class}</a></td>
 			    <td>{item.label}</td><td>{item[infod]}</td></tr>
 		    );
 		}
@@ -396,7 +396,7 @@ class App extends Component {
 		    subItems = Object.values(sub.Phenotypes).map(
 			(item) =>
 			    <tr>
-			    <td><a href={'/#/search/Diseases/' + encodeURIComponent(item.class)}>{item.class}</a></td>
+			    <td><a href={'/#/search/Phenotypes/' + encodeURIComponent(item.class)}>{item.class}</a></td>
 			    <td>{item.label}</td><td>{item[infod]}</td></tr>
 		    );
 		}
@@ -637,6 +637,24 @@ class App extends Component {
 
 	return (
 		<div>
+		<h3> What are the types of interactions in PathoPhenoDB?</h3> 
+		<p>Due to the use of inference and Semantic Web technologies,
+		PathoPhenoDB can identify both direct and indirect associations
+		between pathogens and phenotypes. We classify an association as direct
+		if it is explicitly asserted during the curation. We classify an
+		association as indirect if it is inferred based on a direct
+		association and application of inference over the subclass hierarchy
+		of the ontologies. For example, PathoPhenoDB currently does not cover any
+		infectious disease that is directly associated with Toxocara
+		(NCBITaxon:6264). However, a query for Toxocara will
+		return all the disease and phenotype associations linked to its
+		subclasses, including Toxocara canis (NCBITaxon:6265) and
+		Toxocara canti (NCBITaxon:6266) as indirect
+		associations. Using this kind of inference, PathoPhenoDB can provide
+		useful and relevant knowledge on the entities of interest while using
+		the background knowledge contained in the class hierarchy of the
+		Ontologies.
+		</p>
 		<h3> How to make a search in PathoPhenoDB? </h3> 
 		<p>
 		You can search a disease name, pathogen name or a phenotype name in
@@ -644,38 +662,38 @@ class App extends Component {
 	    </p>
 		<h4>Pathogen search:</h4>
 		<p>
-As shown in the example below, type the pathogen name in to the search
-box that you would like to search in PathoPhenoDB. The database will
-return the list of diseases associated with the searched pathogen as
-well as all the phenotypes associated with the diseases. The drug
-resistance information associated with the searched pathogen will be
-also listed. Indirect associations will cover the diseases associated
-with the subclasses of the searched pathogen based on the NCBI taxon
-Ontology.
-</p>
+		As shown in the example below, type the pathogen name in to the search
+		box that you would like to search in PathoPhenoDB. The database will
+		return the list of diseases associated with the searched pathogen as
+		well as all the phenotypes associated with the diseases. The drug
+		resistance information associated with the searched pathogen will be
+		also listed. Indirect associations will cover the diseases associated
+		with the subclasses of the searched pathogen based on the NCBI taxon
+		Ontology.
+		</p>
 		<p><img src="/static/images/pathogen.png"/></p>
 
 		<h4> Phenotype search: </h4>
 		<p>
-As shown in the example below, type the phenotype name in to the
-search box that you would like to search in PathoPhenoDB. The database
-will return the list of diseases associated with the searched
-phenotype as well as the causative pathogens. Indirect associations
-will cover both, the phenotypes associated with the subclasses and
-equivalent classes of the searched phenotype based on the PhenomeNET
-	    ontology.
+		As shown in the example below, type the phenotype name in to the
+		search box that you would like to search in PathoPhenoDB. The database
+		will return the list of diseases associated with the searched
+		phenotype as well as the causative pathogens. Indirect associations
+		will cover both, the phenotypes associated with the subclasses and
+		equivalent classes of the searched phenotype based on the PhenomeNET
+		ontology.
 		</p>
 		<p><img src="/static/images/phenotype.png"/></p>
 
 		<h4>Disease search:</h4>
 		<p>
-As shown in the example below, type the disease name in to the search
-box that you would like to search in PathoPhenoDB. The database will
-return the list of pathogens associated with the searched disease as
-well as the phenotypes. The drugs that can be used to treat the
-disease will be also retrieved. Indirect associations will cover the
-diseases associated with the subclasses of the searched disease based
-on the Disease Ontology.
+		As shown in the example below, type the disease name in to the search
+		box that you would like to search in PathoPhenoDB. The database will
+		return the list of pathogens associated with the searched disease as
+		well as the phenotypes. The drugs that can be used to treat the
+		disease will be also retrieved. Indirect associations will cover the
+		diseases associated with the subclasses of the searched disease based
+		on the Disease Ontology.
 		</p>
 		<p><img src="/static/images/disease.png"/></p>
 		</div>
