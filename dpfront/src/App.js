@@ -413,7 +413,7 @@ class App extends Component {
 	    if (obj.subclasses.length > 0) {
 		subs = (
 		    	<div>
-			<p> <strong>Assosications of subclasses</strong></p>
+			<p> <strong>Association of subclasses</strong></p>
 			{subs}
 			</div>
 		);
