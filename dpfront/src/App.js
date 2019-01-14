@@ -755,7 +755,7 @@ class App extends Component {
       </div>
 
       <footer className="footer">
-		<p>Report and issues at <a href="https://github.com/bio-ontology-research-group/pathophenodb/issues" target="_blank">the issue tracker</a></p><p>&copy; 2018 BORG, CBRC, KAUST.</p>
+		<p>Report any issues through <a href="https://github.com/bio-ontology-research-group/pathophenodb/issues" target="_blank">the issue tracker</a></p><p>&copy; 2018 BORG, CBRC, KAUST.</p>
       </footer>
 
     </div>
