@@ -236,7 +236,7 @@ class App extends Component {
 			<table className="table table-striped">
 			<tbody>
 			<tr><td colspan="2"><strong>
-			<a href={'#/' + objSection + '/' + encodeURIComponent(sub.class)}>{sub.label} ({sub.class})</a></strong></td></tr>
+			<a href={'#/search/' + objSection + '/' + encodeURIComponent(sub.class)}>{sub.label} ({sub.class})</a></strong></td></tr>
 			{subItems}
 		    </tbody>
 			</table>
@@ -266,7 +266,7 @@ class App extends Component {
 			<table className="table table-striped">
 			<tbody>
 			<tr><td colspan="2"><strong>
-			<a href={'#/' + objSection + '/' + encodeURIComponent(sub.class)}>{sub.label} ({sub.class})</a></strong></td></tr>
+			<a href={'#/search/' + objSection + '/' + encodeURIComponent(sub.class)}>{sub.label} ({sub.class})</a></strong></td></tr>
 			{subItems}
 		    </tbody>
 			</table>
@@ -321,7 +321,7 @@ class App extends Component {
 			<table className="table table-striped">
 			<tbody>
 			<tr><td colspan="2"><strong>
-			<a href={'#/' + objSection + '/' + encodeURIComponent(sub.class)}>{sub.label} ({sub.class})</a></strong></td></tr>
+			<a href={'#/search/' + objSection + '/' + encodeURIComponent(sub.class)}>{sub.label} ({sub.class})</a></strong></td></tr>
 			{subItems}
 		    </tbody>
 			</table>
@@ -350,7 +350,7 @@ class App extends Component {
 			<table className="table table-striped">
 			<tbody>
 			<tr><td colspan="2"><strong>
-			<a href={'#/' + objSection + '/' + encodeURIComponent(sub.class)}>{sub.label} ({sub.class})</a></strong></td></tr>
+			<a href={'#/search/' + objSection + '/' + encodeURIComponent(sub.class)}>{sub.label} ({sub.class})</a></strong></td></tr>
 			{subItems}
 		    </tbody>
 			</table>
@@ -413,7 +413,7 @@ class App extends Component {
 	    if (obj.subclasses.length > 0) {
 		subs = (
 		    	<div>
-			<p> <strong>Association of subclasses</strong></p>
+			<p> <strong>Associations of subclasses</strong></p>
 			{subs}
 			</div>
 		);
