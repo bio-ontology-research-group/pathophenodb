@@ -27,8 +27,7 @@ class App extends Component {
 	const params = this.props.match.params;
 	if (params.page == 'search' && params.section !== undefined && params.query !== undefined) {
 	    this.executeQuery(params.section, params.query);
-	    this.setState({page: params.page,
-			   section: params.section, query: params.query});
+	    this.setState({page: params.page,section: params.section, query: params.query});
 	} else if (params.page !== undefined){
 	    this.setState({page: params.page});
 	}
@@ -131,10 +130,14 @@ class App extends Component {
 	    .then(function(data) {
 		console.log(data);
 		if (data.status == 'ok') {
-		    console.log(data);
 		    that.setState({ 
 		    	search: data.result.label,
 		    	result: data.result});
+		}
+		else{
+		    that.setState({ 
+		    	search: '',
+		    	result: {}});
 		}
 	    });
 
@@ -711,8 +714,9 @@ class App extends Component {
 			<h4><u> Data is available in RDF format</u></h4>
 			<br/>
 			<ul>
-			<li><a href="/media/downloads/patho_pheno.nt" download><b>Version 1 (30 October 2018)</b></a></li>
-			<li><a href="/media/downloads/patho_pheno.v2.nt" download><b>Version 2 (30 November 2018)</b></a></li>
+			<li><a href="/media/downloads/patho_pheno.nt" download><b>Version 1 (30th October 2018)</b></a></li>
+			<li><a href="/media/downloads/patho_pheno.v2.nt" download><b>Version 2 (30th November 2018)</b></a></li>
+			<li><a href="/media/downloads/patho_pheno.v3.nt" download><b>Version 3 (22nd January 2019)</b></a></li>
 			</ul>
 		</div>
 	);
