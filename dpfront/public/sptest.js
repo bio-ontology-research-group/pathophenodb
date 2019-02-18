@@ -91,7 +91,7 @@ WHERE
     ?EC1_ID rdfs:label ?disease_phenotype_evidence_code .
     ?EC2_ID rdfs:label ?disease_pathogen_evidence_code .
 
-  } `);
+  } limit 50 `);
     } else if (example_no == 2) {
         $("#query").val(`#EX2:List all disease with their phenotypes
 
