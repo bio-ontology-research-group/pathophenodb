@@ -78,6 +78,15 @@ body {
     border-radius: 0 5px 5px 0;
   }
 }
+.myinput[type="checkbox"]:before {
+  position: relative;
+  display: block;
+  width: 11px;
+  height: 11px;
+  border: 1px solid #808080;
+  content: "ffffff";
+  background: #FFF;
+}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
