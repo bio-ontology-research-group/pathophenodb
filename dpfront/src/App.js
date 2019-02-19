@@ -713,11 +713,40 @@ class App extends Component {
 			<br/><br/>
 			<h4><u> Data is available in RDF format</u></h4>
 			<br/>
-			<ul>
-			<li><a href="/media/downloads/patho_pheno.nt" download><b>Version 1 (30th October 2018)</b></a></li>
-			<li><a href="/media/downloads/patho_pheno.v2.nt" download><b>Version 2 (30th November 2018)</b></a></li>
-			<li><a href="/media/downloads/patho_pheno.v3.nt" download><b>Version 3 (22nd January 2019)</b></a></li>
-			</ul>
+			<table className="table table-striped">
+  			<thead>
+  				<th>Version</th>
+    			<th>Release date</th> 
+    			<th>With labels </th>
+    			<th></th>
+  			</thead>
+  			<tbody>
+  			<tr>
+  				<td><a href="/media/downloads/patho_pheno.nt" download><b>Version 1</b></a></td>
+  				<td>30th October 2018</td>
+  				<td><input type="checkbox" /></td>
+  				<td className="download"><a href="/media/downloads/patho_pheno.nt" download><b><p>&#9660;</p></b></a></td>
+  			</tr>
+  			<tr>
+  				<td><a href="/media/downloads/patho_pheno.v2.nt" download><b>Version 2</b></a></td>
+  				<td>30th November 2018</td>
+  				<td><input type="checkbox" /></td>
+  				<td className="download"><a href="/media/downloads/patho_pheno.v2.nt" download><b><p>&#9660;</p></b></a></td>
+  			</tr>
+  			<tr>
+  				<td><a href="/media/downloads/patho_pheno.v3.nt" download><b>Version 3</b></a></td>
+  				<td>22nd January 2019</td>
+  				<td><input type="checkbox" /></td>
+  				<td className="download"><a href="/media/downloads/patho_pheno.v3.nt" download><b><p>&#9660;</p></b></a></td>
+  			</tr>
+  			<tr>
+  				<td><a href="/media/downloads/patho_pheno_withsymbols.nt.zip" download><b>Version 4</b></a></td>
+  				<td>22nd February 2019</td>
+  				<td><input type="checkbox" checked/></td>
+  				<td className="download"><a href="/media/downloads/patho_pheno_withsymbols.nt.zip" download><b><p>&#9660;</p></b></a></td>
+  			</tr>
+  			</tbody>
+ 		</table>
 		</div>
 	);
 	

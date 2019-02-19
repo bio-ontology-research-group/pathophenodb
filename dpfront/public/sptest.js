@@ -17,7 +17,7 @@ function runQuery() {
         queryUrl = url + "?query=" + encodeURIComponent(query) + "&format=" + format;
         console.log(queryUrl);
         //$('#result_frame').attr('src', queryUrl)
-        $("#result").append('<iframe src="' + queryUrl + '" style="border:2px white;width: 92%;height:400px;" name="PathoPhenoDB"></iframe>');
+        $("#result").append('<iframe src="' + queryUrl + '" style="border:2px solid black;width: 100%;height:400px;" name="PathoPhenoDB"></iframe>');
     } else {
         queryUrl = url + "?query=" + encodeURIComponent(query) + "&format=json";
         console.log(queryUrl);
@@ -41,7 +41,7 @@ function runQuery() {
             },
             error: function(xhr, textStatus, thrownError) {
                 queryUrl = url + "?query=" + encodeURIComponent(query) + "&format=text%2Fhtml";
-                $("#result").append('<iframe src="' + queryUrl + '" style="border:2px solid black;width: 92%;height:400px;"></iframe>');
+                $("#result").append('<iframe src="' + queryUrl + '" style="border:2px solid black;width: 100%;height:400px;"></iframe>');
             }
         });
 

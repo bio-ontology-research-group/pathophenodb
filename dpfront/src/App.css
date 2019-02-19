@@ -57,6 +57,9 @@ body {
   border-bottom: 0;
   border-radius: 0 0 5px 5px;
 }
+.download > li:last-child > a {
+  font-size:100px;
+}
 
 @media (min-width: 768px) {
   .nav-justified {
