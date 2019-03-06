@@ -1,0 +1,54 @@
+Patho-pheno sparql documentaion:
+
+ssh 10.254.145.153
+
+
+Files for virtuoso:
+DatabaseFile       = /var/lib/virtuoso-opensource-6.1/db/virtuoso.db
+ErrorLogFile       = /var/lib/virtuoso-opensource-6.1/db/virtuoso.log
+LockFile           = /var/lib/virtuoso-opensource-6.1/db/virtuoso.lck
+TransactionFile    = /var/lib/virtuoso-opensource-6.1/db/virtuoso.trx
+xa_persistent_file = /var/lib/virtuoso-opensource-6.1/db/virtuoso.pxa
+
+----------------------------------------------------------------------------------
+to update .nt file
+1- run sql backend:
+
+./usr/bin/isqlw-vt
+./usr/bin/isql-vt
+
+2- run  Bulk Loading script located in /usr/bin/rdfloader.sql
+LOAD /usr/bin/rdfloader.sql;
+
+3-Register the new .nt file with graph IRI : 
+ld_dir ('/data/virtuoso', 'patho_pheno.n3', 'http://patho_pheno.com#');
+
+4-Create in the new file folder an empty file with name: yourfilename.ext.graph
+5-Edit the yourfilename.ext.graph by adding the graph IRI, so the content of the file to be like : 
+http://patho_pheno.com#
+
+6-rdf_loader_run ();
+
+this last command usually takes time depening on the size of the file. If it didn't take time then you RDF file contain errors.
+You can validate your RDF file using this tool https://github.com/IDLabResearch/TurtleValidator
+
+test your graph by executing some queries.
+
+7-limit the permission to the graph 
+DB.DBA.RDF_GRAPH_USER_PERMS_SET ('http://patho_pheno_withsymbols.com#', 'nobody', 3); 
+
+all graphs are blocked with permission 0 except the one that we use.
+
+8- Drop the old graph DROP GRAPH <http://patho_pheno_withsymbols.com#>;
+
+For more details please go to :
+http://vos.openlinksw.com/owiki/wiki/VOS/VirtBulkRDFLoaderExampleSingle
+http://vos.openlinksw.com/owiki/wiki/VOS/VirtBulkRDFLoader
+http://vos.openlinksw.com/owiki/wiki/VOS/VirtRDFGraphsSecurity
+
+
+
+---------------------------------------------------------------------------------------------------------------------------
+The sparql component in the pathopheno site is a HTML&javascript component in the public folder of the pathopheno react folder.
+
+

@@ -1,0 +1,310 @@
+3. List all diseases which caused by pathogens
+
+old graph:
+----------
+ PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
+SELECT ?s ?o 
+WHERE 
+  {
+    ?s RO:0002556 ?o 
+  
+  }
+
+
+
+new graph: <http://patho_pheno.com#>
+-----------
+PREFIX SIO: <http://semanticscience.org/resource/SIO_>
+PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?disease ?evidenced_code ?pathogen
+WHERE 
+  {
+    ?s SIO:000255 ?o .  
+    ?o RO:0002558 ?o1 .
+    ?o RO:0002556 ?o2 .
+  SERVICE <http://sparql.hegroup.org/sparql/> {
+       ?s rdfs:label ?disease .
+       ?o2 rdfs:label ?pathogen .
+       ?o1 rdfs:label ?evidenced_code .
+     }
+
+  } limit 20
+
+
+new graph: <http://patho_pheno_withsymbols.com#>
+-----------
+PREFIX SIO: <http://semanticscience.org/resource/SIO_>
+PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?disease ?evidenced_code ?pathogen
+WHERE 
+  {
+    ?s SIO:000255 ?o .  
+    ?o RO:0002558 ?o1 .
+    ?o RO:0002556 ?o2 .
+    ?s rdfs:label ?disease .
+    ?o2 rdfs:label ?pathogen .
+    ?o1 rdfs:label ?evidenced_code .
+  
+
+  } limit 20
+
+
+*********************************************************************
+2. List all disease with their phenotypes
+PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
+
+
+old graph:
+----------
+SELECT ?s ?o 
+WHERE 
+  {
+    ?s RO:0002200 ?o 
+  
+  } 
+
+  //with labels// this is taking too ong from the server 
+  PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?s ?o ?lab
+WHERE 
+  {
+    ?s RO:0002200 ?o 
+SERVICE <http://dbpedia.org/sparql/> {
+       ?o rdfs:label ?lab
+     }
+  
+  }
+
+
+  new graph: <http://patho_pheno.com#>
+-----------
+PREFIX SIO: <http://semanticscience.org/resource/SIO_>
+PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT distinct ?disease  ?evidenced_code  ?phenotype 
+WHERE 
+  {
+    ?D_ID SIO:000255 ?o .  
+    ?o RO:0002558 ?EC_ID .
+    ?o RO:0002200 ?P_ID .
+  SERVICE <http://sparql.hegroup.org/sparql/> {
+       ?D_ID rdfs:label ?disease .
+       ?P_ID rdfs:label ?phenotype .
+       ?EC_ID rdfs:label ?evidenced_code .
+     }
+
+  } limit 20
+
+*********************************************************************
+1. List all the pathogens with their disease-phenotypes-------> not yet
+
+old graph:
+-----------
+PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
+SELECT  ?pathogen ?phenotype 
+WHERE 
+  {
+    ?s1 RO:0002200 ?phenotype .
+    ?s1 RO:0002556 ?pathogen  
+  }
+
+new graph:
+----------
+PREFIX SIO: <http://semanticscience.org/resource/SIO_>
+PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT distinct ?D_ID ?EC1_ID ?P_ID ?EC2_ID ?PA_ID 
+WHERE 
+  {
+    ?D_ID SIO:000255 ?o1 .
+    ?o1 RO:0002558 ?EC1_ID . 
+    ?o1 RO:0002200 ?P_ID .
+    ?D_ID SIO:000255 ?o .
+    ?o RO:0002558 ?EC2_ID .
+    ?o RO:0002556 ?PA_ID .
+  
+
+  } limit 20
+*************************************************************
+  //with labels
+PREFIX SIO: <http://semanticscience.org/resource/SIO_>
+PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT distinct ?PA_ID ?pathogen  ?D_ID ?disease ?disease_pathogen_evidenced_code  ?P_ID ?phenotype ?disease_phenotype_evidenced_code  
+WHERE
+  {
+    ?D_ID SIO:000255 ?o1 .
+    ?o1 RO:0002558 ?EC1_ID . 
+    ?o1 RO:0002200 ?P_ID .
+    ?D_ID SIO:000255 ?o .
+    ?o RO:0002558 ?EC2_ID .
+    ?o RO:0002556 ?PA_ID .
+    SERVICE <http://sparql.hegroup.org/sparql/> {
+       ?PA_ID rdfs:label ?pathogen.
+       ?P_ID rdfs:label ?phenotype .
+       ?D_ID rdfs:label ?disease .
+       ?EC1_ID rdfs:label ?disease_phenotype_evidenced_code .
+       ?EC2_ID rdfs:label ?disease_pathogen_evidenced_code .
+     }
+  
+
+  } limit 10
+
+***************************************************************
+ 4. List all diseases along with the drugs used to treat them
+old graph:
+---------
+  PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
+SELECT ?s ?o 
+WHERE 
+  {
+    ?s RO:0002302 ?o 
+  
+  }
+
+
+  new ghrap:
+  ---------
+  PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
+SELECT ?Disease_ID  ?Drug_ID ?Disease 
+WHERE 
+  {
+    ?Disease_ID RO:0002302 ?Drug_ID .
+    SERVICE <http://sparql.hegroup.org/sparql/> {
+       ?Disease_ID rdfs:label  ?Disease .
+       #?Drug_ID  rdfs:label  ?lab .
+    }
+  } limit 5
+  *********************************************
+5. List all the pathogens with their resistant proteins
+old graph:
+----------
+ PREFIX RO: <http://bio2vec.net/RO#>
+SELECT  ?pathogen ?protein
+WHERE 
+  {
+    ?s1 RO:resistant_protein ?protein .
+    ?pathogen RO:antibiotic_resistance ?s1 
+    
+  
+  }
+
+
+new graph:
+----------
+  PREFIX RO: <http://bio2vec.net/RO#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT  ?Pathogen_ID ?Pathogen ?Protein_ID #?Protein
+WHERE   
+  {
+    ?s1 RO:resistant_protein ?Protein_ID .
+    ?Pathogen_ID RO:antibiotic_resistance ?s1 .
+    SERVICE <http://sparql.hegroup.org/sparql/> {
+       #?Protein_ID rdfs:label  ?Protein .
+       ?Pathogen_ID  rdfs:label  ?Pathogen.
+    }
+  
+  } limit 10
+
+ *********************************************
+6. List all the pathognes with their resistant DNA accessions
+
+old graph:
+---------
+  PREFIX RO: <http://bio2vec.net/RO#>
+SELECT ?pathogen ?DNA_accessions 
+WHERE 
+  {
+    ?s RO:resistant_DNAaccession ?DNA_accessions.
+    ?pathogen RO:antibiotic_resistance ?s
+  
+  }
+
+  new graph:
+  ---------
+ PREFIX RO: <http://bio2vec.net/RO#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?Pathogen_ID ?Pathogen  ?DNA_accessions_ID  ?DNA_accessions 
+WHERE 
+  {
+    ?s RO:resistant_DNAaccession ?DNA_accessions_ID.
+    ?Pathogen_ID RO:antibiotic_resistance ?s .
+    SERVICE <http://sparql.hegroup.org/sparql/> {
+       ?DNA_accessions_ID  rdfs:label  ?DNA_accessions .
+       ?Pathogen_ID  rdfs:label  ?Pathogen.
+    } 
+  
+  
+  } limit 10
+ *********************************************
+7. List all the pathoges along with the resistant drugs
+
+old graph:
+----------
+  PREFIX RO: <http://bio2vec.net/RO#>
+SELECT ?pathogen ?drug
+WHERE 
+  {
+    ?s RO:resistant_to_drug ?drug .
+    ?pathogen RO:antibiotic_resistance ?s
+  
+  }
+
+  new graph:
+  ----------
+   PREFIX RO: <http://bio2vec.net/RO#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?Pathogen_ID ?Pathogen ?Drug_ID
+WHERE 
+  {
+    ?s RO:resistant_to_drug ?Drug_ID .
+    ?Pathogen_ID  RO:antibiotic_resistance ?s .
+    SERVICE <http://sparql.hegroup.org/sparql/> {
+       #?Drug_ID  rdfs:label  ?Drug .
+       ?Pathogen_ID  rdfs:label  ?Pathogen.
+    }
+  
+  } limit 20
+ *********************************************
+8. for a given specific pathogen, list all the diseases that it can cause
+
+old graph:
+----------
+  PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
+  PREFIX NCBITaxon: <http://purl.obolibrary.org/obo/NCBITaxon_>
+  PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT distinct ?id ?diseases 
+WHERE 
+  {
+    ?id RO:0002556 NCBITaxon:1993
+  	SERVICE <http://sparql.hegroup.org/sparql/> {
+       ?id rdfs:label ?diseases
+     }
+  }
+
+  new graph:
+  ---------
+
+    PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
+PREFIX SIO: <http://semanticscience.org/resource/SIO_>
+  PREFIX NCBITaxon: <http://purl.obolibrary.org/obo/NCBITaxon_>
+  PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT distinct ?D_ID ?Disease ?Evidenced_Code
+WHERE 
+  {
+    ?D_ID SIO:000255  ?o .  
+    ?o RO:0002558  ?EC_ID .
+    ?o RO:0002556  NCBITaxon:1993 .
+     SERVICE <http://sparql.hegroup.org/sparql/> {
+        ?D_ID rdfs:label ?Disease .
+        ?EC_ID rdfs:label ?Evidenced_Code .
+     }
+
+  }
+
+
+ 
