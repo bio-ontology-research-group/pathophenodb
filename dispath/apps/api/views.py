@@ -46,10 +46,9 @@ def load_annotations(result):
         
         data = []
         for id in ids:
-            url = url + urllib.parse.urlencode(id)
-            r = requests.get(url)
+            r = requests.get(url + urllib.parse.quote(id))
             responseData = r.json()
-            if data['status'] == 'ok':
+            if responseData['status'] == 'ok' and len(responseData['result']) > 0:
                 data.append(responseData['result'][0])
                 
         result['Phenotypes'] = data
@@ -73,10 +72,9 @@ def load_annotations(result):
 
         data = []
         for id in ids:
-            url = url + urllib.parse.urlencode(id)
-            r = requests.get(url)
+            r = requests.get(url + urllib.parse.quote(id))
             responseData = r.json()
-            if data['status'] == 'ok':
+            if responseData['status'] == 'ok' and len(responseData['result']) > 0:
                 data.append(responseData['result'][0])
                 
         result['Diseases'] = data
@@ -99,10 +97,9 @@ def load_annotations(result):
                 methods[item['id']] = item['method'] 
         data = []
         for id in ids:
-            url = url + urllib.parse.urlencode(id)
-            r = requests.get(url)
+            r = requests.get(url + urllib.parse.quote(id))
             responseData = r.json()
-            if data['status'] == 'ok':
+            if responseData['status'] == 'ok' and len(responseData['result']) > 0:
                 data.append(responseData['result'][0])
                 
         result['Pathogens'] = data
@@ -130,15 +127,7 @@ class SearchAPIView(APIView):
                 ontology = 'NCBITAXONSH'
             elif section == 'Phenotypes':
                 ontology = 'PhenomeNETSH'
-            
-            # params = {
-            #     'script': 'runQuery.groovy',
-            #     'type': 'equivalent',
-            #     'direct': 'false',
-            #     'query': '<' + query + '>',
-            #     'axioms': 'false',
-            #     'ontology': ontology
-            # }
+
             params = {
                 'type': 'equivalent',
                 'direct': 'false',
@@ -149,11 +138,11 @@ class SearchAPIView(APIView):
             query_string = urllib.parse.urlencode(params)
             url = ABEROWL_API_URL + 'api/dlquery?' + query_string
 
-            r = requests.get(url, params=params)
-            #print(r.text)    
+            r = requests.get(url)  
             results = {}
             for res in r.json()["result"]:
                 results[res["class"]] = res
+
             result = results.pop(query)
             
             if query in links:
@@ -165,7 +154,7 @@ class SearchAPIView(APIView):
                     item.update(links[key])
                     item = load_annotations(item)
                     equivs.append(item)
-            #print(equivs)
+
             result['equivalents'] = equivs
 
             params['type'] = 'subclass'
