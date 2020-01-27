@@ -2,6 +2,7 @@ from rest_framework.views import APIView
 from rest_framework.generics import ListAPIView
 from rest_framework.response import Response
 import requests
+import urllib
 import json
 import itertools
 from django.conf import settings
@@ -30,8 +31,9 @@ def read_links():
 links = read_links()
 
 def load_annotations(result):
-    url = ABEROWL_API_URL + 'api/classes/'
+    url = ABEROWL_API_URL
     if 'Phenotypes' in result:
+        url = url + '/api/ontology/PhenomeNETSH/class/'
         ids = []
         sources = {}
         methods = {}
@@ -41,19 +43,24 @@ def load_annotations(result):
                 sources[item['id']] = item['source']
             if 'method' in item:
                 methods[item['id']] = item['method']  
-        params = {
-            'ontology': 'PhenomeNETSH',
-            'iri':  ids}
-        r = requests.post(url, data=params)
-        data = r.json()
-        if data['status'] == 'ok':
-            result['Phenotypes'] = data['result']
-            for key, item in result['Phenotypes'].items():
-                if item['class'] in sources:
-                    item['source'] = sources[item['class']]
-                if item['class'] in methods:
-                    item['method'] = methods[item['class']]
+        
+        data = []
+        for id in ids:
+            url = url + urllib.parse.urlencode(id)
+            r = requests.get(url)
+            responseData = r.json()
+            if data['status'] == 'ok':
+                data.append(responseData['result'][0])
+                
+        result['Phenotypes'] = data
+        for item in result['Phenotypes']:
+            if item['class'] in sources:
+                item['source'] = sources[item['class']]
+            if item['class'] in methods:
+                item['method'] = methods[item['class']]
+    
     if 'Diseases' in result:
+        url = url + '/api/ontology/DOIDSH/class/'
         ids = []
         sources = {}
         methods = {}
@@ -63,20 +70,24 @@ def load_annotations(result):
                 sources[item['id']] = item['source'] 
             if 'method' in item:
                 methods[item['id']] = item['method'] 
-        params = {
-            'ontology': 'DOIDSH',
-            'iri': ids}
-        r = requests.post(url, data=params)
-        data = r.json()
-        if data['status'] == 'ok':
-            result['Diseases'] = data['result']
-            for key, item in result['Diseases'].items():
-                if item['class'] in sources:
-                    item['source'] = sources[item['class']]
-                if item['class'] in methods:
-                    item['method'] = methods[item['class']]
+
+        data = []
+        for id in ids:
+            url = url + urllib.parse.urlencode(id)
+            r = requests.get(url)
+            responseData = r.json()
+            if data['status'] == 'ok':
+                data.append(responseData['result'][0])
+                
+        result['Diseases'] = data
+        for item in result['Diseases']:
+            if item['class'] in sources:
+                item['source'] = sources[item['class']]
+            if item['class'] in methods:
+                item['method'] = methods[item['class']]
 
     if 'Pathogens' in result:
+        url = url + '/api/ontology/NCBITAXONSH/class/'
         ids = []
         sources = {}
         methods = {}
@@ -86,19 +97,20 @@ def load_annotations(result):
                 sources[item['id']] = item['source']
             if 'method' in item:
                 methods[item['id']] = item['method'] 
-        params = {
-            'ontology': 'NCBITAXONSH',
-            'iri': ids}
-        r = requests.post(url, data=params)
-        data = r.json()
-        #print(data)
-        if data['status'] == 'ok':
-            result['Pathogens'] = data['result']
-            for key, item in result['Pathogens'].items():
-                if item['class'] in sources:
-                    item['source'] = sources[item['class']]
-                if item['class'] in methods:
-                    item['method'] = methods[item['class']]
+        data = []
+        for id in ids:
+            url = url + urllib.parse.urlencode(id)
+            r = requests.get(url)
+            responseData = r.json()
+            if data['status'] == 'ok':
+                data.append(responseData['result'][0])
+                
+        result['Pathogens'] = data
+        for item in result['Pathogens']:
+            if item['class'] in sources:
+                item['source'] = sources[item['class']]
+            if item['class'] in methods:
+                item['method'] = methods[item['class']]
 
                 
     return result
@@ -119,15 +131,23 @@ class SearchAPIView(APIView):
             elif section == 'Phenotypes':
                 ontology = 'PhenomeNETSH'
             
+            # params = {
+            #     'script': 'runQuery.groovy',
+            #     'type': 'equivalent',
+            #     'direct': 'false',
+            #     'query': '<' + query + '>',
+            #     'axioms': 'false',
+            #     'ontology': ontology
+            # }
             params = {
-                'script': 'runQuery.groovy',
                 'type': 'equivalent',
                 'direct': 'false',
                 'query': '<' + query + '>',
                 'axioms': 'false',
                 'ontology': ontology
             }
-            url = ABEROWL_API_URL + 'api/backend/'
+            query_string = urllib.parse.urlencode(params)
+            url = ABEROWL_API_URL + 'api/dlquery?' + query_string
 
             r = requests.get(url, params=params)
             #print(r.text)    
@@ -171,7 +191,7 @@ class SearchClassesAPIView(APIView):
     def get(self, request, format=None):
         query = request.GET.get('query', None)
         try:
-            url = ABEROWL_API_URL + '/api/searchclasses'
+            url = ABEROWL_API_URL + '/api/class/_startwith'
             params = {'query': query, 'ontology': 'PhenomeNETSH'}
             data = {}
             r = requests.get(url, params=params)
