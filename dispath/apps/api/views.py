@@ -122,7 +122,7 @@ class SearchAPIView(APIView):
         try:
             query = request.GET.get('query')
             section = request.GET.get('section')
-            ontology = 'DOIDSH'
+            ontology = 'DOID'
             if section == 'Pathogens':
                 ontology = 'NCBITAXONSH'
             elif section == 'Phenotypes':
@@ -193,7 +193,7 @@ class SearchClassesAPIView(APIView):
             params['ontology'] = 'NCBITAXONSH'
             r = requests.get(url, params=params)
             data['taxon'] = r.json()['result']
-            params['ontology'] = 'DOIDSH'
+            params['ontology'] = 'DOID'
             r = requests.get(url, params=params)
             diseases = list()
             for item in r.json()['result']:
