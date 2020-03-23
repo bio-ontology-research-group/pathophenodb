@@ -37,7 +37,7 @@ def params = [
     ],
     "ncbitaxon":[
 	"id": "TaxID",
-	"file": "data/pathogens.4web.json"
+	"file": "data/pathogens.covid.4web.json"
     ],
     "doid":[
 	"id": "DOID",

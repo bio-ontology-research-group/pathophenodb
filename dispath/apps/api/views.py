@@ -13,7 +13,7 @@ ABEROWL_API_URL = getattr(settings, 'ABEROWL_API_URL', 'http://10.254.145.9/')
 
 def read_links():
     links = {}
-    with open('data/pathogens.4web.json') as f:
+    with open('data/pathogens.covid.4web.json') as f:
         pathogens = json.loads(f.read())
         for path in pathogens:
             links[path["TaxID"]] = path
