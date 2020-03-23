@@ -59,7 +59,7 @@ def load_annotations(result):
                 item['method'] = methods[item['class']]
     
     if 'Diseases' in result:
-        url = url + '/api/ontology/DOIDSH/class/'
+        url = url + '/api/ontology/DOID/class/'
         ids = []
         sources = {}
         methods = {}
