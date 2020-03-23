@@ -33,7 +33,7 @@ def ont = this.args[0];
 def params = [
     "phenomenet":[
 	"id": "Phenotype",
-	"file": "data/phenotype.4web.json"
+	"file": "data/phenotypes.covid.4web.json"
     ],
     "ncbitaxon":[
 	"id": "TaxID",
@@ -41,7 +41,7 @@ def params = [
     ],
     "doid":[
 	"id": "DOID",
-	"file": "data/diseases.4web.json"
+	"file": "data/diseases.covid.4web.json"
     ],
 ]
 
