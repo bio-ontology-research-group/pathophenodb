@@ -17,11 +17,11 @@ def read_links():
         pathogens = json.loads(f.read())
         for path in pathogens:
             links[path["TaxID"]] = path
-    with open('data/diseases.4web.json') as f:
+    with open('data/diseases.covid.4web.json') as f:
         diseases = json.loads(f.read())
         for dis in diseases:
             links[dis["DOID"]] = dis
-    with open('data/phenotypes.4web.json') as f:
+    with open('data/phenotypes.covid.4web.json') as f:
         phenotypes = json.loads(f.read())
         for pheno in phenotypes:
             links[pheno["Phenotype"]] = pheno
