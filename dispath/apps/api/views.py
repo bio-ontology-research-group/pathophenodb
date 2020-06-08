@@ -180,7 +180,7 @@ class SearchClassesAPIView(APIView):
     def get(self, request, format=None):
         query = request.GET.get('query', None)
         try:
-            url = ABEROWL_API_URL + '/api/class/_startwith'
+            url = ABEROWL_API_URL + 'api/class/_startwith'
             params = {'query': query, 'ontology': 'PhenomeNETSH'}
             data = {}
             r = requests.get(url, params=params)
