@@ -146,3 +146,5 @@ STATICFILES_DIRS = (
 
 SITE_ID = 1
 SITE_DOMAIN = 'pathopheno.com'
+
+ABEROWL_API_URL='http://10.254.147.137/'

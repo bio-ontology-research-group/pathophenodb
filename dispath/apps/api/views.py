@@ -9,7 +9,7 @@ from django.conf import settings
 import sys, traceback
 
 
-ABEROWL_API_URL = getattr(settings, 'ABEROWL_API_URL', 'http://10.254.145.9/')
+ABEROWL_API_URL = getattr(settings, 'ABEROWL_API_URL', 'http://localhost/')
 
 def read_links():
     links = {}
