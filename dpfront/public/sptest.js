@@ -77,6 +77,7 @@ PREFIX SIO: <http://semanticscience.org/resource/SIO_>
 PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 SELECT distinct ?PA_ID ?pathogen  ?D_ID ?disease ?disease_pathogen_evidence_code  ?P_ID ?phenotype ?disease_phenotype_evidence_code  
+FROM <http://patho.phenomebrowser.net>
 WHERE
   {
     ?D_ID SIO:000255 ?o1 .
@@ -98,7 +99,8 @@ WHERE
 PREFIX SIO: <http://semanticscience.org/resource/SIO_>
 PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT DISTINCT  ?Disease_ID ?Disease  ?evidence_Code ?Phenotype_ID   ?Phenotype FROM <http://patho_pheno_withlabel.com#>
+SELECT DISTINCT  ?Disease_ID ?Disease  ?evidence_Code ?Phenotype_ID   ?Phenotype   
+FROM <http://patho.phenomebrowser.net>
 WHERE 
   {
     ?Disease_ID SIO:000255 ?o .  
@@ -114,7 +116,8 @@ WHERE
 PREFIX SIO: <http://semanticscience.org/resource/SIO_>
 PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT distinct ?Disease_ID ?Disease ?Pathogen_ID ?Pathogen ?evidence_Code  
+SELECT distinct ?Disease_ID ?Disease ?Pathogen_ID ?Pathogen ?evidence_Code    
+FROM <http://patho.phenomebrowser.net>
 WHERE 
   {
     ?Disease_ID SIO:000255 ?o .  
@@ -129,7 +132,8 @@ WHERE
         $("#query").val(`#EX4:List all diseases along with the drugs used to treat them
 
 PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
-SELECT distinct ?Disease_ID  ?Disease ?Drug_ID ?Drug
+SELECT distinct ?Disease_ID  ?Disease ?Drug_ID ?Drug  
+FROM <http://patho.phenomebrowser.net>
 WHERE 
   {
     ?Disease_ID RO:0002302 ?Drug_ID .
@@ -142,7 +146,8 @@ WHERE
 
 PREFIX RO: <http://bio2vec.net/RO#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT distinct ?Pathogen_ID ?Pathogen ?Protein_ID 
+SELECT distinct ?Pathogen_ID ?Pathogen ?Protein_ID   
+FROM <http://patho.phenomebrowser.net>
 WHERE   
   {
     ?s1 RO:resistant_protein ?Protein_ID .
@@ -155,7 +160,8 @@ WHERE
 
 PREFIX RO: <http://bio2vec.net/RO#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT distinct ?Pathogen_ID ?Pathogen  ?DNA_accessions_ID 
+SELECT distinct ?Pathogen_ID ?Pathogen  ?DNA_accessions_ID   
+FROM <http://patho.phenomebrowser.net>
 WHERE 
   {
     ?s RO:resistant_DNAaccession ?DNA_accessions_ID.
@@ -168,7 +174,8 @@ WHERE
 
 PREFIX RO: <http://bio2vec.net/RO#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT distinct ?Pathogen_ID ?Pathogen ?Drug_ID ?Drug
+SELECT distinct ?Pathogen_ID ?Pathogen ?Drug_ID ?Drug  
+FROM <http://patho.phenomebrowser.net>
 WHERE 
   {
     ?s RO:resistant_to_drug ?Drug_ID .
@@ -184,7 +191,8 @@ PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
 PREFIX SIO: <http://semanticscience.org/resource/SIO_>
 PREFIX NCBITaxon: <http://purl.obolibrary.org/obo/NCBITaxon_>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT distinct ?D_ID ?Disease ?evidence_Code
+SELECT distinct ?D_ID ?Disease ?evidence_Code  
+FROM <http://patho.phenomebrowser.net>
 WHERE 
   {
     ?D_ID SIO:000255  ?o .  
