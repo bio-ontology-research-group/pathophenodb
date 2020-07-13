@@ -740,10 +740,10 @@ class App extends Component {
   				<td className="download"><a href="/media/downloads/patho_pheno.v3.nt" download><b><p>&#9660;</p></b></a></td>
   			</tr>
   			<tr>
-  				<td><a href="/media/downloads/patho_pheno_withsymbols.v3.nt.zip" download><b>Version 3</b></a></td>
+  				<td><a href="/media/downloads/patho_pheno_withsymbols.nt" download><b>Version 3</b></a></td>
   				<td>22nd February 2019</td>
   				<td><input type="checkbox" checked disabled/></td>
-  				<td className="download"><a href="/media/downloads/patho_pheno_withsymbols.v3.nt.zip" download><b><p>&#9660;</p></b></a></td>
+  				<td className="download"><a href="/media/downloads/patho_pheno_withsymbols.nt" download><b><p>&#9660;</p></b></a></td>
   			</tr>
   			</tbody>
  		</table>

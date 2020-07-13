@@ -11,7 +11,7 @@ resistance to particular drugs.
 
 # Website and data
 
-The website making our data available is at http://patho.phenomebrowser.net/ and you can find the latest release of the data in RDF format at https://zenodo.org/record/1970276.
+The website making our data available is at http://patho.phenomebrowser.net/ and you can find the latest release of the data in RDF format at http://patho.phenomebrowser.net/#/downloads.
 
 # Issues
 
